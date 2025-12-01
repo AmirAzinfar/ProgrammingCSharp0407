@@ -46,6 +46,8 @@
             BirthdayDateTimePicker = new DateTimePicker();
             DeleteInfoButton = new Button();
             UpdateButton = new Button();
+            SearchTextBox = new TextBox();
+            label7 = new Label();
             ((System.ComponentModel.ISupportInitialize)UserManageDataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -161,6 +163,7 @@
             SearchButton.TabIndex = 10;
             SearchButton.Text = "جستجو ";
             SearchButton.UseVisualStyleBackColor = true;
+            SearchButton.Click += SearchButton_Click;
             // 
             // label5
             // 
@@ -221,12 +224,32 @@
             UpdateButton.Text = "به روز رسانی";
             UpdateButton.UseVisualStyleBackColor = true;
             // 
+            // SearchTextBox
+            // 
+            SearchTextBox.Location = new Point(790, 132);
+            SearchTextBox.Name = "SearchTextBox";
+            SearchTextBox.Size = new Size(325, 39);
+            SearchTextBox.TabIndex = 12;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.White;
+            label7.Location = new Point(696, 130);
+            label7.Name = "label7";
+            label7.Size = new Size(89, 32);
+            label7.TabIndex = 11;
+            label7.Text = "جستجو:";
+            // 
             // UserManagmentForm
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSlateGray;
             ClientSize = new Size(1558, 987);
+            Controls.Add(SearchTextBox);
+            Controls.Add(label7);
             Controls.Add(UpdateButton);
             Controls.Add(DeleteInfoButton);
             Controls.Add(BirthdayDateTimePicker);
@@ -273,5 +296,7 @@
         private DateTimePicker BirthdayDateTimePicker;
         private Button DeleteInfoButton;
         private Button UpdateButton;
+        private TextBox SearchTextBox;
+        private Label label7;
     }
 }

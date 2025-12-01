@@ -4,8 +4,10 @@ using ProgrammingInCshrpBaseBackend.Abstractions;
 
 namespace ProgrammingInCshrpBaseBackend.Models
 {
+    //Relationships of class Adress and BaseEntity "is a" --> Inheritance
     public class Adress : BaseEntity
     {
+        //Relationships of class Adress and Base "is a" --> Inheritance
         public Adress() :base()
         {
         }

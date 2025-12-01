@@ -4,8 +4,12 @@ using ProgrammingInCshrpBaseBackend.Abstractions;
 
 namespace ProgrammingInCshrpBaseBackend.Models
 {
+    //Relationships of class Job and BaseEntity "is a" --> Inheritance
+
     public class Job : BaseEntity
     {
+        //Relationships of class Job and Base "is a" --> Inheritance
+
         public Job() : base() 
         {
         }

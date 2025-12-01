@@ -4,8 +4,12 @@ using ProgrammingInCshrpBaseBackend.Abstractions;
 
 namespace ProgrammingInCshrpBaseBackend.Models
 {
+    //Relationships of class User and BaseEntity "is a" --> Inheritance
+
     public class User : BaseEntity //entities
     {
+        //Relationships of class User and Base "is a" --> Inheritance
+
         public User() : base() 
         {
         }

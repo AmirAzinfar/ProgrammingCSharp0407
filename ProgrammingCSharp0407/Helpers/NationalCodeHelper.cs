@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ProgrammingCSharp0407.Helpers
+﻿namespace ProgrammingCSharp0407.Helpers
 {
-    internal class NationalCodeHelper
+    internal static class NationalCodeHelper
     {
         public static bool IsValidNationalCode(string nationalCode)
         {

@@ -4,6 +4,8 @@ using ProgrammingInCshrpBaseBackend.Abstractions;
 
 namespace ProgrammingInCshrpBaseBackend.Models
 {
+    //Relationships of class UploadDoc and BaseEntity "is a" --> Inheritance
+
     public class UploadDoc : BaseEntity
     {
         // public int Id { get; set; } beacuse inhertance from BaseEntity
@@ -13,6 +15,7 @@ namespace ProgrammingInCshrpBaseBackend.Models
         public string CV {  get; set; }
         public string EmploymentReference { get; set; }
 
+        //Relationships of class UploadDoc and Base "is a" --> Inheritance
 
         public UploadDoc() :base()
         {

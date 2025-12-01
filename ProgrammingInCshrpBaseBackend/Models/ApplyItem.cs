@@ -3,6 +3,9 @@ using ProgrammingInCshrpBaseBackend.Enums;
 
 namespace ProgrammingInCshrpBaseBackend.Models
 {
+    //class ApplayItem "has a" Relationships of Compsition with Apply,Job,UploadDoc and JobInterview
+    
+
     public class ApplyItem         //Master & Details
     {
         public Apply Apply { get; set; }

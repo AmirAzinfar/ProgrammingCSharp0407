@@ -1,10 +1,11 @@
-﻿using ProgrammingCSharp0407.Interfaces;
-using ProgrammingCSharp0407.Models;
+﻿
+using ProgrammingInCshrpBaseBackend.Interfaces;
+using ProgrammingInCshrpBaseBackend.Models;
 
 
-namespace ProgrammingCSharp0407.Services
+namespace ProgrammingInCshrpBaseBackend.Services
 {
-    internal class AdressService : BaseService<Adress>
+    public class AdressService : BaseService<Adress>
     {
         public void Add(Adress item)
         {

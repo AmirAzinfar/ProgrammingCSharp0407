@@ -1,10 +1,9 @@
 ﻿
+using ProgrammingInCshrpBaseBackend.Enums;
 
-using ProgrammingCSharp0407.Enums;
-
-namespace ProgrammingCSharp0407.Models
+namespace ProgrammingInCshrpBaseBackend.Models
 {
-    internal class ApplyItem         //Master & Details
+    public class ApplyItem         //Master & Details
     {
         public Apply Apply { get; set; }
         public Job Job { get; set; }

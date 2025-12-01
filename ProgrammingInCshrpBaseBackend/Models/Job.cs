@@ -1,9 +1,10 @@
-﻿using ProgrammingCSharp0407.Abstractions;
+﻿
+using ProgrammingInCshrpBaseBackend.Abstractions;
 
 
-namespace ProgrammingCSharp0407.Models
+namespace ProgrammingInCshrpBaseBackend.Models
 {
-    internal class Job : BaseEntity
+    public class Job : BaseEntity
     {
         public Job() : base() 
         {

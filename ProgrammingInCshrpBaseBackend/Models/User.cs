@@ -1,11 +1,10 @@
-﻿using ProgrammingCSharp0407.Abstractions;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿
+using ProgrammingInCshrpBaseBackend.Abstractions;
 
-namespace ProgrammingCSharp0407.Models
+
+namespace ProgrammingInCshrpBaseBackend.Models
 {
-    internal class User : BaseEntity //entities
+    public class User : BaseEntity //entities
     {
         public User() : base() 
         {

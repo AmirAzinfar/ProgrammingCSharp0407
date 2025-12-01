@@ -1,9 +1,10 @@
-﻿using ProgrammingCSharp0407.Abstractions;
+﻿
+using ProgrammingInCshrpBaseBackend.Abstractions;
 
 
-namespace ProgrammingCSharp0407.Models
+namespace ProgrammingInCshrpBaseBackend.Models
 {
-    internal class UploadDoc : BaseEntity
+    public class UploadDoc : BaseEntity
     {
         // public int Id { get; set; } beacuse inhertance from BaseEntity
         public string Motivation {  get; set; }

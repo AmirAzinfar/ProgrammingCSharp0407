@@ -1,9 +1,9 @@
-﻿using ProgrammingCSharp0407.Abstractions;
-using ProgrammingCSharp0407.Enums;
+﻿
+using ProgrammingInCshrpBaseBackend.Abstractions;
 
-namespace ProgrammingCSharp0407.Models
+namespace ProgrammingInCshrpBaseBackend.Models
 {
-    internal class Apply : BaseEntity
+    public class Apply : BaseEntity
     {
         // public int Id { get; set; } beacuse Inheritance from BaseEntity
         public List<ApplyItem> ApplyItems { get; set; } 

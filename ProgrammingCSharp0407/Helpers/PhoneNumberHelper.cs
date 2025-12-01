@@ -18,10 +18,12 @@ namespace ProgrammingCSharp0407.Helpers
             }
         }
 
-        public static string FormatToValidPhoneNumber(string phoneNumber)
+        public static string FormatToValidPhoneNumber (string phoneNumber)
         {  
             return phoneNumber; 
         }
+
+        
 
     }
 }

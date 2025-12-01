@@ -1,20 +1,20 @@
 ﻿using ProgrammingCSharp0407.Helpers;
 using ProgrammingCSharp0407.Models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
+using ProgrammingCSharp0407.Services;
+
 
 namespace ProgrammingCSharp0407.Forms
 {
     public partial class UserManagmentForm : Form
     {
+        UserService userService;
+        //List<User> users;
         public UserManagmentForm()
         {
             InitializeComponent();
+            //users= new List<User>();
+            userService = new UserService();
+
         }
 
         private void RegisterUserbutton_Click(object sender, EventArgs e)
@@ -24,15 +24,25 @@ namespace ProgrammingCSharp0407.Forms
             string lastName = LastNameTextBox.Text;
             string nationalCode = NationalCodeTextBox.Text;
             string phonNumber = PhoneNumberTextBox.Text;
+            DateTime birthday = BirthdayDateTimePicker.Value;
+            DateTime createdAt= DateTime.Now;
 
             if (string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName))
             {
+                MessageBox.Show(".لطفآ نام و نام خانوادگی را به صورت صحیح وارد کنید");
                 return;
             }
 
-            if (PhoneNumberHelper.IsValidPhoneNumber(phonNumber))
+            if (!PhoneNumberHelper.IsValidPhoneNumber(phonNumber))
             {
-                
+                MessageBox.Show("!لطفآ شماره تلفن خود را به صورت صحیح وارد کنید");
+                return;
+            }
+
+            if (!NationalCodeHelper.IsValidNationalCode(nationalCode))
+            {
+                MessageBox.Show("!لطفآ کد ملی خود را به صورت صحیح وارد کنید");
+                return;
             }
 
 
@@ -42,23 +52,20 @@ namespace ProgrammingCSharp0407.Forms
             //User user = new();
             //var user = new User();
             //User user = new User();
+
             //user.FirstName = firstName;
             //user.LastName = lastName;
             //user.NationalCode = nationalCode;
             //user.PhoneNumber = phonNumber;
             //-----------------------
 
-            User user = new User(nationalCode: nationalCode, phoneNumber: phonNumber)
-            {
-                FirstName = firstName,
-                LastName = lastName,
-                NationalCode = nationalCode,
-                PhoneNumber = phonNumber
-            };
-
-            List<User> users = new List<User>();
-            users.Add(user);
-
+            User user = new User(firstName: firstName, lastName: lastName, birthDay:birthday, nationalCode: nationalCode, phoneNumber: phonNumber);
+            //users.Add(user);
+            userService.Add(user);
+            UserManageDataGridView.DataSource = null;
+            //UserManageDataGridView.DataSource= users;
+            UserManageDataGridView.DataSource = userService.GetAll();
+            UserManageDataGridView.Refresh();
 
         }
 
@@ -69,7 +76,7 @@ namespace ProgrammingCSharp0407.Forms
             NationalCodeTextBox.Text = null;
             PhoneNumberTextBox.Text = null;
         }
-        private void DeleteRegisterbutton_Click(object sender, EventArgs e)
+        private void ResetRegisterbutton_Click(object sender, EventArgs e)
         {
             ResetForm();
         }

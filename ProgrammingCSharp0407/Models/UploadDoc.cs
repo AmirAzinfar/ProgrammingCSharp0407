@@ -1,7 +1,5 @@
 ﻿using ProgrammingCSharp0407.Abstractions;
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 namespace ProgrammingCSharp0407.Models
 {
@@ -13,5 +11,10 @@ namespace ProgrammingCSharp0407.Models
         public string WorkExperience { get; set; }
         public string CV {  get; set; }
         public string EmploymentReference { get; set; }
+
+
+        public UploadDoc() :base()
+        {
+        }
     }
 }

@@ -1,3 +1,5 @@
 <Solution>
   <Project Path="ProgrammingCSharp0407/ProgrammingCSharp0407.csproj" />
+  <Project Path="ProgrammingInCsharp0407JobPanel/ProgrammingInCsharp0407JobPanel.csproj" Id="416dd894-5e32-4239-982e-828008731078" />
+  <Project Path="ProgrammingInCshrpBaseBackend/ProgrammingInCshrpBaseBackend.csproj" Id="108e06bd-9a76-40bb-b6e9-ed45541982ed" />
 </Solution>

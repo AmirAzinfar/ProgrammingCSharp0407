@@ -44,7 +44,7 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = SystemColors.ButtonHighlight;
+            label1.ForeColor = SystemColors.ActiveCaptionText;
             label1.Location = new Point(23, 141);
             label1.Name = "label1";
             label1.Size = new Size(118, 32);
@@ -55,7 +55,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = SystemColors.ButtonHighlight;
+            label2.ForeColor = SystemColors.ActiveCaptionText;
             label2.Location = new Point(37, 205);
             label2.Name = "label2";
             label2.Size = new Size(104, 32);
@@ -64,6 +64,8 @@
             // 
             // UserNameTextBox
             // 
+            UserNameTextBox.BackColor = Color.Gainsboro;
+            UserNameTextBox.BorderStyle = BorderStyle.FixedSingle;
             UserNameTextBox.Location = new Point(162, 141);
             UserNameTextBox.Name = "UserNameTextBox";
             UserNameTextBox.Size = new Size(250, 39);
@@ -71,6 +73,8 @@
             // 
             // PasswordTextBox
             // 
+            PasswordTextBox.BackColor = Color.Gainsboro;
+            PasswordTextBox.BorderStyle = BorderStyle.FixedSingle;
             PasswordTextBox.Location = new Point(162, 205);
             PasswordTextBox.Name = "PasswordTextBox";
             PasswordTextBox.Size = new Size(250, 39);
@@ -79,9 +83,13 @@
             // 
             // button1
             // 
-            button1.BackColor = Color.LightSlateGray;
+            button1.BackColor = Color.DarkTurquoise;
+            button1.Cursor = Cursors.Hand;
+            button1.FlatAppearance.BorderColor = Color.MidnightBlue;
+            button1.FlatAppearance.BorderSize = 2;
+            button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = SystemColors.ButtonHighlight;
+            button1.ForeColor = Color.FromArgb(64, 64, 64);
             button1.Location = new Point(162, 279);
             button1.Name = "button1";
             button1.Size = new Size(250, 68);
@@ -105,8 +113,8 @@
             // 
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI", 13.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.LightGray;
-            label3.Location = new Point(103, 23);
+            label3.ForeColor = Color.Black;
+            label3.Location = new Point(103, 32);
             label3.Name = "label3";
             label3.Size = new Size(374, 66);
             label3.TabIndex = 6;
@@ -117,7 +125,7 @@
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ControlDarkDark;
+            BackColor = Color.DarkTurquoise;
             ClientSize = new Size(929, 421);
             Controls.Add(label3);
             Controls.Add(pictureBox1);

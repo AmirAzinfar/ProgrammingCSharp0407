@@ -1,21 +1,18 @@
 ﻿using ProgrammingCSharp0407.Models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
+using ProgrammingCSharp0407.Services;
 
 namespace ProgrammingCSharp0407.Forms
 {
     public partial class JobManagmentForm : Form
     {
 
-        List<Job> jobs;
+        //List<Job> jobs;
+        JobService jobService;
         public JobManagmentForm()
         {
             InitializeComponent();
+
+            jobService = new JobService();
 
             string[] FieldOfJoboptionen = { "پزشک و متخصص", "فنی و مهندسی", "معلم", "مربی و دستیار" };
             FieldOfJobComboBox.Items.AddRange(FieldOfJoboptionen);
@@ -29,7 +26,7 @@ namespace ProgrammingCSharp0407.Forms
             string[] Cityoptionen = { "تهران ", "اصفهان", "شیراز", "فسا", "کرج", "بندرعباس" };
             CityComboBox.Items.AddRange(Cityoptionen);
 
-            jobs = new List<Job>();
+            //jobs = new List<Job>();
         }
 
 
@@ -38,25 +35,23 @@ namespace ProgrammingCSharp0407.Forms
             //data collect
             string fieldOfJob = FieldOfJobComboBox.Text;
             string titelOfJob = JobTitelComboBox.Text;
-            string provinzWorkPlace = ProvinzComboBox.Text;
+            string provinzWorkplace = ProvinzComboBox.Text;
             string cityWorkplace = CityComboBox.Text;
             string salaryJob = SalaryTextBox.Text;
 
-            Job job = new Job();
-            job.FieldOfJob = fieldOfJob;
-            job.TitelOfJob = titelOfJob;
-            job.ProvinzWorkplace = provinzWorkPlace;
-            job.CityWorkplace = cityWorkplace;
+            Job job = new Job(fieldOfJob:fieldOfJob,titelOfJob:titelOfJob,provinzWorkplace:provinzWorkplace,cityWorkplace:cityWorkplace);
+           
             job.Salary= salaryJob;
+            
 
             //List<Job> jobs = new List<Job>();
-            jobs.Add(job);
+            jobService.Add(job);
 
             //JobAppliedDataGridView.DataSource = jobs;
 
             //DataGridView can not reload "refresh", beacuse of that we will read it as folow: 
             JobAppliedDataGridView.DataSource = null;
-            JobAppliedDataGridView.DataSource= jobs;
+            JobAppliedDataGridView.DataSource= jobService.GetAll();
             JobAppliedDataGridView:Refresh();
 
         }

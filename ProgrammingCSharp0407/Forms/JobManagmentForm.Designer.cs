@@ -60,6 +60,7 @@
             CancelApplaybutton = new Button();
             JobAppliedDataGridView = new DataGridView();
             label17 = new Label();
+            label18 = new Label();
             ((System.ComponentModel.ISupportInitialize)JobAppliedDataGridView).BeginInit();
             SuspendLayout();
             // 
@@ -67,6 +68,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
             label1.Location = new Point(1624, 414);
             label1.Name = "label1";
             label1.Size = new Size(125, 32);
@@ -75,6 +77,7 @@
             // 
             // FieldOfJobComboBox
             // 
+            FieldOfJobComboBox.BackColor = Color.FromArgb(224, 224, 224);
             FieldOfJobComboBox.FormattingEnabled = true;
             FieldOfJobComboBox.Location = new Point(984, 411);
             FieldOfJobComboBox.Name = "FieldOfJobComboBox";
@@ -85,6 +88,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.White;
             label2.Location = new Point(1603, 494);
             label2.Name = "label2";
             label2.Size = new Size(146, 32);
@@ -93,6 +97,7 @@
             // 
             // JobTitelComboBox
             // 
+            JobTitelComboBox.BackColor = Color.FromArgb(224, 224, 224);
             JobTitelComboBox.FormattingEnabled = true;
             JobTitelComboBox.Location = new Point(984, 486);
             JobTitelComboBox.Name = "JobTitelComboBox";
@@ -103,6 +108,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.White;
             label3.Location = new Point(1615, 660);
             label3.Name = "label3";
             label3.Size = new Size(134, 32);
@@ -113,6 +119,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.White;
             label4.Location = new Point(1490, 580);
             label4.Name = "label4";
             label4.Size = new Size(263, 32);
@@ -123,6 +130,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.White;
             label5.Location = new Point(1649, 739);
             label5.Name = "label5";
             label5.Size = new Size(100, 32);
@@ -132,7 +140,8 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(1116, 573);
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(1123, 575);
             label6.Name = "label6";
             label6.Size = new Size(70, 32);
             label6.TabIndex = 7;
@@ -140,6 +149,7 @@
             // 
             // SalaryTextBox
             // 
+            SalaryTextBox.BackColor = Color.FromArgb(224, 224, 224);
             SalaryTextBox.Location = new Point(1203, 573);
             SalaryTextBox.Name = "SalaryTextBox";
             SalaryTextBox.Size = new Size(280, 39);
@@ -148,6 +158,7 @@
             // FullTimeRadioButton
             // 
             FullTimeRadioButton.AutoSize = true;
+            FullTimeRadioButton.ForeColor = Color.White;
             FullTimeRadioButton.Location = new Point(1343, 660);
             FullTimeRadioButton.Name = "FullTimeRadioButton";
             FullTimeRadioButton.Size = new Size(140, 36);
@@ -159,6 +170,7 @@
             // HalfTimeRadioButton
             // 
             HalfTimeRadioButton.AutoSize = true;
+            HalfTimeRadioButton.ForeColor = Color.White;
             HalfTimeRadioButton.Location = new Point(1116, 658);
             HalfTimeRadioButton.Name = "HalfTimeRadioButton";
             HalfTimeRadioButton.Size = new Size(147, 36);
@@ -169,6 +181,7 @@
             // 
             // ProvinzComboBox
             // 
+            ProvinzComboBox.BackColor = Color.FromArgb(224, 224, 224);
             ProvinzComboBox.FormattingEnabled = true;
             ProvinzComboBox.Location = new Point(984, 739);
             ProvinzComboBox.Name = "ProvinzComboBox";
@@ -177,6 +190,7 @@
             // 
             // CityComboBox
             // 
+            CityComboBox.BackColor = Color.FromArgb(224, 224, 224);
             CityComboBox.FormattingEnabled = true;
             CityComboBox.Location = new Point(984, 799);
             CityComboBox.Name = "CityComboBox";
@@ -186,6 +200,7 @@
             // label7
             // 
             label7.AutoSize = true;
+            label7.ForeColor = Color.White;
             label7.Location = new Point(1408, 739);
             label7.Name = "label7";
             label7.Size = new Size(75, 32);
@@ -195,6 +210,7 @@
             // label8
             // 
             label8.AutoSize = true;
+            label8.ForeColor = Color.White;
             label8.Location = new Point(1374, 799);
             label8.Name = "label8";
             label8.Size = new Size(109, 32);
@@ -205,6 +221,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.ForeColor = Color.White;
             label9.Location = new Point(1591, 893);
             label9.Name = "label9";
             label9.Size = new Size(158, 32);
@@ -214,6 +231,7 @@
             // NowRadioButton
             // 
             NowRadioButton.AutoSize = true;
+            NowRadioButton.ForeColor = Color.White;
             NowRadioButton.Location = new Point(1384, 952);
             NowRadioButton.Name = "NowRadioButton";
             NowRadioButton.Size = new Size(99, 36);
@@ -225,6 +243,7 @@
             // label10
             // 
             label10.AutoSize = true;
+            label10.ForeColor = Color.White;
             label10.Location = new Point(1416, 893);
             label10.Name = "label10";
             label10.Size = new Size(74, 32);
@@ -241,6 +260,7 @@
             // AgreementRadioButton
             // 
             AgreementRadioButton.AutoSize = true;
+            AgreementRadioButton.ForeColor = Color.White;
             AgreementRadioButton.Location = new Point(1116, 952);
             AgreementRadioButton.Name = "AgreementRadioButton";
             AgreementRadioButton.Size = new Size(191, 36);
@@ -254,6 +274,7 @@
             label11.AutoSize = true;
             label11.BackColor = Color.Transparent;
             label11.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label11.ForeColor = Color.WhiteSmoke;
             label11.Location = new Point(1598, 44);
             label11.Name = "label11";
             label11.Size = new Size(166, 32);
@@ -279,6 +300,8 @@
             // 
             // label14
             // 
+            label14.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label14.ForeColor = Color.WhiteSmoke;
             label14.Location = new Point(934, 76);
             label14.Name = "label14";
             label14.RightToLeft = RightToLeft.Yes;
@@ -289,6 +312,8 @@
             // 
             // label15
             // 
+            label15.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label15.ForeColor = Color.WhiteSmoke;
             label15.Location = new Point(1601, 256);
             label15.Name = "label15";
             label15.RightToLeft = RightToLeft.Yes;
@@ -299,6 +324,8 @@
             // 
             // label16
             // 
+            label16.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label16.ForeColor = Color.WhiteSmoke;
             label16.Location = new Point(1545, 304);
             label16.Name = "label16";
             label16.RightToLeft = RightToLeft.Yes;
@@ -309,8 +336,14 @@
             // 
             // DeleteInfoFormbutton
             // 
-            DeleteInfoFormbutton.BackColor = Color.White;
-            DeleteInfoFormbutton.Location = new Point(1252, 1058);
+            DeleteInfoFormbutton.BackColor = Color.FromArgb(224, 224, 224);
+            DeleteInfoFormbutton.Cursor = Cursors.Hand;
+            DeleteInfoFormbutton.FlatAppearance.BorderColor = Color.White;
+            DeleteInfoFormbutton.FlatAppearance.BorderSize = 2;
+            DeleteInfoFormbutton.FlatAppearance.MouseDownBackColor = Color.Silver;
+            DeleteInfoFormbutton.FlatAppearance.MouseOverBackColor = Color.FromArgb(128, 255, 255);
+            DeleteInfoFormbutton.FlatStyle = FlatStyle.Flat;
+            DeleteInfoFormbutton.Location = new Point(1252, 1053);
             DeleteInfoFormbutton.Name = "DeleteInfoFormbutton";
             DeleteInfoFormbutton.Size = new Size(231, 73);
             DeleteInfoFormbutton.TabIndex = 12;
@@ -319,8 +352,14 @@
             // 
             // RegisterApplybutton
             // 
-            RegisterApplybutton.BackColor = Color.Cyan;
-            RegisterApplybutton.Location = new Point(984, 1058);
+            RegisterApplybutton.BackColor = Color.Aquamarine;
+            RegisterApplybutton.Cursor = Cursors.Hand;
+            RegisterApplybutton.FlatAppearance.BorderColor = Color.White;
+            RegisterApplybutton.FlatAppearance.BorderSize = 2;
+            RegisterApplybutton.FlatAppearance.MouseDownBackColor = Color.Silver;
+            RegisterApplybutton.FlatAppearance.MouseOverBackColor = Color.FromArgb(128, 255, 255);
+            RegisterApplybutton.FlatStyle = FlatStyle.Flat;
+            RegisterApplybutton.Location = new Point(984, 1053);
             RegisterApplybutton.Name = "RegisterApplybutton";
             RegisterApplybutton.Size = new Size(232, 73);
             RegisterApplybutton.TabIndex = 11;
@@ -330,8 +369,14 @@
             // 
             // CancelApplaybutton
             // 
-            CancelApplaybutton.BackColor = Color.Transparent;
-            CancelApplaybutton.Location = new Point(1518, 1058);
+            CancelApplaybutton.BackColor = Color.Pink;
+            CancelApplaybutton.Cursor = Cursors.Hand;
+            CancelApplaybutton.FlatAppearance.BorderColor = Color.White;
+            CancelApplaybutton.FlatAppearance.BorderSize = 2;
+            CancelApplaybutton.FlatAppearance.MouseDownBackColor = Color.Silver;
+            CancelApplaybutton.FlatAppearance.MouseOverBackColor = Color.FromArgb(128, 255, 255);
+            CancelApplaybutton.FlatStyle = FlatStyle.Flat;
+            CancelApplaybutton.Location = new Point(1518, 1053);
             CancelApplaybutton.Name = "CancelApplaybutton";
             CancelApplaybutton.Size = new Size(231, 73);
             CancelApplaybutton.TabIndex = 13;
@@ -340,17 +385,19 @@
             // 
             // JobAppliedDataGridView
             // 
+            JobAppliedDataGridView.BackgroundColor = Color.Silver;
             JobAppliedDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            JobAppliedDataGridView.Location = new Point(35, 105);
+            JobAppliedDataGridView.Location = new Point(35, 44);
             JobAppliedDataGridView.Name = "JobAppliedDataGridView";
             JobAppliedDataGridView.RowHeadersWidth = 82;
-            JobAppliedDataGridView.Size = new Size(881, 1026);
+            JobAppliedDataGridView.Size = new Size(881, 1082);
             JobAppliedDataGridView.TabIndex = 25;
             // 
             // label17
             // 
             label17.BackColor = Color.Transparent;
-            label17.Location = new Point(961, 352);
+            label17.ForeColor = Color.Black;
+            label17.Location = new Point(961, 369);
             label17.Name = "label17";
             label17.RightToLeft = RightToLeft.Yes;
             label17.Size = new Size(803, 41);
@@ -358,12 +405,25 @@
             label17.Text = "-------------------------------------------------------------------------------";
             label17.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // label18
+            // 
+            label18.BackColor = Color.Transparent;
+            label18.ForeColor = Color.Black;
+            label18.Location = new Point(961, 998);
+            label18.Name = "label18";
+            label18.RightToLeft = RightToLeft.Yes;
+            label18.Size = new Size(803, 41);
+            label18.TabIndex = 27;
+            label18.Text = "-------------------------------------------------------------------------------";
+            label18.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // JobManagmentForm
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ButtonFace;
-            ClientSize = new Size(1816, 1185);
+            BackColor = Color.LightSlateGray;
+            ClientSize = new Size(1816, 1169);
+            Controls.Add(label18);
             Controls.Add(label17);
             Controls.Add(JobAppliedDataGridView);
             Controls.Add(CancelApplaybutton);
@@ -396,7 +456,7 @@
             Controls.Add(FieldOfJobComboBox);
             Controls.Add(label1);
             Name = "JobManagmentForm";
-            Text = "JobManagmentForm";
+            Text = "فرم درخواست";
             ((System.ComponentModel.ISupportInitialize)JobAppliedDataGridView).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -435,5 +495,6 @@
         private Button CancelApplaybutton;
         private DataGridView JobAppliedDataGridView;
         private Label label17;
+        private Label label18;
     }
 }

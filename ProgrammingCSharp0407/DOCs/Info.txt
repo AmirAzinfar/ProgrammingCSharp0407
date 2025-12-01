@@ -1,1 +1,4 @@
-﻿
+﻿Hallo Amir
+Hier ist C#-Kurs für Windows Form
+Der nächste Kurs wäre ORM
+Danach werde ich ASP.net und Web lernen.

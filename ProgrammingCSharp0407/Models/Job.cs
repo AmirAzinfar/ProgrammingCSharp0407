@@ -1,12 +1,22 @@
 ﻿using ProgrammingCSharp0407.Abstractions;
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 namespace ProgrammingCSharp0407.Models
 {
     internal class Job : BaseEntity
     {
+        public Job() : base() 
+        {
+        }
+        public Job(string fieldOfJob, string titelOfJob, string provinzWorkplace, string cityWorkplace) :this()
+        {
+            FieldOfJob = fieldOfJob;
+            TitelOfJob = titelOfJob;   
+            ProvinzWorkplace = provinzWorkplace;
+            CityWorkplace = cityWorkplace;
+        }
+
+
         //public int Id { get; set; } beacuse inhertance from BaseEntity
         public string FieldOfJob {  get; set; }
         public string TitelOfJob { get; set; }
@@ -18,4 +28,6 @@ namespace ProgrammingCSharp0407.Models
         public DateTime DateOfStart {  get; set; }
 
     }
+
+    
 }

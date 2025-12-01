@@ -1,6 +1,6 @@
 ﻿namespace ProgrammingCSharp0407.Forms
 {
-    partial class User_Panel
+    partial class UserPanelForm
     {
         /// <summary>
         /// Required designer variable.
@@ -32,5 +32,6 @@
         private ToolStripMenuItem اSubmitFormToolStripMenuItem;
         private ToolStripMenuItem StatusApplyToolStripMenuItem;
         private PictureBox pictureBox1;
+        private ToolStripMenuItem UploadDocsToolStripMenuItem;
     }
 }

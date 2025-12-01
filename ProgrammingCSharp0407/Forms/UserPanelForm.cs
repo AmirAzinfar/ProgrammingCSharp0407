@@ -8,14 +8,14 @@ using System.Windows.Forms;
 
 namespace ProgrammingCSharp0407.Forms
 {
-    public partial class User_Panel : Form
+    public partial class UserPanelForm : Form
     {
-        public User_Panel()
+        public UserPanelForm()
         {
             InitializeComponent();
         }
 
-        private void User_Panel_Load(object sender, EventArgs e)
+        private void UserPanelForm_Load(object sender, EventArgs e)
         {
 
         }
@@ -27,6 +27,7 @@ namespace ProgrammingCSharp0407.Forms
             FormRegistToolStripMenuItem = new ToolStripMenuItem();
             ApplyJobToolStripMenuItem = new ToolStripMenuItem();
             FullFormToolStripMenuItem = new ToolStripMenuItem();
+            UploadDocsToolStripMenuItem = new ToolStripMenuItem();
             managmentToolStripMenuItem = new ToolStripMenuItem();
             ApplierJobToolStripMenuItem = new ToolStripMenuItem();
             اSubmitFormToolStripMenuItem = new ToolStripMenuItem();
@@ -45,7 +46,7 @@ namespace ProgrammingCSharp0407.Forms
             menuStrip1.Items.AddRange(new ToolStripItem[] { userToolStripMenuItem, ApplyJobToolStripMenuItem, managmentToolStripMenuItem, ContactToolStripMenuItem, HelpToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(827, 40);
+            menuStrip1.Size = new Size(823, 40);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -67,7 +68,7 @@ namespace ProgrammingCSharp0407.Forms
             // 
             // ApplyJobToolStripMenuItem
             // 
-            ApplyJobToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { FullFormToolStripMenuItem });
+            ApplyJobToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { FullFormToolStripMenuItem, UploadDocsToolStripMenuItem });
             ApplyJobToolStripMenuItem.ForeColor = Color.FromArgb(64, 64, 64);
             ApplyJobToolStripMenuItem.Name = "ApplyJobToolStripMenuItem";
             ApplyJobToolStripMenuItem.Size = new Size(206, 36);
@@ -77,9 +78,17 @@ namespace ProgrammingCSharp0407.Forms
             // 
             FullFormToolStripMenuItem.BackColor = Color.LightSkyBlue;
             FullFormToolStripMenuItem.Name = "FullFormToolStripMenuItem";
-            FullFormToolStripMenuItem.Size = new Size(359, 44);
+            FullFormToolStripMenuItem.Size = new Size(294, 44);
             FullFormToolStripMenuItem.Text = "تکمیل فرم ";
             FullFormToolStripMenuItem.Click += FullFormToolStripMenuItem_Click;
+            // 
+            // UploadDocsToolStripMenuItem
+            // 
+            UploadDocsToolStripMenuItem.BackColor = Color.PaleTurquoise;
+            UploadDocsToolStripMenuItem.Name = "UploadDocsToolStripMenuItem";
+            UploadDocsToolStripMenuItem.Size = new Size(294, 44);
+            UploadDocsToolStripMenuItem.Text = "بارگذاری مدارک";
+            UploadDocsToolStripMenuItem.Click += UploadDocsToolStripMenuItem_Click;
             // 
             // managmentToolStripMenuItem
             // 
@@ -93,21 +102,21 @@ namespace ProgrammingCSharp0407.Forms
             // 
             ApplierJobToolStripMenuItem.BackColor = Color.LightSkyBlue;
             ApplierJobToolStripMenuItem.Name = "ApplierJobToolStripMenuItem";
-            ApplierJobToolStripMenuItem.Size = new Size(359, 44);
+            ApplierJobToolStripMenuItem.Size = new Size(330, 44);
             ApplierJobToolStripMenuItem.Text = "متقاضیان";
             // 
             // اSubmitFormToolStripMenuItem
             // 
             اSubmitFormToolStripMenuItem.BackColor = SystemColors.ActiveCaption;
             اSubmitFormToolStripMenuItem.Name = "اSubmitFormToolStripMenuItem";
-            اSubmitFormToolStripMenuItem.Size = new Size(359, 44);
+            اSubmitFormToolStripMenuItem.Size = new Size(330, 44);
             اSubmitFormToolStripMenuItem.Text = "ارسال درخواست ";
             // 
             // StatusApplyToolStripMenuItem
             // 
             StatusApplyToolStripMenuItem.BackColor = Color.SkyBlue;
             StatusApplyToolStripMenuItem.Name = "StatusApplyToolStripMenuItem";
-            StatusApplyToolStripMenuItem.Size = new Size(359, 44);
+            StatusApplyToolStripMenuItem.Size = new Size(330, 44);
             StatusApplyToolStripMenuItem.Text = "وضعیت درخواست";
             // 
             // ContactToolStripMenuItem
@@ -133,15 +142,16 @@ namespace ProgrammingCSharp0407.Forms
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             // 
-            // User_Panel
+            // UserPanelForm
             // 
             BackColor = SystemColors.AppWorkspace;
-            ClientSize = new Size(827, 767);
+            ClientSize = new Size(823, 760);
             Controls.Add(pictureBox1);
             Controls.Add(menuStrip1);
+            Cursor = Cursors.Arrow;
             ForeColor = SystemColors.ActiveCaptionText;
             MainMenuStrip = menuStrip1;
-            Name = "User_Panel";
+            Name = "UserPanelForm";
             Text = "پنل کاربری ";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
@@ -161,6 +171,12 @@ namespace ProgrammingCSharp0407.Forms
         {
             JobManagmentForm jobManagmentForm1 = new JobManagmentForm();
             jobManagmentForm1.ShowDialog();
+        }
+
+        private void UploadDocsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UploadDocsForm uploadDocsForm1 = new UploadDocsForm();
+            uploadDocsForm1.ShowDialog();
         }
     }
 }

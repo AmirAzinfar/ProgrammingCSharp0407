@@ -1,9 +1,10 @@
-﻿using ProgrammingCSharp0407.Abstractions;
-using ProgrammingCSharp0407.Enums;
+﻿
+using ProgrammingInCshrpBaseBackend.Abstractions;
 
-namespace ProgrammingCSharp0407.Models
+namespace ProgrammingInCshrpBaseBackend.Models
 {
-    internal class Apply : BaseEntity
+    //Relationships of class Applay and BaseEntity "is a" --> Inheritance
+    public class Apply : BaseEntity
     {
         // public int Id { get; set; } beacuse Inheritance from BaseEntity
         public List<ApplyItem> ApplyItems { get; set; } 
@@ -11,7 +12,8 @@ namespace ProgrammingCSharp0407.Models
         
         public DateTime CreatedAt { get; set; }
         public int Count { get; set; }
-        
+
+        //Relationships of class Applay and Base "is a" --> Inheritance
 
         public Apply() : base() 
         {

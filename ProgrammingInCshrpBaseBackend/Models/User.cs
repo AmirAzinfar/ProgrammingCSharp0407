@@ -1,12 +1,15 @@
-﻿using ProgrammingCSharp0407.Abstractions;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿
+using ProgrammingInCshrpBaseBackend.Abstractions;
 
-namespace ProgrammingCSharp0407.Models
+
+namespace ProgrammingInCshrpBaseBackend.Models
 {
-    internal class User : BaseEntity //entities
+    //Relationships of class User and BaseEntity "is a" --> Inheritance
+
+    public class User : BaseEntity //entities
     {
+        //Relationships of class User and Base "is a" --> Inheritance
+
         public User() : base() 
         {
         }

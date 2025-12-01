@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ProgrammingCSharp0407.Helpers
+﻿namespace ProgrammingCSharp0407.Helpers
 {
-    internal class PhoneNumberHelper
+    internal static class PhoneNumberHelper
     {
         public static bool IsValidPhoneNumber (string phoneNumber)
         {

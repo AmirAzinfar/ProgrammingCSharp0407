@@ -1,6 +1,7 @@
 ﻿using ProgrammingCSharp0407.Helpers;
-using ProgrammingCSharp0407.Models;
-using ProgrammingCSharp0407.Services;
+using ProgrammingCSharp0407.Utilities;
+using ProgrammingInCshrpBaseBackend.Models;
+using ProgrammingInCshrpBaseBackend.Services;
 
 
 namespace ProgrammingCSharp0407.Forms
@@ -25,7 +26,7 @@ namespace ProgrammingCSharp0407.Forms
             string nationalCode = NationalCodeTextBox.Text;
             string phonNumber = PhoneNumberTextBox.Text;
             DateTime birthday = BirthdayDateTimePicker.Value;
-            DateTime createdAt= DateTime.Now;
+            DateTime createdAt = DateTime.Now;
 
             if (string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName))
             {
@@ -59,7 +60,7 @@ namespace ProgrammingCSharp0407.Forms
             //user.PhoneNumber = phonNumber;
             //-----------------------
 
-            User user = new User(firstName: firstName, lastName: lastName, birthDay:birthday, nationalCode: nationalCode, phoneNumber: phonNumber);
+            User user = new User(firstName: firstName, lastName: lastName, birthDay: birthday, nationalCode: nationalCode, phoneNumber: phonNumber);
             //users.Add(user);
             userService.Add(user);
             UserManageDataGridView.DataSource = null;
@@ -71,14 +72,27 @@ namespace ProgrammingCSharp0407.Forms
 
         private void ResetForm()
         {
-            FirstNameTextBox.Text =null;
-            LastNameTextBox.Text=null;
+            FirstNameTextBox.Text = null;
+            LastNameTextBox.Text = null;
             NationalCodeTextBox.Text = null;
             PhoneNumberTextBox.Text = null;
+            SearchTextBox.Text = null;
         }
         private void ResetRegisterbutton_Click(object sender, EventArgs e)
         {
             ResetForm();
+        }
+
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+            string TextSearch = SearchTextBox.Text.Trim();
+            if (string.IsNullOrEmpty(TextSearch))
+            {
+                MessageBox.Show("!کلمه مورد نظر جهت جستجو را در کادر جستجو وارد کنید");
+                return;
+            }
+
+           //to continue, I nees foreach and Information abaut DataGridViewCell
         }
     }
 }

@@ -1,9 +1,12 @@
-﻿using ProgrammingCSharp0407.Abstractions;
+﻿
+using ProgrammingInCshrpBaseBackend.Abstractions;
 
 
-namespace ProgrammingCSharp0407.Models
+namespace ProgrammingInCshrpBaseBackend.Models
 {
-    internal class UploadDoc : BaseEntity
+    //Relationships of class UploadDoc and BaseEntity "is a" --> Inheritance
+
+    public class UploadDoc : BaseEntity
     {
         // public int Id { get; set; } beacuse inhertance from BaseEntity
         public string Motivation {  get; set; }
@@ -12,6 +15,7 @@ namespace ProgrammingCSharp0407.Models
         public string CV {  get; set; }
         public string EmploymentReference { get; set; }
 
+        //Relationships of class UploadDoc and Base "is a" --> Inheritance
 
         public UploadDoc() :base()
         {

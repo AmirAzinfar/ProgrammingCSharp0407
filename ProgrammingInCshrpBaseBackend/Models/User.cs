@@ -1,5 +1,4 @@
-﻿
-using ProgrammingInCshrpBaseBackend.Abstractions;
+﻿using ProgrammingInCshrpBaseBackend.Abstractions;
 
 
 namespace ProgrammingInCshrpBaseBackend.Models

@@ -12,7 +12,14 @@ namespace ProgrammingInCshrpBaseBackend.Models
         {
         }
         public string Street { get; set; }
-        public int HouseNumber { get; set; }
-        public int PostalCode { get; set; }
+        public string HouseNumber { get; set; }
+        public string PostalCode { get; set; }
+
+        public Adress (string street, string houseNumber, string postalCode)
+        {
+            Street = street;
+            HouseNumber = houseNumber;
+            PostalCode = postalCode;
+        }
     }
 }

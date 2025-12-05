@@ -9,7 +9,6 @@ namespace ProgrammingInCshrpBaseBackend.Models
         // public int Id { get; set; } beacuse Inheritance from BaseEntity
         public List<ApplyItem> ApplyItems { get; set; } 
         public User User { get; set; }
-        
         public DateTime CreatedAt { get; set; }
         public int Count { get; set; }
 

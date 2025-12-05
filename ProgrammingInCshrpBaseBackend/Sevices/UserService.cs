@@ -14,7 +14,7 @@ namespace ProgrammingInCshrpBaseBackend.Services;
 
         // 1:connect to Database (Db)
 
-            const string Connectionstring = "Server=AMIRA;Database=ProgrammingCSharp0407Db;Integrated Security=True;TrustServerCertificate=True;";
+            const string Connectionstring = "Server=AA;Database=ProgrammingCSharp0407Db;Integrated Security=True;TrustServerCertificate=True;";
             using (SqlConnection connection = new SqlConnection(Connectionstring))
              { 
                 connection.Open();
@@ -52,7 +52,7 @@ namespace ProgrammingInCshrpBaseBackend.Services;
             // How we get Data from Tables of Database:
 
             // 1:connect to Database (Db)
-            const string Connectionstring = "Server=AMIR;Database=ProgrammingCSharp0407Db;Integrated Security=True;TrustServerCertificate=True;";
+            const string Connectionstring = "Server=AA;Database=ProgrammingCSharp0407Db;Integrated Security=True;TrustServerCertificate=True;";
 
             // 2: SqlServer command or Query --> select Table (User) from Db
             // here,I need SqlClient Pacage to Install, therefor I search "Microsoft.Data.SqlClient"

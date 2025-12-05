@@ -9,7 +9,7 @@ public class AdressService : IBaseService<Adress>
 {
     public void Add(Adress adress)
     {
-        const string ConectionString = "Server=AMIRAZINFAR3707;Database=ProgrammingCSharp0407Db;Integrated Security=True;TrustServerCertificate=True;";
+        const string ConectionString = "Server=AA;Database=ProgrammingCSharp0407Db;Integrated Security=True;TrustServerCertificate=True;";
 
         using (SqlConnection connection = new SqlConnection(ConectionString))
         {
@@ -28,7 +28,7 @@ public class AdressService : IBaseService<Adress>
     public List<Adress> GetAll()
     {
         List<Adress> adresses = new List<Adress>();
-        const string ConectionString = "Server=AMIRAZINFAR3707;Database=ProgrammingCSharp0407Db;Integrated Security=True;TrustServerCertificate=True;";
+        const string ConectionString = "Server=AA;Database=ProgrammingCSharp0407Db;Integrated Security=True;TrustServerCertificate=True;";
 
         using(SqlConnection connection = new SqlConnection(ConectionString))
         {

@@ -48,6 +48,8 @@
             UpdateButton = new Button();
             SearchTextBox = new TextBox();
             label7 = new Label();
+            CloseButton = new Button();
+            AdressUserButton = new Button();
             ((System.ComponentModel.ISupportInitialize)UserManageDataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -126,7 +128,10 @@
             // 
             // RegisterUserbutton
             // 
-            RegisterUserbutton.BackColor = Color.MediumSpringGreen;
+            RegisterUserbutton.BackColor = Color.LightGray;
+            RegisterUserbutton.Cursor = Cursors.Hand;
+            RegisterUserbutton.FlatAppearance.MouseOverBackColor = Color.Aquamarine;
+            RegisterUserbutton.FlatStyle = FlatStyle.Flat;
             RegisterUserbutton.Location = new Point(1170, 223);
             RegisterUserbutton.Name = "RegisterUserbutton";
             RegisterUserbutton.Size = new Size(325, 64);
@@ -137,17 +142,21 @@
             // 
             // ResetRegisterbutton
             // 
+            ResetRegisterbutton.BackColor = Color.LightGray;
+            ResetRegisterbutton.Cursor = Cursors.Hand;
+            ResetRegisterbutton.FlatAppearance.MouseOverBackColor = Color.Aquamarine;
+            ResetRegisterbutton.FlatStyle = FlatStyle.Flat;
             ResetRegisterbutton.Location = new Point(1170, 301);
             ResetRegisterbutton.Name = "ResetRegisterbutton";
             ResetRegisterbutton.Size = new Size(325, 64);
             ResetRegisterbutton.TabIndex = 7;
             ResetRegisterbutton.Text = "تنظیم مجدد فرم";
-            ResetRegisterbutton.UseVisualStyleBackColor = true;
+            ResetRegisterbutton.UseVisualStyleBackColor = false;
             ResetRegisterbutton.Click += ResetRegisterbutton_Click;
             // 
             // UserManageDataGridView
             // 
-            UserManageDataGridView.BackgroundColor = Color.Silver;
+            UserManageDataGridView.BackgroundColor = Color.LightGray;
             UserManageDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             UserManageDataGridView.Location = new Point(31, 198);
             UserManageDataGridView.Name = "UserManageDataGridView";
@@ -157,12 +166,16 @@
             // 
             // SearchButton
             // 
-            SearchButton.Location = new Point(1170, 543);
+            SearchButton.BackColor = Color.White;
+            SearchButton.Cursor = Cursors.Hand;
+            SearchButton.FlatAppearance.MouseOverBackColor = Color.Aquamarine;
+            SearchButton.FlatStyle = FlatStyle.Flat;
+            SearchButton.Location = new Point(1170, 884);
             SearchButton.Name = "SearchButton";
-            SearchButton.Size = new Size(325, 64);
+            SearchButton.Size = new Size(93, 51);
             SearchButton.TabIndex = 10;
             SearchButton.Text = "جستجو ";
-            SearchButton.UseVisualStyleBackColor = true;
+            SearchButton.UseVisualStyleBackColor = false;
             SearchButton.Click += SearchButton_Click;
             // 
             // label5
@@ -208,27 +221,36 @@
             // 
             // DeleteInfoButton
             // 
+            DeleteInfoButton.BackColor = Color.LightGray;
+            DeleteInfoButton.Cursor = Cursors.Hand;
+            DeleteInfoButton.FlatAppearance.MouseOverBackColor = Color.Aquamarine;
+            DeleteInfoButton.FlatStyle = FlatStyle.Flat;
             DeleteInfoButton.Location = new Point(1170, 381);
             DeleteInfoButton.Name = "DeleteInfoButton";
             DeleteInfoButton.Size = new Size(325, 64);
             DeleteInfoButton.TabIndex = 8;
             DeleteInfoButton.Text = "حذف اطلاعات وارد شده ";
-            DeleteInfoButton.UseVisualStyleBackColor = true;
+            DeleteInfoButton.UseVisualStyleBackColor = false;
             // 
             // UpdateButton
             // 
+            UpdateButton.BackColor = Color.LightGray;
+            UpdateButton.Cursor = Cursors.Hand;
+            UpdateButton.FlatAppearance.MouseOverBackColor = Color.Aquamarine;
+            UpdateButton.FlatStyle = FlatStyle.Flat;
             UpdateButton.Location = new Point(1170, 462);
             UpdateButton.Name = "UpdateButton";
             UpdateButton.Size = new Size(325, 64);
             UpdateButton.TabIndex = 9;
             UpdateButton.Text = "به روز رسانی";
-            UpdateButton.UseVisualStyleBackColor = true;
+            UpdateButton.UseVisualStyleBackColor = false;
             // 
             // SearchTextBox
             // 
-            SearchTextBox.Location = new Point(790, 132);
+            SearchTextBox.Location = new Point(1269, 884);
+            SearchTextBox.Multiline = true;
             SearchTextBox.Name = "SearchTextBox";
-            SearchTextBox.Size = new Size(325, 39);
+            SearchTextBox.Size = new Size(226, 51);
             SearchTextBox.TabIndex = 12;
             // 
             // label7
@@ -238,9 +260,37 @@
             label7.ForeColor = Color.White;
             label7.Location = new Point(696, 130);
             label7.Name = "label7";
-            label7.Size = new Size(89, 32);
+            label7.Size = new Size(0, 32);
             label7.TabIndex = 11;
-            label7.Text = "جستجو:";
+            // 
+            // CloseButton
+            // 
+            CloseButton.BackColor = Color.LightGray;
+            CloseButton.Cursor = Cursors.Hand;
+            CloseButton.FlatAppearance.MouseOverBackColor = Color.Aquamarine;
+            CloseButton.FlatStyle = FlatStyle.Flat;
+            CloseButton.Location = new Point(1170, 544);
+            CloseButton.Name = "CloseButton";
+            CloseButton.Size = new Size(325, 64);
+            CloseButton.TabIndex = 13;
+            CloseButton.Text = "بستن فرم";
+            CloseButton.UseVisualStyleBackColor = false;
+            CloseButton.Click += CloseButton_Click;
+            // 
+            // AdressUserButton
+            // 
+            AdressUserButton.BackColor = Color.LightGray;
+            AdressUserButton.Cursor = Cursors.Hand;
+            AdressUserButton.FlatAppearance.MouseOverBackColor = Color.Aquamarine;
+            AdressUserButton.FlatStyle = FlatStyle.Flat;
+            AdressUserButton.ForeColor = Color.MidnightBlue;
+            AdressUserButton.Location = new Point(790, 130);
+            AdressUserButton.Name = "AdressUserButton";
+            AdressUserButton.Size = new Size(325, 46);
+            AdressUserButton.TabIndex = 14;
+            AdressUserButton.Text = "آدرس کاربر را وارد کنید";
+            AdressUserButton.UseVisualStyleBackColor = false;
+            AdressUserButton.Click += AdressUserButton_Click;
             // 
             // UserManagmentForm
             // 
@@ -248,6 +298,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSlateGray;
             ClientSize = new Size(1558, 987);
+            Controls.Add(AdressUserButton);
+            Controls.Add(CloseButton);
             Controls.Add(SearchTextBox);
             Controls.Add(label7);
             Controls.Add(UpdateButton);
@@ -298,5 +350,7 @@
         private Button UpdateButton;
         private TextBox SearchTextBox;
         private Label label7;
+        private Button CloseButton;
+        private Button AdressUserButton;
     }
 }

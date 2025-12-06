@@ -15,6 +15,8 @@ namespace ProgrammingCSharp0407.Forms
             InitializeComponent();
             //users= new List<User>();
             userService = new UserService();
+            UserManageDataGridView.DataSource = userService.GetAll();
+            UserManageDataGridView.Refresh();
 
         }
 
@@ -92,7 +94,18 @@ namespace ProgrammingCSharp0407.Forms
                 return;
             }
 
-           //to continue, I nees foreach and Information abaut DataGridViewCell
+            //to continue, I nees foreach and Information abaut DataGridViewCell
+        }
+
+        private void CloseButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void AdressUserButton_Click(object sender, EventArgs e)
+        {
+            UserAdressForm userAdressForm = new UserAdressForm();
+            userAdressForm.ShowDialog();
         }
     }
 }

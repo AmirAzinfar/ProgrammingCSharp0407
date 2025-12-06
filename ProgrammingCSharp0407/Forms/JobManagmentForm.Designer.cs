@@ -352,7 +352,7 @@
             // 
             // RegisterApplybutton
             // 
-            RegisterApplybutton.BackColor = Color.Aquamarine;
+            RegisterApplybutton.BackColor = Color.Chartreuse;
             RegisterApplybutton.Cursor = Cursors.Hand;
             RegisterApplybutton.FlatAppearance.BorderColor = Color.White;
             RegisterApplybutton.FlatAppearance.BorderSize = 2;
@@ -369,7 +369,7 @@
             // 
             // CancelApplaybutton
             // 
-            CancelApplaybutton.BackColor = Color.Pink;
+            CancelApplaybutton.BackColor = Color.FromArgb(224, 224, 224);
             CancelApplaybutton.Cursor = Cursors.Hand;
             CancelApplaybutton.FlatAppearance.BorderColor = Color.White;
             CancelApplaybutton.FlatAppearance.BorderSize = 2;

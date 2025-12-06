@@ -1,5 +1,4 @@
-﻿
-using ProgrammingInCshrpBaseBackend.Interfaces;
+﻿using ProgrammingInCshrpBaseBackend.Interfaces;
 using ProgrammingInCshrpBaseBackend.Models;
 
 namespace ProgrammingInCshrpBaseBackend.Services

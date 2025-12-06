@@ -166,13 +166,13 @@
             // 
             // SearchButton
             // 
-            SearchButton.BackColor = Color.White;
+            SearchButton.BackColor = Color.LightGray;
             SearchButton.Cursor = Cursors.Hand;
             SearchButton.FlatAppearance.MouseOverBackColor = Color.Aquamarine;
             SearchButton.FlatStyle = FlatStyle.Flat;
             SearchButton.Location = new Point(1170, 884);
             SearchButton.Name = "SearchButton";
-            SearchButton.Size = new Size(93, 51);
+            SearchButton.Size = new Size(93, 45);
             SearchButton.TabIndex = 10;
             SearchButton.Text = "جستجو ";
             SearchButton.UseVisualStyleBackColor = false;
@@ -250,7 +250,7 @@
             SearchTextBox.Location = new Point(1269, 884);
             SearchTextBox.Multiline = true;
             SearchTextBox.Name = "SearchTextBox";
-            SearchTextBox.Size = new Size(226, 51);
+            SearchTextBox.Size = new Size(226, 45);
             SearchTextBox.TabIndex = 12;
             // 
             // label7

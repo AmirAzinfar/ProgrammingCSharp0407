@@ -50,6 +50,7 @@
             label7 = new Label();
             CloseButton = new Button();
             AdressUserButton = new Button();
+            label8 = new Label();
             ((System.ComponentModel.ISupportInitialize)UserManageDataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -128,7 +129,7 @@
             // 
             // RegisterUserbutton
             // 
-            RegisterUserbutton.BackColor = Color.LightGray;
+            RegisterUserbutton.BackColor = Color.Gainsboro;
             RegisterUserbutton.Cursor = Cursors.Hand;
             RegisterUserbutton.FlatAppearance.MouseOverBackColor = Color.Aquamarine;
             RegisterUserbutton.FlatStyle = FlatStyle.Flat;
@@ -142,7 +143,7 @@
             // 
             // ResetRegisterbutton
             // 
-            ResetRegisterbutton.BackColor = Color.LightGray;
+            ResetRegisterbutton.BackColor = Color.Gainsboro;
             ResetRegisterbutton.Cursor = Cursors.Hand;
             ResetRegisterbutton.FlatAppearance.MouseOverBackColor = Color.Aquamarine;
             ResetRegisterbutton.FlatStyle = FlatStyle.Flat;
@@ -156,13 +157,14 @@
             // 
             // UserManageDataGridView
             // 
-            UserManageDataGridView.BackgroundColor = Color.LightGray;
+            UserManageDataGridView.BackgroundColor = Color.WhiteSmoke;
             UserManageDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             UserManageDataGridView.Location = new Point(31, 198);
             UserManageDataGridView.Name = "UserManageDataGridView";
             UserManageDataGridView.RowHeadersWidth = 82;
             UserManageDataGridView.Size = new Size(1084, 758);
             UserManageDataGridView.TabIndex = 7;
+            UserManageDataGridView.CellClick += UserManageDataGridView_CellClick;
             // 
             // SearchButton
             // 
@@ -221,7 +223,7 @@
             // 
             // DeleteInfoButton
             // 
-            DeleteInfoButton.BackColor = Color.LightGray;
+            DeleteInfoButton.BackColor = Color.Gainsboro;
             DeleteInfoButton.Cursor = Cursors.Hand;
             DeleteInfoButton.FlatAppearance.MouseOverBackColor = Color.Aquamarine;
             DeleteInfoButton.FlatStyle = FlatStyle.Flat;
@@ -231,10 +233,11 @@
             DeleteInfoButton.TabIndex = 8;
             DeleteInfoButton.Text = "حذف اطلاعات وارد شده ";
             DeleteInfoButton.UseVisualStyleBackColor = false;
+            DeleteInfoButton.Click += DeleteInfoButton_Click;
             // 
             // UpdateButton
             // 
-            UpdateButton.BackColor = Color.LightGray;
+            UpdateButton.BackColor = Color.Gainsboro;
             UpdateButton.Cursor = Cursors.Hand;
             UpdateButton.FlatAppearance.MouseOverBackColor = Color.Aquamarine;
             UpdateButton.FlatStyle = FlatStyle.Flat;
@@ -244,6 +247,7 @@
             UpdateButton.TabIndex = 9;
             UpdateButton.Text = "به روز رسانی";
             UpdateButton.UseVisualStyleBackColor = false;
+            UpdateButton.Click += UpdateButton_Click;
             // 
             // SearchTextBox
             // 
@@ -265,7 +269,7 @@
             // 
             // CloseButton
             // 
-            CloseButton.BackColor = Color.LightGray;
+            CloseButton.BackColor = Color.Gainsboro;
             CloseButton.Cursor = Cursors.Hand;
             CloseButton.FlatAppearance.MouseOverBackColor = Color.Aquamarine;
             CloseButton.FlatStyle = FlatStyle.Flat;
@@ -279,7 +283,7 @@
             // 
             // AdressUserButton
             // 
-            AdressUserButton.BackColor = Color.LightGray;
+            AdressUserButton.BackColor = Color.Gainsboro;
             AdressUserButton.Cursor = Cursors.Hand;
             AdressUserButton.FlatAppearance.MouseOverBackColor = Color.Aquamarine;
             AdressUserButton.FlatStyle = FlatStyle.Flat;
@@ -292,12 +296,24 @@
             AdressUserButton.UseVisualStyleBackColor = false;
             AdressUserButton.Click += AdressUserButton_Click;
             // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.ForeColor = Color.White;
+            label8.Location = new Point(704, 137);
+            label8.Name = "label8";
+            label8.Size = new Size(75, 32);
+            label8.TabIndex = 15;
+            label8.Text = "آدرس:";
+            // 
             // UserManagmentForm
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSlateGray;
             ClientSize = new Size(1558, 987);
+            Controls.Add(label8);
             Controls.Add(AdressUserButton);
             Controls.Add(CloseButton);
             Controls.Add(SearchTextBox);
@@ -352,5 +368,6 @@
         private Label label7;
         private Button CloseButton;
         private Button AdressUserButton;
+        private Label label8;
     }
 }

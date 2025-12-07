@@ -38,7 +38,7 @@ namespace ProgrammingInCshrpBaseBackend.Services;
              int rowsaffected = command.ExecuteNonQuery();
             }
         }
-    public List<User> GetAll()
+        public List<User> GetAll()
         {
             //return users;
             List<User> users = new List<User>();
@@ -84,11 +84,59 @@ namespace ProgrammingInCshrpBaseBackend.Services;
                         CreatedAt = (DateTime)reader["CreatedAt"],
 
                     };
-                    
                     users.Add(user);
                 }    
             }
             // 4-Return List<User>    
             return users;
+        }
+
+        public void Delete(int id)
+        {
+            const string Connectionstring = "Server=.;Database=ProgrammingCSharp0407Db;Integrated Security=True;TrustServerCertificate=True;";
+            using (SqlConnection connection = new SqlConnection(Connectionstring))
+            {
+                connection.Open();
+                // now, I write a Query with command DELETE (same "DELETE" as Query in Database)
+                //Without WHERE, all rows in the table will be deleted! The table remains empty.
+                string Query = $"DELETE FROM [dbo].[Table_User] WHERE Id = @Id;";
+
+                SqlCommand command = new SqlCommand(Query, connection);
+
+                // create Parameters to command data in Table of Db
+                //command.Parameters.AddWithValue("@Id", "8");
+                command.Parameters.AddWithValue("@Id", id);
+
+                //Excute INSERT Query
+
+                int rowsaffected = command.ExecuteNonQuery();
+            }
+        }
+
+        public void Update(User item)
+         {
+            const string Connectionstring = "Server=.;Database=ProgrammingCSharp0407Db;Integrated Security=True;TrustServerCertificate=True;";
+            using (SqlConnection connection = new SqlConnection(Connectionstring))
+            {
+                connection.Open();
+                // now, I write a Query with command UPDATE (same "UPDATE" as Query in Database)
+                //Without WHERE, all rows in the table will be changed!
+                string Query = $"UPDATE [dbo].[Table_User] SET FirstName = @FirstName,LastName = @LastName,PhoneNumber = @PhoneNumber, NationalCode = @NationalCode, Birthday = @Birthday WHERE Id = @Id";
+
+                SqlCommand command = new SqlCommand(Query, connection);
+
+                // create Parameters to command data in Table of Db
+                //command.Parameters.AddWithValue("@Id", "8");
+                command.Parameters.AddWithValue("@FirstName", item.FirstName);
+                command.Parameters.AddWithValue("@LastName", item.LastName);
+                command.Parameters.AddWithValue("@NationalCode", item.NationalCode);
+                command.Parameters.AddWithValue("@PhoneNumber", item.PhoneNumber);
+                command.Parameters.AddWithValue("@Birthday", item.Birthday);
+                command.Parameters.AddWithValue("@Id", item.Id);
+
+                //Excute INSERT Query
+
+                int rowsaffected = command.ExecuteNonQuery();
+            }
         }
     }

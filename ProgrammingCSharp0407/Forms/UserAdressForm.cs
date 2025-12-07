@@ -1,64 +1,137 @@
 ﻿using ProgrammingInCshrpBaseBackend.Models;
 using ProgrammingInCshrpBaseBackend.Services;
 
-namespace ProgrammingCSharp0407.Forms
+namespace ProgrammingCSharp0407.Forms;
+
+public partial class UserAdressForm : Form
 {
-    public partial class UserAdressForm : Form
+    int SelectedAdressId = 0;
+
+    AdressService adressService;
+    public UserAdressForm()
     {
-        AdressService adressService;
-        public UserAdressForm()
+        InitializeComponent();
+        adressService = new AdressService();
+        AdressDataGridView.DataSource = adressService.GetAll();
+        AdressDataGridView.Refresh();
+    }
+
+    private void RegistAdressButton_Click(object sender, EventArgs e)
+    {
+        UserAdressForm userAdressForm = new UserAdressForm();
+        string Street = StreetTextBox.Text;
+        string HouseNumber = HouseNumberTextBox.Text;
+        string PostalCode = PostalCodeTextBox.Text;
+
+        if (string.IsNullOrEmpty(Street))
         {
-            InitializeComponent();
-            adressService = new AdressService();
-            AdressDataGridView.DataSource = adressService.GetAll();
-            AdressDataGridView.Refresh();
+            MessageBox.Show("!لطفآ آدرس خیابان را وارد کنید");
+            return;
+        }
+        if (string.IsNullOrEmpty(HouseNumber))
+        {
+            MessageBox.Show("!لطفآ پلاک محل را وارد کنید");
+            return;
+        }
+        if (string.IsNullOrEmpty(PostalCode))
+        {
+            MessageBox.Show("!لطفآ کد پستی را وارد کنید");
+            return;
         }
 
-        private void RegistAdressButton_Click(object sender, EventArgs e)
-        {
-            UserAdressForm userAdressForm = new UserAdressForm();
-            string Street = StreetTextBox.Text;
-            string HouseNumber = HousNumberTextBox.Text;
-            string PostalCod = PostalCodeTextBox.Text;
+        Adress adress = new Adress(street: Street, houseNumber: HouseNumber, postalCode: PostalCode);
+        adressService.Add(adress);
+        AdressDataGridView.DataSource = null;
+        AdressDataGridView.DataSource = adressService.GetAll();
+        AdressDataGridView.Refresh();
 
-            if (string.IsNullOrEmpty(Street))
-            {
-                MessageBox.Show("!لطفآ آدرس خیابان را وارد کنید");
-                return;
-            }
-            if (string.IsNullOrEmpty(HouseNumber)) 
-            {
-                MessageBox.Show("!لطفآ پلاک محل را وارد کنید");
-                return;
-            }
-            if (string.IsNullOrEmpty(PostalCod))
-            {
-                MessageBox.Show("!لطفآ کد پستی را وارد کنید");
-                return;
-            }
+        MessageBox.Show(".آدرس کاربر با موفقیت ثبت شد");
 
-            Adress adress = new Adress(street:Street,houseNumber:HouseNumber,postalCode:PostalCod);
-            adressService.Add(adress);
-            AdressDataGridView.DataSource = null;
-            AdressDataGridView.DataSource= adressService.GetAll();  
-            AdressDataGridView.Refresh();   
-                    
-        }
-        public void ResetAdressInfo()
+    }
+    public void ResetAdressInfo()
+    {
+        StreetTextBox.Text = null;
+        HouseNumberTextBox.Text = null;
+        PostalCodeTextBox.Text = null;
+        SelectedAdressId = 0;
+    }
+
+    private void EditAdressInfoButton_Click(object sender, EventArgs e)
+    {
+        ResetAdressInfo();
+    }
+
+    private void CloseAdressButton_Click(object sender, EventArgs e)
+    {
+        this.Close();
+    }
+
+    private void AdressDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+    {
+        if (e.RowIndex >= 0)
         {
-            StreetTextBox.Text = null;
-            HousNumberTextBox.Text = null;
-            PostalCodeTextBox.Text = null;
+            //Get the current row
+            var row = AdressDataGridView.Rows[e.RowIndex];
+            //Access the Id from rows data
+            SelectedAdressId = int.Parse(row.Cells["id"].Value.ToString());
+
+            StreetTextBox.Text = row.Cells["Street"].Value?.ToString();
+            HouseNumberTextBox.Text = row.Cells["HouseNumber"].Value?.ToString();
+            PostalCodeTextBox.Text = row.Cells["PostalCode"].Value?.ToString();
+        }
+    }
+
+    private void UpdateAdressButton_Click(object sender, EventArgs e)
+    {
+        UserAdressForm userAdressForm = new UserAdressForm();
+        string Street = StreetTextBox.Text;
+        string HouseNumber = HouseNumberTextBox.Text;
+        string PostalCode = PostalCodeTextBox.Text;
+
+        if (string.IsNullOrEmpty(Street))
+        {
+            MessageBox.Show("!لطفآ آدرس خیابان را وارد کنید");
+            return;
+        }
+        if (string.IsNullOrEmpty(HouseNumber))
+        {
+            MessageBox.Show("!لطفآ پلاک محل را وارد کنید");
+            return;
+        }
+        if (string.IsNullOrEmpty(PostalCode))
+        {
+            MessageBox.Show("!لطفآ کد پستی را وارد کنید");
+            return;
         }
 
-        private void DeleteAdressInfoButton_Click(object sender, EventArgs e)
+        Adress adress = new Adress
         {
-            ResetAdressInfo();
-        }
+            Id = SelectedAdressId,
+            Street = Street,
+            HouseNumber = HouseNumber,
+            PostalCode = PostalCode,
+        };
+        adressService.Update(adress);
+        AdressDataGridView.DataSource = null;
+        AdressDataGridView.DataSource = adressService.GetAll();
+        AdressDataGridView.Refresh();
 
-        private void CloseAdressButton_Click(object sender, EventArgs e)
+        MessageBox.Show(".به روز رسانی با موفقیت انجام شد");
+    }
+
+    private void DeleteAdressButton_Click(object sender, EventArgs e)
+    {
+        // I need id
+        // Service call
+        if (SelectedAdressId == 0)
         {
-            this.Close();
+            MessageBox.Show("!لطفا در ابتدا آدرس مورد نظر را انتخاب کنید");
+            return;
         }
+        adressService.Delete(SelectedAdressId);
+        AdressDataGridView.DataSource = adressService.GetAll();
+        AdressDataGridView.Refresh();
+
+        MessageBox.Show(".حذف اطلاعات کاربر با موفقیت انجام شد");
     }
 }

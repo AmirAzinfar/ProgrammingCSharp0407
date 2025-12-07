@@ -25,6 +25,8 @@ public class AdressService : IBaseService<Adress>
         }
     }
 
+    
+
     public List<Adress> GetAll()
     {
         List<Adress> adresses = new List<Adress>();
@@ -53,4 +55,49 @@ public class AdressService : IBaseService<Adress>
         return adresses;
     }
 
+    public void Delete(int id)
+    {
+        const string Connectionstring = "Server=.;Database=ProgrammingCSharp0407Db;Integrated Security=True;TrustServerCertificate=True;";
+        using (SqlConnection connection = new SqlConnection(Connectionstring))
+        {
+            connection.Open();
+            // now, I write a Query with command DELETE (same "DELETE" as Query in Database)
+            //Without WHERE, all rows in the table will be deleted! The table remains empty.
+            string Query = $"DELETE FROM [dbo].[Table_Adress] WHERE Id = @Id;";
+
+            SqlCommand command = new SqlCommand(Query, connection);
+
+            // create Parameters to command data in Table of Db
+            //command.Parameters.AddWithValue("@Id", "8");
+            command.Parameters.AddWithValue("@Id", id);
+
+            //Excute INSERT Query
+
+            int rowsaffected = command.ExecuteNonQuery();
+        }
+    }
+    public void Update(Adress item)
+    {
+        const string Connectionstring = "Server=.;Database=ProgrammingCSharp0407Db;Integrated Security=True;TrustServerCertificate=True;";
+        using (SqlConnection connection = new SqlConnection(Connectionstring))
+        {
+            connection.Open();
+            // now, I write a Query with command UPDATE (same "UPDATE" as Query in Database)
+            //Without WHERE, all rows in the table will be changed!
+            string Query = $"UPDATE [dbo].[Table_Adress] SET Street = @Street,HouseNumber = @HouseNumber,PostalCode = @PostalCode WHERE Id = @Id";
+
+            SqlCommand command = new SqlCommand(Query, connection);
+
+            // create Parameters to command data in Table of Db
+            //command.Parameters.AddWithValue("@Id", "8");
+            command.Parameters.AddWithValue("@Street", item.Street);
+            command.Parameters.AddWithValue("@HouseNumber", item.HouseNumber);
+            command.Parameters.AddWithValue("@PostalCode", item.PostalCode);
+            command.Parameters.AddWithValue("@Id", item.Id);
+
+            //Excute INSERT Query
+
+            int rowsaffected = command.ExecuteNonQuery();
+        }
+    }
 }

@@ -40,15 +40,13 @@
             SalaryTextBox = new TextBox();
             FullTimeRadioButton = new RadioButton();
             HalfTimeRadioButton = new RadioButton();
-            ProvinzComboBox = new ComboBox();
+            ProvinceComboBox = new ComboBox();
             CityComboBox = new ComboBox();
             label7 = new Label();
             label8 = new Label();
             label9 = new Label();
-            NowRadioButton = new RadioButton();
             label10 = new Label();
-            EnterancedateTimePicker = new DateTimePicker();
-            AgreementRadioButton = new RadioButton();
+            EnteranceDateTimePicker = new DateTimePicker();
             label11 = new Label();
             label12 = new Label();
             label13 = new Label();
@@ -61,6 +59,9 @@
             JobAppliedDataGridView = new DataGridView();
             label17 = new Label();
             label18 = new Label();
+            BothRadioButton = new RadioButton();
+            ImmediatelyCheckBox = new CheckBox();
+            WithAgreeCheckBox = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)JobAppliedDataGridView).BeginInit();
             SuspendLayout();
             // 
@@ -69,7 +70,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(1624, 414);
+            label1.Location = new Point(1639, 414);
             label1.Name = "label1";
             label1.Size = new Size(125, 32);
             label1.TabIndex = 0;
@@ -89,7 +90,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(1603, 494);
+            label2.Location = new Point(1618, 494);
             label2.Name = "label2";
             label2.Size = new Size(146, 32);
             label2.TabIndex = 2;
@@ -109,7 +110,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(1615, 660);
+            label3.Location = new Point(1630, 660);
             label3.Name = "label3";
             label3.Size = new Size(134, 32);
             label3.TabIndex = 4;
@@ -120,7 +121,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(1490, 580);
+            label4.Location = new Point(1501, 576);
             label4.Name = "label4";
             label4.Size = new Size(263, 32);
             label4.TabIndex = 5;
@@ -131,7 +132,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(1649, 739);
+            label5.Location = new Point(1664, 739);
             label5.Name = "label5";
             label5.Size = new Size(100, 32);
             label5.TabIndex = 6;
@@ -171,7 +172,7 @@
             // 
             HalfTimeRadioButton.AutoSize = true;
             HalfTimeRadioButton.ForeColor = Color.White;
-            HalfTimeRadioButton.Location = new Point(1116, 658);
+            HalfTimeRadioButton.Location = new Point(1190, 658);
             HalfTimeRadioButton.Name = "HalfTimeRadioButton";
             HalfTimeRadioButton.Size = new Size(147, 36);
             HalfTimeRadioButton.TabIndex = 5;
@@ -179,14 +180,14 @@
             HalfTimeRadioButton.Text = "نیمه وقت ";
             HalfTimeRadioButton.UseVisualStyleBackColor = true;
             // 
-            // ProvinzComboBox
+            // ProvinceComboBox
             // 
-            ProvinzComboBox.BackColor = Color.FromArgb(224, 224, 224);
-            ProvinzComboBox.FormattingEnabled = true;
-            ProvinzComboBox.Location = new Point(984, 739);
-            ProvinzComboBox.Name = "ProvinzComboBox";
-            ProvinzComboBox.Size = new Size(387, 40);
-            ProvinzComboBox.TabIndex = 6;
+            ProvinceComboBox.BackColor = Color.FromArgb(224, 224, 224);
+            ProvinceComboBox.FormattingEnabled = true;
+            ProvinceComboBox.Location = new Point(984, 739);
+            ProvinceComboBox.Name = "ProvinceComboBox";
+            ProvinceComboBox.Size = new Size(387, 40);
+            ProvinceComboBox.TabIndex = 6;
             // 
             // CityComboBox
             // 
@@ -222,23 +223,11 @@
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label9.ForeColor = Color.White;
-            label9.Location = new Point(1591, 893);
+            label9.Location = new Point(1606, 893);
             label9.Name = "label9";
             label9.Size = new Size(158, 32);
             label9.TabIndex = 15;
             label9.Text = ":شروع به کار از";
-            // 
-            // NowRadioButton
-            // 
-            NowRadioButton.AutoSize = true;
-            NowRadioButton.ForeColor = Color.White;
-            NowRadioButton.Location = new Point(1384, 952);
-            NowRadioButton.Name = "NowRadioButton";
-            NowRadioButton.Size = new Size(99, 36);
-            NowRadioButton.TabIndex = 9;
-            NowRadioButton.TabStop = true;
-            NowRadioButton.Text = "اکنون";
-            NowRadioButton.UseVisualStyleBackColor = true;
             // 
             // label10
             // 
@@ -250,24 +239,12 @@
             label10.TabIndex = 17;
             label10.Text = ":تاریخ ";
             // 
-            // EnterancedateTimePicker
+            // EnteranceDateTimePicker
             // 
-            EnterancedateTimePicker.Location = new Point(984, 893);
-            EnterancedateTimePicker.Name = "EnterancedateTimePicker";
-            EnterancedateTimePicker.Size = new Size(387, 39);
-            EnterancedateTimePicker.TabIndex = 8;
-            // 
-            // AgreementRadioButton
-            // 
-            AgreementRadioButton.AutoSize = true;
-            AgreementRadioButton.ForeColor = Color.White;
-            AgreementRadioButton.Location = new Point(1116, 952);
-            AgreementRadioButton.Name = "AgreementRadioButton";
-            AgreementRadioButton.Size = new Size(191, 36);
-            AgreementRadioButton.TabIndex = 10;
-            AgreementRadioButton.TabStop = true;
-            AgreementRadioButton.Text = "به طور توافقی";
-            AgreementRadioButton.UseVisualStyleBackColor = true;
+            EnteranceDateTimePicker.Location = new Point(984, 893);
+            EnteranceDateTimePicker.Name = "EnteranceDateTimePicker";
+            EnteranceDateTimePicker.Size = new Size(387, 39);
+            EnteranceDateTimePicker.TabIndex = 8;
             // 
             // label11
             // 
@@ -382,6 +359,7 @@
             CancelApplaybutton.TabIndex = 13;
             CancelApplaybutton.Text = "لغو درخواست";
             CancelApplaybutton.UseVisualStyleBackColor = false;
+            CancelApplaybutton.Click += CancelApplaybutton_Click;
             // 
             // JobAppliedDataGridView
             // 
@@ -396,7 +374,7 @@
             // label17
             // 
             label17.BackColor = Color.Transparent;
-            label17.ForeColor = Color.Black;
+            label17.ForeColor = Color.White;
             label17.Location = new Point(961, 369);
             label17.Name = "label17";
             label17.RightToLeft = RightToLeft.Yes;
@@ -408,7 +386,7 @@
             // label18
             // 
             label18.BackColor = Color.Transparent;
-            label18.ForeColor = Color.Black;
+            label18.ForeColor = Color.White;
             label18.Location = new Point(961, 998);
             label18.Name = "label18";
             label18.RightToLeft = RightToLeft.Yes;
@@ -417,12 +395,49 @@
             label18.Text = "-------------------------------------------------------------------------------";
             label18.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // BothRadioButton
+            // 
+            BothRadioButton.AutoSize = true;
+            BothRadioButton.ForeColor = Color.White;
+            BothRadioButton.Location = new Point(1073, 658);
+            BothRadioButton.Name = "BothRadioButton";
+            BothRadioButton.Size = new Size(102, 36);
+            BothRadioButton.TabIndex = 28;
+            BothRadioButton.TabStop = true;
+            BothRadioButton.Text = "هر دو";
+            BothRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // ImmediatelyCheckBox
+            // 
+            ImmediatelyCheckBox.AutoSize = true;
+            ImmediatelyCheckBox.ForeColor = Color.White;
+            ImmediatelyCheckBox.Location = new Point(1287, 959);
+            ImmediatelyCheckBox.Name = "ImmediatelyCheckBox";
+            ImmediatelyCheckBox.Size = new Size(196, 36);
+            ImmediatelyCheckBox.TabIndex = 29;
+            ImmediatelyCheckBox.Text = "فوراً در دسترس";
+            ImmediatelyCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // WithAgreeCheckBox
+            // 
+            WithAgreeCheckBox.AutoSize = true;
+            WithAgreeCheckBox.ForeColor = Color.White;
+            WithAgreeCheckBox.Location = new Point(1073, 959);
+            WithAgreeCheckBox.Name = "WithAgreeCheckBox";
+            WithAgreeCheckBox.Size = new Size(199, 36);
+            WithAgreeCheckBox.TabIndex = 30;
+            WithAgreeCheckBox.Text = "به طور توافقی ";
+            WithAgreeCheckBox.UseVisualStyleBackColor = true;
+            // 
             // JobManagmentForm
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSlateGray;
             ClientSize = new Size(1816, 1169);
+            Controls.Add(WithAgreeCheckBox);
+            Controls.Add(ImmediatelyCheckBox);
+            Controls.Add(BothRadioButton);
             Controls.Add(label18);
             Controls.Add(label17);
             Controls.Add(JobAppliedDataGridView);
@@ -435,15 +450,13 @@
             Controls.Add(label13);
             Controls.Add(label12);
             Controls.Add(label11);
-            Controls.Add(AgreementRadioButton);
-            Controls.Add(EnterancedateTimePicker);
+            Controls.Add(EnteranceDateTimePicker);
             Controls.Add(label10);
-            Controls.Add(NowRadioButton);
             Controls.Add(label9);
             Controls.Add(label8);
             Controls.Add(label7);
             Controls.Add(CityComboBox);
-            Controls.Add(ProvinzComboBox);
+            Controls.Add(ProvinceComboBox);
             Controls.Add(HalfTimeRadioButton);
             Controls.Add(FullTimeRadioButton);
             Controls.Add(SalaryTextBox);
@@ -475,15 +488,13 @@
         private TextBox SalaryTextBox;
         private RadioButton FullTimeRadioButton;
         private RadioButton HalfTimeRadioButton;
-        private ComboBox ProvinzComboBox;
+        private ComboBox ProvinceComboBox;
         private ComboBox CityComboBox;
         private Label label7;
         private Label label8;
         private Label label9;
-        private RadioButton NowRadioButton;
         private Label label10;
-        private DateTimePicker EnterancedateTimePicker;
-        private RadioButton AgreementRadioButton;
+        private DateTimePicker EnteranceDateTimePicker;
         private Label label11;
         private Label label12;
         private Label label13;
@@ -496,5 +507,8 @@
         private DataGridView JobAppliedDataGridView;
         private Label label17;
         private Label label18;
+        private RadioButton BothRadioButton;
+        private CheckBox ImmediatelyCheckBox;
+        private CheckBox WithAgreeCheckBox;
     }
 }

@@ -11,8 +11,8 @@ namespace ProgrammingInCshrpBaseBackend.Models
         //class WatchList "has a" Relationships of Compsition with User,Job
 
         //public int Id { get; set; } beacuse inhertance from BaseEntity
-        public User User { get; set; }
-        public Job Job { get; set; }
-        public string Description { get; set; }
+        public User User {get; set;}
+        public Job Job {get; set;}
+        public string Description {get; set;}
     }
 }

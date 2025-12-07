@@ -33,5 +33,8 @@
         private ToolStripMenuItem StatusApplyToolStripMenuItem;
         private PictureBox pictureBox1;
         private ToolStripMenuItem UploadDocsToolStripMenuItem;
+        private ToolStripMenuItem ToolStripMenuItem;
+        private ToolStripMenuItem AdminChangeToolStripMenuItem;
+        private ToolStripMenuItem ExitToolStripMenuItem;
     }
 }

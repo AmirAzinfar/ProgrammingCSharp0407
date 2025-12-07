@@ -11,9 +11,9 @@ namespace ProgrammingInCshrpBaseBackend.Models
         public Adress() :base()
         {
         }
-        public string Street { get; set; }
-        public string HouseNumber { get; set; }
-        public string PostalCode { get; set; }
+        public string Street {get; set;}
+        public string HouseNumber {get; set;}
+        public string PostalCode {get; set;}
 
         public Adress (string street, string houseNumber, string postalCode)
         {

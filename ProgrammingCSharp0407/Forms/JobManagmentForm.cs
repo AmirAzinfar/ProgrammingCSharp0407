@@ -1,60 +1,62 @@
-﻿
-using ProgrammingInCshrpBaseBackend.Models;
+﻿using ProgrammingInCshrpBaseBackend.Models;
 using ProgrammingInCshrpBaseBackend.Services;
 
-namespace ProgrammingCSharp0407.Forms
+namespace ProgrammingCSharp0407.Forms;
+
+public partial class JobManagmentForm : Form
 {
-    public partial class JobManagmentForm : Form
+
+    //List<Job> jobs;
+    JobService jobService;
+    public JobManagmentForm()
     {
+        InitializeComponent();
 
-        //List<Job> jobs;
-        JobService jobService;
-        public JobManagmentForm()
-        {
-            InitializeComponent();
+        jobService = new JobService();
 
-            jobService = new JobService();
+        string[] FieldOfJoboptionen = { "پزشک و متخصص", "فنی و مهندسی", "معلم", "مربی و دستیار" };
+        FieldOfJobComboBox.Items.AddRange(FieldOfJoboptionen);
 
-            string[] FieldOfJoboptionen = { "پزشک و متخصص", "فنی و مهندسی", "معلم", "مربی و دستیار" };
-            FieldOfJobComboBox.Items.AddRange(FieldOfJoboptionen);
+        string[] JobTiteloptionen = { "دندانپزشک", "مهندس فرایند", "مهندس مکانیک", "مهندس ساختمان", "ریاضی و فیزیک", "پرستار" };
+        JobTitelComboBox.Items.AddRange(JobTiteloptionen);
 
-            string[] JobTiteloptionen = { "دندانپزشک", "مهندس فرایند", "مهندس مکانیک", "مهندس ساختمان", "ریاضی و فیزیک", "پرستار" };
-            JobTitelComboBox.Items.AddRange(JobTiteloptionen);
+        string[] Provinceoptionen = { "تهران ", "اصفهان", "فارس ", "البرز", "هرمزگان" };
+        ProvinceComboBox.Items.AddRange(Provinceoptionen);
 
-            string[] Provinzoptionen = { "تهران ", "اصفهان", "فارس ", "البرز", "هرمزگان" };
-            ProvinzComboBox.Items.AddRange(Provinzoptionen);
+        string[] Cityoptionen = { "تهران ", "اصفهان", "شیراز", "فسا", "کرج", "بندرعباس" };
+        CityComboBox.Items.AddRange(Cityoptionen);
 
-            string[] Cityoptionen = { "تهران ", "اصفهان", "شیراز", "فسا", "کرج", "بندرعباس" };
-            CityComboBox.Items.AddRange(Cityoptionen);
+        //jobs = new List<Job>();
+    }
 
-            //jobs = new List<Job>();
-        }
+    private void RegisterApplybutton_Click(object sender, EventArgs e)
+    {
+        //data collect
+        string fieldOfJob = FieldOfJobComboBox.Text;
+        string titelOfJob = JobTitelComboBox.Text;
+        string provinceWorkplace = ProvinceComboBox.Text;
+        string cityWorkplace = CityComboBox.Text;
+        string salaryJob = SalaryTextBox.Text;
+
+        Job job = new Job(fieldOfJob: fieldOfJob, titelOfJob: titelOfJob, provinceWorkplace: provinceWorkplace, cityWorkplace: cityWorkplace);
+
+        job.Salary = salaryJob;
 
 
-        private void RegisterApplybutton_Click(object sender, EventArgs e)
-        {
-            //data collect
-            string fieldOfJob = FieldOfJobComboBox.Text;
-            string titelOfJob = JobTitelComboBox.Text;
-            string provinzWorkplace = ProvinzComboBox.Text;
-            string cityWorkplace = CityComboBox.Text;
-            string salaryJob = SalaryTextBox.Text;
+        //List<Job> jobs = new List<Job>();
+        jobService.Add(job);
 
-            Job job = new Job(fieldOfJob:fieldOfJob,titelOfJob:titelOfJob,provinzWorkplace:provinzWorkplace,cityWorkplace:cityWorkplace);
-           
-            job.Salary= salaryJob;
-            
+        //JobAppliedDataGridView.DataSource = jobs;
 
-            //List<Job> jobs = new List<Job>();
-            jobService.Add(job);
+        //DataGridView can not reload "refresh", beacuse of that we will read it as folow: 
+        JobAppliedDataGridView.DataSource = null;
+        JobAppliedDataGridView.DataSource = jobService.GetAll();
+        JobAppliedDataGridView: Refresh();
 
-            //JobAppliedDataGridView.DataSource = jobs;
+    }
 
-            //DataGridView can not reload "refresh", beacuse of that we will read it as folow: 
-            JobAppliedDataGridView.DataSource = null;
-            JobAppliedDataGridView.DataSource= jobService.GetAll();
-            JobAppliedDataGridView:Refresh();
-
-        }
+    private void CancelApplaybutton_Click(object sender, EventArgs e)
+    {
+        this.Close();
     }
 }

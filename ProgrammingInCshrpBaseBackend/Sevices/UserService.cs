@@ -7,7 +7,6 @@ namespace ProgrammingInCshrpBaseBackend.Services;
 
     public class UserService : IBaseService<User>
     {
-         
         public void Add(User user)
         {
         //users.Add(user); 

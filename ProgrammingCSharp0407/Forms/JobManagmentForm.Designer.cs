@@ -53,7 +53,7 @@
             label14 = new Label();
             label15 = new Label();
             label16 = new Label();
-            DeleteInfoFormbutton = new Button();
+            DeleteJobButton = new Button();
             RegisterApplybutton = new Button();
             CancelApplaybutton = new Button();
             JobAppliedDataGridView = new DataGridView();
@@ -62,6 +62,7 @@
             BothRadioButton = new RadioButton();
             ImmediatelyCheckBox = new CheckBox();
             WithAgreeCheckBox = new CheckBox();
+            UpdateJobButton = new Button();
             ((System.ComponentModel.ISupportInitialize)JobAppliedDataGridView).BeginInit();
             SuspendLayout();
             // 
@@ -311,21 +312,22 @@
             label16.Text = "شرکت توسعه نیرو";
             label16.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // DeleteInfoFormbutton
+            // DeleteJobButton
             // 
-            DeleteInfoFormbutton.BackColor = Color.FromArgb(224, 224, 224);
-            DeleteInfoFormbutton.Cursor = Cursors.Hand;
-            DeleteInfoFormbutton.FlatAppearance.BorderColor = Color.White;
-            DeleteInfoFormbutton.FlatAppearance.BorderSize = 2;
-            DeleteInfoFormbutton.FlatAppearance.MouseDownBackColor = Color.Silver;
-            DeleteInfoFormbutton.FlatAppearance.MouseOverBackColor = Color.FromArgb(128, 255, 255);
-            DeleteInfoFormbutton.FlatStyle = FlatStyle.Flat;
-            DeleteInfoFormbutton.Location = new Point(1252, 1053);
-            DeleteInfoFormbutton.Name = "DeleteInfoFormbutton";
-            DeleteInfoFormbutton.Size = new Size(231, 73);
-            DeleteInfoFormbutton.TabIndex = 12;
-            DeleteInfoFormbutton.Text = "حذف اطلاعات";
-            DeleteInfoFormbutton.UseVisualStyleBackColor = false;
+            DeleteJobButton.BackColor = Color.FromArgb(224, 224, 224);
+            DeleteJobButton.Cursor = Cursors.Hand;
+            DeleteJobButton.FlatAppearance.BorderColor = Color.White;
+            DeleteJobButton.FlatAppearance.BorderSize = 2;
+            DeleteJobButton.FlatAppearance.MouseDownBackColor = Color.Silver;
+            DeleteJobButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(128, 255, 255);
+            DeleteJobButton.FlatStyle = FlatStyle.Flat;
+            DeleteJobButton.Location = new Point(1408, 1053);
+            DeleteJobButton.Name = "DeleteJobButton";
+            DeleteJobButton.Size = new Size(170, 73);
+            DeleteJobButton.TabIndex = 12;
+            DeleteJobButton.Text = "لغو درخواست";
+            DeleteJobButton.UseVisualStyleBackColor = false;
+            DeleteJobButton.Click += DeleteJobButton_Click;
             // 
             // RegisterApplybutton
             // 
@@ -338,7 +340,7 @@
             RegisterApplybutton.FlatStyle = FlatStyle.Flat;
             RegisterApplybutton.Location = new Point(984, 1053);
             RegisterApplybutton.Name = "RegisterApplybutton";
-            RegisterApplybutton.Size = new Size(232, 73);
+            RegisterApplybutton.Size = new Size(242, 73);
             RegisterApplybutton.TabIndex = 11;
             RegisterApplybutton.Text = "ثبت درخواست";
             RegisterApplybutton.UseVisualStyleBackColor = false;
@@ -353,11 +355,11 @@
             CancelApplaybutton.FlatAppearance.MouseDownBackColor = Color.Silver;
             CancelApplaybutton.FlatAppearance.MouseOverBackColor = Color.FromArgb(128, 255, 255);
             CancelApplaybutton.FlatStyle = FlatStyle.Flat;
-            CancelApplaybutton.Location = new Point(1518, 1053);
+            CancelApplaybutton.Location = new Point(1584, 1053);
             CancelApplaybutton.Name = "CancelApplaybutton";
-            CancelApplaybutton.Size = new Size(231, 73);
+            CancelApplaybutton.Size = new Size(159, 73);
             CancelApplaybutton.TabIndex = 13;
-            CancelApplaybutton.Text = "لغو درخواست";
+            CancelApplaybutton.Text = "بستن صفحه";
             CancelApplaybutton.UseVisualStyleBackColor = false;
             CancelApplaybutton.Click += CancelApplaybutton_Click;
             // 
@@ -370,6 +372,7 @@
             JobAppliedDataGridView.RowHeadersWidth = 82;
             JobAppliedDataGridView.Size = new Size(881, 1082);
             JobAppliedDataGridView.TabIndex = 25;
+            JobAppliedDataGridView.CellClick += JobAppliedDataGridView_CellClick;
             // 
             // label17
             // 
@@ -429,12 +432,30 @@
             WithAgreeCheckBox.Text = "به طور توافقی ";
             WithAgreeCheckBox.UseVisualStyleBackColor = true;
             // 
+            // UpdateJobButton
+            // 
+            UpdateJobButton.BackColor = Color.FromArgb(224, 224, 224);
+            UpdateJobButton.Cursor = Cursors.Hand;
+            UpdateJobButton.FlatAppearance.BorderColor = Color.White;
+            UpdateJobButton.FlatAppearance.BorderSize = 2;
+            UpdateJobButton.FlatAppearance.MouseDownBackColor = Color.Silver;
+            UpdateJobButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(128, 255, 255);
+            UpdateJobButton.FlatStyle = FlatStyle.Flat;
+            UpdateJobButton.Location = new Point(1232, 1053);
+            UpdateJobButton.Name = "UpdateJobButton";
+            UpdateJobButton.Size = new Size(170, 73);
+            UpdateJobButton.TabIndex = 31;
+            UpdateJobButton.Text = "به روز رسانی ";
+            UpdateJobButton.UseVisualStyleBackColor = false;
+            UpdateJobButton.Click += UpdateJobButton_Click;
+            // 
             // JobManagmentForm
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSlateGray;
             ClientSize = new Size(1816, 1169);
+            Controls.Add(UpdateJobButton);
             Controls.Add(WithAgreeCheckBox);
             Controls.Add(ImmediatelyCheckBox);
             Controls.Add(BothRadioButton);
@@ -443,7 +464,7 @@
             Controls.Add(JobAppliedDataGridView);
             Controls.Add(CancelApplaybutton);
             Controls.Add(RegisterApplybutton);
-            Controls.Add(DeleteInfoFormbutton);
+            Controls.Add(DeleteJobButton);
             Controls.Add(label16);
             Controls.Add(label15);
             Controls.Add(label14);
@@ -501,7 +522,7 @@
         private Label label14;
         private Label label15;
         private Label label16;
-        private Button DeleteInfoFormbutton;
+        private Button DeleteJobButton;
         private Button RegisterApplybutton;
         private Button CancelApplaybutton;
         private DataGridView JobAppliedDataGridView;
@@ -510,5 +531,6 @@
         private RadioButton BothRadioButton;
         private CheckBox ImmediatelyCheckBox;
         private CheckBox WithAgreeCheckBox;
+        private Button UpdateJobButton;
     }
 }

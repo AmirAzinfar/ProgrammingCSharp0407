@@ -13,7 +13,7 @@ public partial class JobManagmentForm : Form
 
         jobService = new JobService();
         JobAppliedDataGridView.DataSource = jobService.GetAll();
-    JobAppliedDataGridView: Refresh();
+        JobAppliedDataGridView: Refresh();
         FullTimeRadioButton.Checked = true;
 
         jobService = new JobService();

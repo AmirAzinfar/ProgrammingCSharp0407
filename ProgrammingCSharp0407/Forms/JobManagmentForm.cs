@@ -1,5 +1,6 @@
 ﻿using ProgrammingInCshrpBaseBackend.Models;
 using ProgrammingInCshrpBaseBackend.Services;
+using System.Diagnostics;
 
 namespace ProgrammingCSharp0407.Forms;
 
@@ -13,25 +14,102 @@ public partial class JobManagmentForm : Form
 
         jobService = new JobService();
         JobAppliedDataGridView.DataSource = jobService.GetAll();
-    JobAppliedDataGridView: Refresh();
+        JobAppliedDataGridView: Refresh();
         FullTimeRadioButton.Checked = true;
 
         jobService = new JobService();
 
-        string[] FieldOfJoboptionen = { "پزشک و متخصص", "فنی و مهندسی", "معلم", "مربی و دستیار" };
+        string[] FieldOfJoboptionen = { "همه شغل ها", "پزشک و متخصص", "فنی و مهندسی", "معلم", "هنرمند" };
         FieldOfJobComboBox.Items.AddRange(FieldOfJoboptionen);
 
-        string[] JobTiteloptionen = { "دندانپزشک", "مهندس فرایند", "مهندس مکانیک", "مهندس ساختمان", "ریاضی و فیزیک", "پرستار" };
+        string[] JobTiteloptionen = {"دندانپزشک","رادیولوژیست","چشم پزشک", "مهندس فرایند", "مهندس مکانیک", "مهندس ساختمان",
+                                    "ریاضی و فیزیک","زبان انگلیسی","پرستار","نوازنده پیانو","نوازنده دف" };
         JobTitelComboBox.Items.AddRange(JobTiteloptionen);
 
-        string[] Provinceoptionen = { "تهران ", "اصفهان", "فارس ", "البرز", "هرمزگان" };
+        string[] Provinceoptionen = {"همه استان ها", "خراسان", "تهران", "اصفهان", "فارس", "البرز", "هرمزگان" };
         ProvinceComboBox.Items.AddRange(Provinceoptionen);
 
-        string[] Cityoptionen = { "تهران ", "اصفهان", "شیراز", "فسا", "کرج", "بندرعباس" };
+        string[] Cityoptionen = {"مشهد", "تهران", "قم", "نجف آباد", "اصفهان", "شیراز", "فسا", "کرج", "بندرعباس" };
         CityComboBox.Items.AddRange(Cityoptionen);
 
-        //jobs = new List<Job>();
+        FieldOfJobComboBox.SelectedIndex = 0;
+        FieldOfJobComboBox.SelectedIndexChanged += FieldOfJobComboBox_SelectedIndexChanged;
+
+        ProvinceComboBox.SelectedIndex = 0;
+        ProvinceComboBox.SelectedIndexChanged += ProvinceComboBox_SelectedIndexChanged;
     }
+    private void FieldOfJobComboBox_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        switch (FieldOfJobComboBox.Text)
+        {
+            case "همه شغل ها":
+                JobTitelComboBox.Items.Clear();
+                JobTitelComboBox.Items.AddRange(new string[]{"دندانپزشک","رادیولوژیست","چشم پزشک", "مهندس فرایند", "مهندس مکانیک", "مهندس ساختمان",
+                                        "ریاضی و فیزیک","زبان انگلیسی","پرستار","نوازنده پیانو","نوازنده دف" });
+                break;
+
+            case "پزشک و متخصص":
+                JobTitelComboBox.Items.Clear();
+                JobTitelComboBox.Items.AddRange(new string[] { "دندانپزشک", "رادیولوژیست", "چشم پزشک" });
+                break;
+
+            case "فنی و مهندسی":
+                JobTitelComboBox.Items.Clear();
+                JobTitelComboBox.Items.AddRange(new string[] { "مهندس فرایند", "مهندس مکانیک", "مهندس ساختمان" });
+                break;
+
+            case "معلم":
+                JobTitelComboBox.Items.Clear();
+                JobTitelComboBox.Items.AddRange(new string[] { "ریاضی و فیزیک", "زبان انگلیسی" });
+                break;
+
+            case "هنرمند":
+                JobTitelComboBox.Items.Clear();
+                JobTitelComboBox.Items.AddRange(new string[] { "نوازنده پیانو", "نوازنده دف" });
+                break;
+        }
+    }
+
+    private void ProvinceComboBox_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        switch (ProvinceComboBox.Text)
+        {
+            case "همه استان ها":
+                CityComboBox.Items.Clear();
+                CityComboBox.Items.AddRange(new string[]{"مشهد", "تهران", "قم", "نجف آباد", "اصفهان", "شیراز", "فسا", "کرج", "بندرعباس" });
+                break;
+
+            case "خراسان":
+                CityComboBox.Items.Clear();
+                CityComboBox.Items.AddRange(new string[] {"مشهد"});
+                break;
+
+            case "تهران ":
+                CityComboBox.Items.Clear();
+                CityComboBox.Items.AddRange(new string[] {"تهران", "قم"});
+                break;
+
+            case "اصفهان":
+                CityComboBox.Items.Clear();
+                CityComboBox.Items.AddRange(new string[] {"نجف آباد", "اصفهان"});
+                break;
+
+            case "فارس ":
+                CityComboBox.Items.Clear();
+                CityComboBox.Items.AddRange(new string[] {"شیراز", "فسا"});
+                break;
+            case "البرز":
+                CityComboBox.Items.Clear();
+                CityComboBox.Items.AddRange(new string[] {"کرج"});
+                break;
+            case "هرمزگان":
+                CityComboBox.Items.Clear();
+                CityComboBox.Items.AddRange(new string[] {"بندرعباس"});
+                break;
+        }
+
+    }
+
 
     private void RegisterApplybutton_Click(object sender, EventArgs e)
     {
@@ -96,7 +174,7 @@ public partial class JobManagmentForm : Form
 
         JobAppliedDataGridView.DataSource = null;
         JobAppliedDataGridView.DataSource = jobService.GetAll();
-        JobAppliedDataGridView: Refresh();
+    JobAppliedDataGridView: Refresh();
 
         MessageBox.Show(".درخواست شغلی شما با موفقیت ثبت شد");
 
@@ -145,7 +223,7 @@ public partial class JobManagmentForm : Form
             {
                 EnteranceDateTimePicker.Checked = false;
             }
-              
+
             //for CheckBoxes
 
             if (row.Cells["ChoiceStart"].Value.ToString() == "فورا")
@@ -166,7 +244,7 @@ public partial class JobManagmentForm : Form
                 WithAgreeCheckBox.Checked = false;
                 ImmediatelyCheckBox.Checked = false;
             }
-            
+
         }
     }
     private void DeleteJobButton_Click(object sender, EventArgs e)
@@ -253,7 +331,7 @@ public partial class JobManagmentForm : Form
 
         JobAppliedDataGridView.DataSource = null;
         JobAppliedDataGridView.DataSource = jobService.GetAll();
-        JobAppliedDataGridView: Refresh();
+    JobAppliedDataGridView: Refresh();
 
         MessageBox.Show(".به روز رسانی با موفقیت انجام شد");
     }

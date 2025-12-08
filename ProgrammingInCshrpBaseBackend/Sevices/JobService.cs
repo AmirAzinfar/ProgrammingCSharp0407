@@ -6,11 +6,9 @@ namespace ProgrammingInCshrpBaseBackend.Services;
 
 public class JobService : IBaseService<Job>
 {
-    private List<Job> jobs = new List<Job> ();
     public void Add(Job job)
     {
-        //jobs.Add(job);
-
+        
         const string ConectionString = "Server=.;Database=ProgrammingCSharp0407Db;Integrated Security=True;TrustServerCertificate=True;";
 
         using(SqlConnection Connection = new SqlConnection(ConectionString))              
@@ -39,14 +37,79 @@ public class JobService : IBaseService<Job>
 
      public List<Job> GetAll()
      {
-      return jobs; 
-     }
+        List<Job> jobs = new List<Job>();
+        const string Connectionstring = "Server=.;Database=ProgrammingCSharp0407Db;Integrated Security=True;TrustServerCertificate=True;";
+
+        using (SqlConnection connection = new SqlConnection(Connectionstring))
+        {
+            connection.Open();
+            
+            string Query = $"SELECT * FROM [dbo].[Table_Job]";
+
+            SqlCommand command = new SqlCommand(Query, connection);
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                Job job = new Job()
+                {
+                    Id = (int)reader["Id"],
+                    FieldOfJob = reader["FieldOfJob"].ToString(),
+                    TitelOfJob = reader["TitelOfJob"].ToString(),
+                    Salary = reader["Salary"].ToString(),
+                    TimeWorkingHours = reader["TimeWorkingHours"].ToString(),
+                    ProvinceWorkplace = reader["ProvinceWorkplace"].ToString(),
+                    CityWorkplace = reader["CityWorkplace"].ToString(),
+                    DateOfStart = (DateTime)reader["DateOfStart"],
+                    ChoiceStart = reader["ChoiceStart"].ToString(),
+                    CreatedAt=(DateTime)reader["CreatedAt"],
+                };
+                jobs.Add(job);
+            }
+        }
+   
+        return jobs;
+    }
     public void Delete(int id)
     {
-        throw new NotImplementedException();
+        const string Connectionstring = "Server=.;Database=ProgrammingCSharp0407Db;Integrated Security=True;TrustServerCertificate=True;";
+        using (SqlConnection connection = new SqlConnection(Connectionstring))
+        {
+            connection.Open();
+            
+            string Query = $"DELETE FROM [dbo].[Table_Job] WHERE Id = @Id;";
+
+            SqlCommand command = new SqlCommand(Query, connection);
+
+            command.Parameters.AddWithValue("@Id", id);
+
+            int rowsaffected = command.ExecuteNonQuery();
+        }
     }
     public void Update(Job item)
     {
-       throw new NotImplementedException();
+        const string Connectionstring = "Server=.;Database=ProgrammingCSharp0407Db;Integrated Security=True;TrustServerCertificate=True;";
+        using (SqlConnection connection = new SqlConnection(Connectionstring))
+        {
+            connection.Open();
+            
+            string Query = $"UPDATE [dbo].[Table_Job] SET FieldOfJob = @FieldOfJob,TitelOfJob=@TitelOfJob,Salary=@Salary," +
+                "TimeWorkingHours=@TimeWorkingHours, ProvinceWorkplace= @ProvinceWorkplace," +
+                "CityWorkplace=@CityWorkplace,DateOfStart=@DateOfStart,ChoiceStart=@ChoiceStart WHERE Id = @Id";
+
+            SqlCommand command = new SqlCommand(Query, connection);
+
+            command.Parameters.AddWithValue("@FieldOfJob", item.FieldOfJob);
+            command.Parameters.AddWithValue("@TitelOfJob", item.TitelOfJob);
+            command.Parameters.AddWithValue("@Salary", item.Salary);
+            command.Parameters.AddWithValue("@TimeWorkingHours", item.TimeWorkingHours);
+            command.Parameters.AddWithValue("@ProvinceWorkplace", item.ProvinceWorkplace);
+            command.Parameters.AddWithValue("@CityWorkplace", item.CityWorkplace);
+            command.Parameters.AddWithValue("@DateOfStart", item.DateOfStart);
+            command.Parameters.AddWithValue("@ChoiceStart", item.ChoiceStart);
+            command.Parameters.AddWithValue("@Id", item.Id);
+
+            int rowsaffected = command.ExecuteNonQuery();
+        }
     }
 }

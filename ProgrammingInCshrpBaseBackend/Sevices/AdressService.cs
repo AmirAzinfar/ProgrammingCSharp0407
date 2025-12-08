@@ -25,8 +25,6 @@ public class AdressService : IBaseService<Adress>
         }
     }
 
-    
-
     public List<Adress> GetAll()
     {
         List<Adress> adresses = new List<Adress>();

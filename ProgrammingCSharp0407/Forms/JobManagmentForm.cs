@@ -12,6 +12,10 @@ public partial class JobManagmentForm : Form
     {
         InitializeComponent();
 
+        //jobService = new JobService();
+        //JobAppliedDataGridView.DataSource = jobService.GetAll();
+        //JobAppliedDataGridView: Refresh();
+
         jobService = new JobService();
 
         string[] FieldOfJoboptionen = { "پزشک و متخصص", "فنی و مهندسی", "معلم", "مربی و دستیار" };
@@ -36,12 +40,56 @@ public partial class JobManagmentForm : Form
         string titelOfJob = JobTitelComboBox.Text;
         string provinceWorkplace = ProvinceComboBox.Text;
         string cityWorkplace = CityComboBox.Text;
-        string salaryJob = SalaryTextBox.Text;
+        string salary = SalaryTextBox.Text;
+        string timeWorkingHours;
+        DateTime dateOfStart;
+        string choiceStart;
 
-        Job job = new Job(fieldOfJob: fieldOfJob, titelOfJob: titelOfJob, provinceWorkplace: provinceWorkplace, cityWorkplace: cityWorkplace);
 
-        job.Salary = salaryJob;
+        Job job = new Job(fieldOfJob: fieldOfJob, titelOfJob: titelOfJob, salary: salary, provinceWorkplace: provinceWorkplace, cityWorkplace: cityWorkplace);
 
+        
+        // definition TimeWorkingHours
+        if (FullTimeRadioButton.Checked)
+        {
+            job.TimeWorkingHours = "تمام وقت";
+        }
+        else if (HalfTimeRadioButton.Checked)
+        {
+            job.TimeWorkingHours = "نیمه وقت";
+        }
+        else if (BothRadioButton.Checked)
+        {
+            job.TimeWorkingHours = "نیمه/تمام وقت";
+        }
+        else 
+        {
+            MessageBox.Show(".لطفا ساعت کاری دلخواه خود را انتخاب نمایید");
+        }
+
+        // defintion DateTimePicker
+        if (EnteranceDateTimePicker.Checked)
+        {
+            job.DateOfStart = EnteranceDateTimePicker.Value;
+        }
+        else job.DateOfStart = null;
+        
+        //defintion list of and differnt state for CheckBoxes
+        List<string> Choices = new List<string>();
+        if (ImmediatelyCheckBox.Checked)
+        {
+            Choices.Add("فورا");
+        }
+        if (WithAgreeCheckBox.Checked)
+        {
+            Choices.Add("توافقی");
+        }
+        else if (!ImmediatelyCheckBox.Checked && !WithAgreeCheckBox.Checked)
+        {
+            Choices.Add("/");
+        }
+
+        job.ChoiceStart = string.Join(",", Choices);
 
         //List<Job> jobs = new List<Job>();
         jobService.Add(job);
@@ -52,6 +100,8 @@ public partial class JobManagmentForm : Form
         JobAppliedDataGridView.DataSource = null;
         JobAppliedDataGridView.DataSource = jobService.GetAll();
         JobAppliedDataGridView: Refresh();
+
+        MessageBox.Show(".درخواست شغلی شما با موفقیت ثبت شد");
 
     }
 

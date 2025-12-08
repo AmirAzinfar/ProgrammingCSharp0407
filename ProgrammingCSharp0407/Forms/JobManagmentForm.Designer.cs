@@ -85,6 +85,7 @@
             FieldOfJobComboBox.Name = "FieldOfJobComboBox";
             FieldOfJobComboBox.Size = new Size(499, 40);
             FieldOfJobComboBox.TabIndex = 1;
+            FieldOfJobComboBox.SelectedIndexChanged += FieldOfJobComboBox_SelectedIndexChanged;
             // 
             // label2
             // 
@@ -189,6 +190,7 @@
             ProvinceComboBox.Name = "ProvinceComboBox";
             ProvinceComboBox.Size = new Size(387, 40);
             ProvinceComboBox.TabIndex = 6;
+            ProvinceComboBox.SelectedIndexChanged += ProvinceComboBox_SelectedIndexChanged;
             // 
             // CityComboBox
             // 

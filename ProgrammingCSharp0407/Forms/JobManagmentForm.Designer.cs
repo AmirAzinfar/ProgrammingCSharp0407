@@ -411,18 +411,18 @@
             // 
             ImmediatelyCheckBox.AutoSize = true;
             ImmediatelyCheckBox.ForeColor = Color.White;
-            ImmediatelyCheckBox.Location = new Point(1287, 959);
+            ImmediatelyCheckBox.Location = new Point(1297, 959);
             ImmediatelyCheckBox.Name = "ImmediatelyCheckBox";
-            ImmediatelyCheckBox.Size = new Size(196, 36);
+            ImmediatelyCheckBox.Size = new Size(91, 36);
             ImmediatelyCheckBox.TabIndex = 29;
-            ImmediatelyCheckBox.Text = "فوراً در دسترس";
+            ImmediatelyCheckBox.Text = "فوراً ";
             ImmediatelyCheckBox.UseVisualStyleBackColor = true;
             // 
             // WithAgreeCheckBox
             // 
             WithAgreeCheckBox.AutoSize = true;
             WithAgreeCheckBox.ForeColor = Color.White;
-            WithAgreeCheckBox.Location = new Point(1073, 959);
+            WithAgreeCheckBox.Location = new Point(984, 959);
             WithAgreeCheckBox.Name = "WithAgreeCheckBox";
             WithAgreeCheckBox.Size = new Size(199, 36);
             WithAgreeCheckBox.TabIndex = 30;

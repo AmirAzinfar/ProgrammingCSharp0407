@@ -293,10 +293,10 @@
             ConfirmButton.FlatAppearance.BorderColor = Color.White;
             ConfirmButton.FlatAppearance.BorderSize = 2;
             ConfirmButton.FlatAppearance.MouseDownBackColor = Color.Silver;
-            ConfirmButton.FlatAppearance.MouseOverBackColor = Color.Gray;
+            ConfirmButton.FlatAppearance.MouseOverBackColor = Color.Aqua;
             ConfirmButton.FlatStyle = FlatStyle.Flat;
             ConfirmButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ConfirmButton.ForeColor = Color.White;
+            ConfirmButton.ForeColor = Color.Black;
             ConfirmButton.Location = new Point(234, 472);
             ConfirmButton.Name = "ConfirmButton";
             ConfirmButton.Size = new Size(264, 76);
@@ -311,16 +311,17 @@
             CancelButton.FlatAppearance.BorderColor = Color.White;
             CancelButton.FlatAppearance.BorderSize = 2;
             CancelButton.FlatAppearance.MouseDownBackColor = Color.Silver;
-            CancelButton.FlatAppearance.MouseOverBackColor = Color.Gray;
+            CancelButton.FlatAppearance.MouseOverBackColor = Color.Aqua;
             CancelButton.FlatStyle = FlatStyle.Flat;
             CancelButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            CancelButton.ForeColor = Color.White;
+            CancelButton.ForeColor = Color.Black;
             CancelButton.Location = new Point(516, 472);
             CancelButton.Name = "CancelButton";
             CancelButton.Size = new Size(264, 76);
             CancelButton.TabIndex = 22;
-            CancelButton.Text = "لغو";
+            CancelButton.Text = "بستن صفحه ";
             CancelButton.UseVisualStyleBackColor = false;
+            CancelButton.Click += CancelButton_Click;
             // 
             // UploadDocsForm
             // 

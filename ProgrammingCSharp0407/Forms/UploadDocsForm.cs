@@ -97,19 +97,24 @@ namespace ProgrammingCSharp0407.Forms
             {
                 //contents write on file (write on file) using AppendAllText(path:filepath, contents:"someting");
 
-                File.AppendAllText(path:filepath,contents:"Hier ist mein zweiets Codeline");
+                File.AppendAllText(path: filepath, contents: "Hier ist mein zweiets Codeline");
                 //now, read new added Text
                 string ShowAddedAllText = File.ReadAllText(filepath);
 
-            MessageBox.Show(ShowAddedAllText);
-             //if use File.WriteAllText-->overwrite all of text on file with my contents
-            //File.WriteAllText(filepath,"Hier ist mein zweiets Codeline");
+                MessageBox.Show(ShowAddedAllText);
+                //if use File.WriteAllText-->overwrite all of text on file with my contents
+                //File.WriteAllText(filepath,"Hier ist mein zweiets Codeline");
             }
             else
             {
                 MessageBox.Show("فایل مورد نظر در این آدرس وجود ندارد \n !لطفا مطمئن شوید آدرس فایل صحیح وارد شده باشد");
                 //MessageBox.Show(filepath);
             }
+        }
+
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

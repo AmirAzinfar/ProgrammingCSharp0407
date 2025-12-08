@@ -76,7 +76,7 @@ public partial class JobManagmentForm : Form
         {
             case "همه استان ها":
                 CityComboBox.Items.Clear();
-                CityComboBox.Items.AddRange(new string[]{"مشهد", "تهران", "قم", "نجف آباد", "اصفهان", "شیراز", "فسا", "کرج", "بندرعباس" });
+                CityComboBox.Items.AddRange(new string[] { "مشهد", "تهران", "قم", "نجف آباد", "اصفهان", "شیراز", "فسا", "کرج", "بندرعباس" });
                 break;
 
             case "خراسان":
@@ -107,10 +107,7 @@ public partial class JobManagmentForm : Form
                 CityComboBox.Items.AddRange(new string[] {"بندرعباس"});
                 break;
         }
-
     }
-
-
     private void RegisterApplybutton_Click(object sender, EventArgs e)
     {
         //data collect

@@ -63,6 +63,7 @@
             ImmediatelyCheckBox = new CheckBox();
             WithAgreeCheckBox = new CheckBox();
             UpdateJobButton = new Button();
+            label19 = new Label();
             ((System.ComponentModel.ISupportInitialize)JobAppliedDataGridView).BeginInit();
             SuspendLayout();
             // 
@@ -174,7 +175,7 @@
             // 
             HalfTimeRadioButton.AutoSize = true;
             HalfTimeRadioButton.ForeColor = Color.White;
-            HalfTimeRadioButton.Location = new Point(1190, 658);
+            HalfTimeRadioButton.Location = new Point(1145, 658);
             HalfTimeRadioButton.Name = "HalfTimeRadioButton";
             HalfTimeRadioButton.Size = new Size(147, 36);
             HalfTimeRadioButton.TabIndex = 5;
@@ -254,7 +255,7 @@
             label11.AutoSize = true;
             label11.BackColor = Color.Transparent;
             label11.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label11.ForeColor = Color.WhiteSmoke;
+            label11.ForeColor = Color.FromArgb(224, 224, 224);
             label11.Location = new Point(1598, 44);
             label11.Name = "label11";
             label11.Size = new Size(166, 32);
@@ -281,7 +282,7 @@
             // label14
             // 
             label14.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label14.ForeColor = Color.WhiteSmoke;
+            label14.ForeColor = Color.Gainsboro;
             label14.Location = new Point(934, 76);
             label14.Name = "label14";
             label14.RightToLeft = RightToLeft.Yes;
@@ -293,7 +294,7 @@
             // label15
             // 
             label15.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label15.ForeColor = Color.WhiteSmoke;
+            label15.ForeColor = Color.FromArgb(224, 224, 224);
             label15.Location = new Point(1601, 256);
             label15.Name = "label15";
             label15.RightToLeft = RightToLeft.Yes;
@@ -305,7 +306,7 @@
             // label16
             // 
             label16.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label16.ForeColor = Color.WhiteSmoke;
+            label16.ForeColor = Color.FromArgb(224, 224, 224);
             label16.Location = new Point(1545, 304);
             label16.Name = "label16";
             label16.RightToLeft = RightToLeft.Yes;
@@ -369,10 +370,10 @@
             // 
             JobAppliedDataGridView.BackgroundColor = Color.Silver;
             JobAppliedDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            JobAppliedDataGridView.Location = new Point(35, 44);
+            JobAppliedDataGridView.Location = new Point(35, 102);
             JobAppliedDataGridView.Name = "JobAppliedDataGridView";
             JobAppliedDataGridView.RowHeadersWidth = 82;
-            JobAppliedDataGridView.Size = new Size(881, 1082);
+            JobAppliedDataGridView.Size = new Size(881, 1024);
             JobAppliedDataGridView.TabIndex = 25;
             JobAppliedDataGridView.CellClick += JobAppliedDataGridView_CellClick;
             // 
@@ -404,7 +405,7 @@
             // 
             BothRadioButton.AutoSize = true;
             BothRadioButton.ForeColor = Color.White;
-            BothRadioButton.Location = new Point(1073, 658);
+            BothRadioButton.Location = new Point(984, 658);
             BothRadioButton.Name = "BothRadioButton";
             BothRadioButton.Size = new Size(102, 36);
             BothRadioButton.TabIndex = 28;
@@ -451,12 +452,25 @@
             UpdateJobButton.UseVisualStyleBackColor = false;
             UpdateJobButton.Click += UpdateJobButton_Click;
             // 
+            // label19
+            // 
+            label19.Font = new Font("Segoe UI", 10.125F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label19.ForeColor = Color.White;
+            label19.Location = new Point(691, 44);
+            label19.Name = "label19";
+            label19.RightToLeft = RightToLeft.Yes;
+            label19.Size = new Size(237, 48);
+            label19.TabIndex = 32;
+            label19.Text = "لیست درخواست ها ";
+            label19.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // JobManagmentForm
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.LightSlateGray;
-            ClientSize = new Size(1816, 1169);
+            BackColor = Color.DimGray;
+            ClientSize = new Size(1795, 1169);
+            Controls.Add(label19);
             Controls.Add(UpdateJobButton);
             Controls.Add(WithAgreeCheckBox);
             Controls.Add(ImmediatelyCheckBox);
@@ -492,7 +506,9 @@
             Controls.Add(FieldOfJobComboBox);
             Controls.Add(label1);
             Name = "JobManagmentForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "فرم درخواست";
+            TopMost = true;
             ((System.ComponentModel.ISupportInitialize)JobAppliedDataGridView).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -534,5 +550,6 @@
         private CheckBox ImmediatelyCheckBox;
         private CheckBox WithAgreeCheckBox;
         private Button UpdateJobButton;
+        private Label label19;
     }
 }

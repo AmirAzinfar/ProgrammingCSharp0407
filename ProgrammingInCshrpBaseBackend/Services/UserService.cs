@@ -67,9 +67,7 @@ namespace ProgrammingInCshrpBaseBackend.Services;
                 // create a SqlDatareader to read (bring/fetch) data from Table in Db
                 SqlDataReader reader = command.ExecuteReader();
 
-             // 3:Results (from Table in Db) --> Map to Instance (Objects)
-
-                
+             // 3:Results (from Table in Db) --> Map to Instance (Objects)     
                 while (reader.Read()) 
                 {
                     User user = new User()

@@ -1,6 +1,5 @@
 ﻿using ProgrammingInCshrpBaseBackend.Models;
 using ProgrammingInCshrpBaseBackend.Services;
-using System.Diagnostics;
 
 namespace ProgrammingCSharp0407.Forms;
 
@@ -171,7 +170,7 @@ public partial class JobManagmentForm : Form
 
         JobAppliedDataGridView.DataSource = null;
         JobAppliedDataGridView.DataSource = jobService.GetAll();
-    JobAppliedDataGridView: Refresh();
+        JobAppliedDataGridView: Refresh();
 
         MessageBox.Show(".درخواست شغلی شما با موفقیت ثبت شد");
 
@@ -331,7 +330,5 @@ public partial class JobManagmentForm : Form
     JobAppliedDataGridView: Refresh();
 
         MessageBox.Show(".به روز رسانی با موفقیت انجام شد");
-    }
-
-    
+    }    
 }

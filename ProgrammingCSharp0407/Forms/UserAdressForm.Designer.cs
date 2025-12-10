@@ -196,7 +196,9 @@
             Controls.Add(label1);
             Cursor = Cursors.Hand;
             Name = "UserAdressForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "آدرس";
+            TopMost = true;
             ((System.ComponentModel.ISupportInitialize)AdressDataGridView).EndInit();
             ResumeLayout(false);
             PerformLayout();

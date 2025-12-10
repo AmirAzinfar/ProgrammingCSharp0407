@@ -9,6 +9,7 @@ namespace ProgrammingCSharp0407
         public Form1()
         {
             InitializeComponent();
+            this.AcceptButton = button1;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -64,6 +65,8 @@ namespace ProgrammingCSharp0407
             UserNameTextBox.Text = null;
             PasswordTextBox.Text = null;
         }
+
+        
 
 
         //----------------------first, I started with these Codes

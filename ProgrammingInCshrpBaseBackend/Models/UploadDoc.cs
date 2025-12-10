@@ -2,23 +2,25 @@
 using ProgrammingInCshrpBaseBackend.Abstractions;
 
 
-namespace ProgrammingInCshrpBaseBackend.Models
+namespace ProgrammingInCshrpBaseBackend.Models;
+
+//Relationships of class UploadDoc and BaseEntity "is a" --> Inheritance
+
+public class UploadDoc : BaseEntity
 {
-    //Relationships of class UploadDoc and BaseEntity "is a" --> Inheritance
+    // public int Id { get; set; } beacuse inhertance from BaseEntity
+    public byte[] Motivation {get; set;}
+    public byte[] Education {get; set;}
+    public byte[] JobExperience {get; set;}
+    public byte[] CV {get; set;}
+    public byte[] EmploymentReference {get; set;}
+    //public DateTime? CreatedAt {get; set;}
 
-    public class UploadDoc : BaseEntity
+
+    //Relationships of class UploadDoc and Base "is a" --> Inheritance
+
+    public UploadDoc() :base()
     {
-        // public int Id { get; set; } beacuse inhertance from BaseEntity
-        public string Motivation { get; set;}
-        public string Edjucation {get; set;}
-        public string WorkExperience {get; set;}
-        public string CV {get; set;}
-        public string EmploymentReference {get; set;}
-
-        //Relationships of class UploadDoc and Base "is a" --> Inheritance
-
-        public UploadDoc() :base()
-        {
-        }
     }
+
 }

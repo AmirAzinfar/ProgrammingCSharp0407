@@ -31,10 +31,10 @@
         private ToolStripMenuItem HelpToolStripMenuItem;
         private ToolStripMenuItem اSubmitFormToolStripMenuItem;
         private ToolStripMenuItem StatusApplyToolStripMenuItem;
-        private PictureBox pictureBox1;
         private ToolStripMenuItem UploadDocsToolStripMenuItem;
         private ToolStripMenuItem ToolStripMenuItem;
         private ToolStripMenuItem AdminChangeToolStripMenuItem;
         private ToolStripMenuItem ExitToolStripMenuItem;
+        private PictureBox pictureBox1;
     }
 }

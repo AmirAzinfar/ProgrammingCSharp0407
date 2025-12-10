@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartLoginForm));
             pictureBox1 = new PictureBox();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
             // 
             pictureBox1.Dock = DockStyle.Fill;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Image = Properties.Resources.Background;
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(800, 450);
@@ -44,15 +44,30 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
+            // button1
+            // 
+            button1.BackColor = Color.Transparent;
+            button1.Dock = DockStyle.Bottom;
+            button1.FlatAppearance.MouseOverBackColor = Color.Cyan;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Location = new Point(0, 397);
+            button1.Name = "button1";
+            button1.Size = new Size(800, 53);
+            button1.TabIndex = 1;
+            button1.Text = "خروج از برنامه ";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
             // StartLoginForm
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button1);
             Controls.Add(pictureBox1);
             Name = "StartLoginForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Load += StartLoginForm_Load;
+            WindowState = FormWindowState.Minimized;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
@@ -60,5 +75,6 @@
         #endregion
 
         private PictureBox pictureBox1;
+        private Button button1;
     }
 }

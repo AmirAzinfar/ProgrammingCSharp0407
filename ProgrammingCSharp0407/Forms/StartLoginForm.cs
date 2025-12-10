@@ -15,8 +15,8 @@ public partial class StartLoginForm : Form
         form1.Show();
     }
 
-    private void StartLoginForm_Load(object sender, EventArgs e)
+    private void button1_Click(object sender, EventArgs e)
     {
-        
+        Application.Exit();
     }
 }

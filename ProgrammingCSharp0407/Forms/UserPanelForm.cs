@@ -45,10 +45,10 @@ namespace ProgrammingCSharp0407.Forms
             menuStrip1.Items.AddRange(new ToolStripItem[] { ToolStripMenuItem, userToolStripMenuItem, ApplyJobToolStripMenuItem, managmentToolStripMenuItem, ContactToolStripMenuItem, HelpToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(823, 40);
+            menuStrip1.Size = new Size(874, 40);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
-            menuStrip1.ItemClicked += menuStrip1_ItemClicked;
+          
             // 
             // ToolStripMenuItem
             // 
@@ -56,7 +56,7 @@ namespace ProgrammingCSharp0407.Forms
             ToolStripMenuItem.Name = "ToolStripMenuItem";
             ToolStripMenuItem.Size = new Size(121, 36);
             ToolStripMenuItem.Text = "تنظیم ها";
-            ToolStripMenuItem.Click += ToolStripMenuItem_Click;
+           
             // 
             // AdminChangeToolStripMenuItem
             // 
@@ -160,10 +160,10 @@ namespace ProgrammingCSharp0407.Forms
             // pictureBox1
             // 
             pictureBox1.Dock = DockStyle.Fill;
-            pictureBox1.Image = Properties.Resources.Test;
-            pictureBox1.Location = new Point(0, 40);
+            pictureBox1.Image = Properties.Resources.Background;
+            pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(823, 720);
+            pictureBox1.Size = new Size(874, 714);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
@@ -171,9 +171,9 @@ namespace ProgrammingCSharp0407.Forms
             // UserPanelForm
             // 
             BackColor = SystemColors.AppWorkspace;
-            ClientSize = new Size(823, 760);
-            Controls.Add(pictureBox1);
+            ClientSize = new Size(874, 714);
             Controls.Add(menuStrip1);
+            Controls.Add(pictureBox1);
             ForeColor = SystemColors.ActiveCaptionText;
             MainMenuStrip = menuStrip1;
             Name = "UserPanelForm";
@@ -214,16 +214,6 @@ namespace ProgrammingCSharp0407.Forms
         private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
+        }        
     }
 }

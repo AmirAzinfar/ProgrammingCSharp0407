@@ -39,6 +39,7 @@
             FirstNameContactTextBox = new TextBox();
             LastNameContactTextBox = new TextBox();
             SubjectContactTextBox = new TextBox();
+            label5 = new Label();
             SuspendLayout();
             // 
             // label1
@@ -46,7 +47,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(522, 48);
+            label1.Location = new Point(518, 116);
             label1.Name = "label1";
             label1.Size = new Size(56, 32);
             label1.TabIndex = 0;
@@ -56,7 +57,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(432, 112);
+            label2.Location = new Point(428, 180);
             label2.Name = "label2";
             label2.Size = new Size(146, 32);
             label2.TabIndex = 1;
@@ -66,7 +67,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(481, 179);
+            label3.Location = new Point(477, 247);
             label3.Name = "label3";
             label3.Size = new Size(97, 32);
             label3.TabIndex = 2;
@@ -76,7 +77,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(204, 253);
+            label4.Location = new Point(200, 321);
             label4.Name = "label4";
             label4.Size = new Size(374, 32);
             label4.TabIndex = 3;
@@ -86,7 +87,7 @@
             // 
             TextContacTextBox.BackColor = Color.WhiteSmoke;
             TextContacTextBox.ForeColor = Color.Black;
-            TextContacTextBox.Location = new Point(54, 298);
+            TextContacTextBox.Location = new Point(50, 366);
             TextContacTextBox.Multiline = true;
             TextContacTextBox.Name = "TextContacTextBox";
             TextContacTextBox.ScrollBars = ScrollBars.Both;
@@ -100,7 +101,7 @@
             SendContactButton.FlatStyle = FlatStyle.Flat;
             SendContactButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             SendContactButton.ForeColor = Color.Black;
-            SendContactButton.Location = new Point(415, 658);
+            SendContactButton.Location = new Point(411, 726);
             SendContactButton.Name = "SendContactButton";
             SendContactButton.Size = new Size(161, 62);
             SendContactButton.TabIndex = 5;
@@ -114,12 +115,13 @@
             DeleteContactButton.FlatAppearance.MouseOverBackColor = Color.Cyan;
             DeleteContactButton.FlatStyle = FlatStyle.Flat;
             DeleteContactButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            DeleteContactButton.Location = new Point(234, 658);
+            DeleteContactButton.Location = new Point(230, 726);
             DeleteContactButton.Name = "DeleteContactButton";
             DeleteContactButton.Size = new Size(161, 62);
             DeleteContactButton.TabIndex = 6;
             DeleteContactButton.Text = "حذف ";
             DeleteContactButton.UseVisualStyleBackColor = true;
+            DeleteContactButton.Click += DeleteContactButton_Click;
             // 
             // ExitContactButton
             // 
@@ -127,7 +129,7 @@
             ExitContactButton.FlatAppearance.MouseOverBackColor = Color.Cyan;
             ExitContactButton.FlatStyle = FlatStyle.Flat;
             ExitContactButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ExitContactButton.Location = new Point(54, 658);
+            ExitContactButton.Location = new Point(50, 726);
             ExitContactButton.Name = "ExitContactButton";
             ExitContactButton.Size = new Size(161, 66);
             ExitContactButton.TabIndex = 7;
@@ -139,7 +141,7 @@
             // 
             FirstNameContactTextBox.BackColor = Color.White;
             FirstNameContactTextBox.ForeColor = Color.Black;
-            FirstNameContactTextBox.Location = new Point(54, 48);
+            FirstNameContactTextBox.Location = new Point(50, 116);
             FirstNameContactTextBox.Name = "FirstNameContactTextBox";
             FirstNameContactTextBox.Size = new Size(365, 39);
             FirstNameContactTextBox.TabIndex = 8;
@@ -148,7 +150,7 @@
             // 
             LastNameContactTextBox.BackColor = Color.White;
             LastNameContactTextBox.ForeColor = Color.Black;
-            LastNameContactTextBox.Location = new Point(54, 112);
+            LastNameContactTextBox.Location = new Point(50, 180);
             LastNameContactTextBox.Name = "LastNameContactTextBox";
             LastNameContactTextBox.Size = new Size(365, 39);
             LastNameContactTextBox.TabIndex = 9;
@@ -157,17 +159,28 @@
             // 
             SubjectContactTextBox.BackColor = Color.White;
             SubjectContactTextBox.ForeColor = Color.Black;
-            SubjectContactTextBox.Location = new Point(54, 176);
+            SubjectContactTextBox.Location = new Point(50, 244);
             SubjectContactTextBox.Name = "SubjectContactTextBox";
             SubjectContactTextBox.Size = new Size(365, 39);
             SubjectContactTextBox.TabIndex = 10;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.Location = new Point(440, 29);
+            label5.Name = "label5";
+            label5.Size = new Size(132, 45);
+            label5.TabIndex = 11;
+            label5.Text = "پیام شما";
             // 
             // ContactWithUsForm
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.MediumAquamarine;
-            ClientSize = new Size(633, 759);
+            ClientSize = new Size(633, 815);
+            Controls.Add(label5);
             Controls.Add(SubjectContactTextBox);
             Controls.Add(LastNameContactTextBox);
             Controls.Add(FirstNameContactTextBox);
@@ -199,5 +212,6 @@
         private TextBox FirstNameContactTextBox;
         private TextBox LastNameContactTextBox;
         private TextBox SubjectContactTextBox;
+        private Label label5;
     }
 }

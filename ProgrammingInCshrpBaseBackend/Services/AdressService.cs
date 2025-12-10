@@ -9,9 +9,9 @@ public class AdressService : IBaseService<Adress>
 {
     public void Add(Adress adress)
     {
-        const string ConectionString = "Server=.;Database=ProgrammingCSharp0407Db;Integrated Security=True;TrustServerCertificate=True;";
+        const string ConnectionString = "Server=.;Database=ProgrammingCSharp0407Db;Integrated Security=True;TrustServerCertificate=True;";
 
-        using (SqlConnection connection = new SqlConnection(ConectionString))
+        using (SqlConnection connection = new SqlConnection(ConnectionString))
         {
             connection.Open();
             string Query = $"INSERT INTO [dbo].[Table_Adress]" +
@@ -28,9 +28,9 @@ public class AdressService : IBaseService<Adress>
     public List<Adress> GetAll()
     {
         List<Adress> adresses = new List<Adress>();
-        const string ConectionString = "Server=.;Database=ProgrammingCSharp0407Db;Integrated Security=True;TrustServerCertificate=True;";
+        const string ConnectionString = "Server=.;Database=ProgrammingCSharp0407Db;Integrated Security=True;TrustServerCertificate=True;";
 
-        using(SqlConnection connection = new SqlConnection(ConectionString))
+        using(SqlConnection connection = new SqlConnection(ConnectionString))
         {
             connection.Open();
             string Query = $"SELECT * FROM[dbo].[Table_Adress]";

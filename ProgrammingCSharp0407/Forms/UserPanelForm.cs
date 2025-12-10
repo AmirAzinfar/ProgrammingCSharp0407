@@ -54,7 +54,7 @@ namespace ProgrammingCSharp0407.Forms
             // 
             ToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { AdminChangeToolStripMenuItem, ExitToolStripMenuItem });
             ToolStripMenuItem.Name = "ToolStripMenuItem";
-            ToolStripMenuItem.Size = new Size(121, 38);
+            ToolStripMenuItem.Size = new Size(121, 36);
             ToolStripMenuItem.Text = "تنظیم ها";
             ToolStripMenuItem.Click += ToolStripMenuItem_Click;
             // 
@@ -79,7 +79,7 @@ namespace ProgrammingCSharp0407.Forms
             userToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { FormRegistToolStripMenuItem });
             userToolStripMenuItem.ForeColor = Color.FromArgb(64, 64, 64);
             userToolStripMenuItem.Name = "userToolStripMenuItem";
-            userToolStripMenuItem.Size = new Size(90, 38);
+            userToolStripMenuItem.Size = new Size(90, 36);
             userToolStripMenuItem.Text = "فرم‌ها";
             // 
             // FormRegistToolStripMenuItem
@@ -95,7 +95,7 @@ namespace ProgrammingCSharp0407.Forms
             ApplyJobToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { FullFormToolStripMenuItem, UploadDocsToolStripMenuItem });
             ApplyJobToolStripMenuItem.ForeColor = Color.FromArgb(64, 64, 64);
             ApplyJobToolStripMenuItem.Name = "ApplyJobToolStripMenuItem";
-            ApplyJobToolStripMenuItem.Size = new Size(206, 38);
+            ApplyJobToolStripMenuItem.Size = new Size(206, 36);
             ApplyJobToolStripMenuItem.Text = "درخواست شغلی ";
             // 
             // FullFormToolStripMenuItem
@@ -119,7 +119,7 @@ namespace ProgrammingCSharp0407.Forms
             managmentToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { ApplierJobToolStripMenuItem, اSubmitFormToolStripMenuItem, StatusApplyToolStripMenuItem });
             managmentToolStripMenuItem.ForeColor = Color.FromArgb(64, 64, 64);
             managmentToolStripMenuItem.Name = "managmentToolStripMenuItem";
-            managmentToolStripMenuItem.Size = new Size(110, 38);
+            managmentToolStripMenuItem.Size = new Size(110, 36);
             managmentToolStripMenuItem.Text = "مدیریت";
             // 
             // ApplierJobToolStripMenuItem
@@ -147,22 +147,24 @@ namespace ProgrammingCSharp0407.Forms
             // 
             ContactToolStripMenuItem.ForeColor = Color.FromArgb(64, 64, 64);
             ContactToolStripMenuItem.Name = "ContactToolStripMenuItem";
-            ContactToolStripMenuItem.Size = new Size(145, 38);
+            ContactToolStripMenuItem.Size = new Size(145, 36);
             ContactToolStripMenuItem.Text = "تماس با ما ";
             // 
             // HelpToolStripMenuItem
             // 
             HelpToolStripMenuItem.ForeColor = Color.FromArgb(64, 64, 64);
             HelpToolStripMenuItem.Name = "HelpToolStripMenuItem";
-            HelpToolStripMenuItem.Size = new Size(92, 38);
+            HelpToolStripMenuItem.Size = new Size(92, 36);
             HelpToolStripMenuItem.Text = "راهنما";
             // 
             // pictureBox1
             // 
+            pictureBox1.Dock = DockStyle.Fill;
             pictureBox1.Image = Properties.Resources.Test;
-            pictureBox1.Location = new Point(-2, 38);
+            pictureBox1.Location = new Point(0, 40);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(829, 733);
+            pictureBox1.Size = new Size(823, 720);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             // 
@@ -176,6 +178,7 @@ namespace ProgrammingCSharp0407.Forms
             MainMenuStrip = menuStrip1;
             Name = "UserPanelForm";
             Text = "پنل کاربری ";
+            WindowState = FormWindowState.Maximized;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ((ISupportInitialize)pictureBox1).EndInit();

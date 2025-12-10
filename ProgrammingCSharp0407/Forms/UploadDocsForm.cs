@@ -1,176 +1,170 @@
-﻿
+﻿using ProgrammingInCshrpBaseBackend.Models;
+using ProgrammingInCshrpBaseBackend.Services;
 
-namespace ProgrammingCSharp0407.Forms
+
+namespace ProgrammingCSharp0407.Forms;
+
+public partial class UploadDocsForm : Form
 {
-    public partial class UploadDocsForm : Form
+    int SelectedFileId = 0;
+    UploadDocService uploadDocService;
+
+    public byte[] motivationFileData;
+    public byte[] educationFileData;
+    public byte[] jobExperienceFileData;
+    public byte[] cvFileData;
+    public byte[] employmentReferenceFileData;
+
+    public UploadDocsForm()
     {
-        public UploadDocsForm()
+        InitializeComponent();
+        uploadDocService = new UploadDocService();
+        LoadListView();
+    }
+    private void LoadListView()
+    {
+        UploadDocListView.Items.Clear();
+        var uploadDocs = uploadDocService.GetAll();
+
+        var docs = uploadDocService.GetAll();
+
+        foreach (var doc in docs)
         {
-            InitializeComponent();
+            ListViewItem item = new ListViewItem(doc.Id.ToString());
+            item.SubItems.Add(doc.Motivation != null && doc.Motivation.Length > 0 ? "✔" : "x");
+            item.SubItems.Add(doc.Education != null && doc.Education.Length > 0 ? "✔" : "x");
+            item.SubItems.Add(doc.JobExperience != null && doc.JobExperience.Length > 0 ? "✔" : "x");
+            item.SubItems.Add(doc.CV != null && doc.CV.Length > 0 ? "✔" : "x");
+            item.SubItems.Add(doc.EmploymentReference != null && doc.EmploymentReference.Length > 0 ? "✔" : "x");
+            item.SubItems.Add(doc.CreatedAt.ToString("yyyy-MM-dd"));
+
+            UploadDocListView.Items.Add(item);
         }
+    }
 
-
-        string dateiPfad = "";
-
-        private void MotivationButton_Click(object sender, EventArgs e)
+    private void ConfirmButton_Click(object sender, EventArgs e)
+    {
+        if (motivationFileData == null &&
+            educationFileData == null &&
+            jobExperienceFileData == null &&
+            cvFileData == null &&
+            employmentReferenceFileData == null)
         {
-            OpenFileDialog openFile = new OpenFileDialog();
-            openFile.Filter = "PDF files (*.pdf)|*.pdf|All files (*.*)|*.*";
-
-            if (openFile.ShowDialog() == DialogResult.OK)
-            {
-                dateiPfad = openFile.FileName;
-                MotivationStatusLabel.Text = "\u2714 بارگذاری شد";
-                MessageBox.Show(".فایل شما با موفقیت بارگذاری شد");
-            }
+            MessageBox.Show("!لطفاً حداقل یک فایل را بارگذاری کنید");
+            return;
         }
-
-        //private void MotivationButton_Click(object sender, EventArgs e)
-        //{
-        //    string file = @"C:\Users\amirazinfar\source\repos\ProgrammingCSharp0407\ProgrammingCSharp0407\DOCs\Info.txt";
-
-        //    //"Reading File using File.ReadAllText()
-
-        //    if (File.Exists(file))
-        //    {
-        //        string str = File.ReadAllText(file);
-        //        MessageBox.Show(str);
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("فایل مورد نظر در این آدرس وجود ندارد \n !لطفا مطمئن شوید آدرس فایل صحیح وارد شده باشد");
-        //    }
-        //}
-
-        private void CVButton_Click(object sender, EventArgs e)
+        UploadDoc doc = new UploadDoc
         {
-            OpenFileDialog openFile = new OpenFileDialog();
-            openFile.Filter = "PDF files (*.pdf)|*.pdf|All files (*.*)|*.*";
+            Motivation = motivationFileData,
+            Education = educationFileData,
+            JobExperience = jobExperienceFileData,
+            CV = cvFileData,
+            EmploymentReference = employmentReferenceFileData,
+            CreatedAt = DateTime.Now
+        };
 
-            if (openFile.ShowDialog() == DialogResult.OK)
-            {
-                dateiPfad = openFile.FileName;
-                CVStatusLabel.Text = "\u2714 بارگذاری شد";
-                MessageBox.Show(".فایل شما با موفقیت بارگذاری شد");
-            }
-            //string file = @"C:\Users\amirazinfar\source\repos\ProgrammingCSharp0407\ProgrammingCSharp0407\DOCs\Info.txt";
+        uploadDocService.Add(doc);
+        LoadListView();
+        ResetLabel();
+        motivationFileData = null;
+        educationFileData = null;
+        jobExperienceFileData =null;
+        cvFileData = null;
+        employmentReferenceFileData = null;
 
-            ////"Reading File using File.ReadAllLines()
+    }
+    public void LoadFile(out byte[] fileData)
+    {
+        OpenFileDialog openFile = new OpenFileDialog();
+        openFile.Filter = "PDF Files (*.pdf)|*.pdf";
 
-            //if (File.Exists(file))
-            //{
-            //    string[] lines = File.ReadAllLines(file);
-
-            //    foreach (string item in lines)
-            //        MessageBox.Show(item);
-            //}
-            //else
-            //{
-            //    MessageBox.Show("فایل مورد نظر در این آدرس وجود ندارد \n !لطفا مطمئن شوید آدرس فایل صحیح وارد شده باشد");
-            //}
-        }
-
-        private void EducationButton_Click(object sender, EventArgs e)
+        if (openFile.ShowDialog() == DialogResult.OK)
         {
-
-            OpenFileDialog openFile = new OpenFileDialog();
-            openFile.Filter = "PDF files (*.pdf)|*.pdf|All files (*.*)|*.*";
-
-            if (openFile.ShowDialog() == DialogResult.OK)
-            {
-                dateiPfad = openFile.FileName;
-                EducationStatusLabel.Text = "\u2714 بارگذاری شد";
-                MessageBox.Show(".فایل شما با موفقیت بارگذاری شد");
-            }
-            //string file = @"C:\Users\amirazinfar\source\repos\ProgrammingCSharp0407\ProgrammingCSharp0407\DOCs\Info.txt";
-
-            ////"Reading File using StreamReader
-
-            //if (File.Exists(file))
-            //{
-            //    StreamReader Textfile = new StreamReader(file);
-
-            //    string line;
-            //    while ((line = Textfile.ReadLine()) != null)
-            //    {
-            //        MessageBox.Show(line);
-            //    }
-            //    Textfile.Close();
-            //}
-            //else
-            //{
-            //    MessageBox.Show("فایل مورد نظر در این آدرس وجود ندارد \n !لطفا مطمئن شوید آدرس فایل صحیح وارد شده باشد");
-            //}
+            fileData = File.ReadAllBytes(openFile.FileName);
         }
-
-        private void WorkExperiencButton_Click(object sender, EventArgs e)
+        else
         {
-
-            OpenFileDialog openFile = new OpenFileDialog();
-            openFile.Filter = "PDF files (*.pdf)|*.pdf|All files (*.*)|*.*";
-
-            if (openFile.ShowDialog() == DialogResult.OK)
-            {
-                dateiPfad = openFile.FileName;
-                WorkExperiencStatusLabel.Text = "\u2714 بارگذاری شد";
-                MessageBox.Show(".فایل شما با موفقیت بارگذاری شد");
-            }
-            //string filepath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "DOCs", "Info.txt");
-
-            ////"Reading File by dynamic Path:
-            ////Path.Combine(AppDomain.CurrentDomain.BaseDirectory,"FoldersName","FileName");
-            ////and Reading File using File.ReadAllText();
-
-            //if (File.Exists(filepath))
-            //{
-            //    string ShowAllText = File.ReadAllText(filepath);
-
-            //    MessageBox.Show(ShowAllText);
-            //}
-            //else
-            //{
-            //    MessageBox.Show("فایل مورد نظر در این آدرس وجود ندارد \n !لطفا مطمئن شوید آدرس فایل صحیح وارد شده باشد");
-            //    //MessageBox.Show(filepath);
-            //}
+            fileData = null;
         }
-
-        private void WorkCertificateButton_Click(object sender, EventArgs e)
+    }
+    private void MotivationButton_Click(object sender, EventArgs e)
+    {
+        LoadFile(out motivationFileData);
+        if (motivationFileData != null)
         {
-            OpenFileDialog openFile = new OpenFileDialog();
-            openFile.Filter = "PDF files (*.pdf)|*.pdf|All files (*.*)|*.*";
-
-            if (openFile.ShowDialog() == DialogResult.OK)
-            {
-                dateiPfad = openFile.FileName;
-                WorkCerteficateLabel.Text = "\u2714 بارگذاری شد";
-                MessageBox.Show(".فایل شما با موفقیت بارگذاری شد");
-            }
-            //string filepath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "DOCs", "AddTextToFile.txt");
-
-            //if (File.Exists(filepath))
-            //{
-            //    //contents write on file (write on file) using AppendAllText(path:filepath, contents:"someting");
-
-            //    File.AppendAllText(path: filepath, contents: "Hier ist mein zweiets Codeline");
-            //    //now, read new added Text
-            //    string ShowAddedAllText = File.ReadAllText(filepath);
-
-            //    MessageBox.Show(ShowAddedAllText);
-            //    //if use File.WriteAllText-->overwrite all of text on file with my contents
-            //    //File.WriteAllText(filepath,"Hier ist mein zweiets Codeline");
-            //}
-            //else
-            //{
-            //    MessageBox.Show("فایل مورد نظر در این آدرس وجود ندارد \n !لطفا مطمئن شوید آدرس فایل صحیح وارد شده باشد");
-            //    //MessageBox.Show(filepath);
-            //}
+            MotivationStatusLabel.Text = "\u2714 بارگذاری شد";
+            MessageBox.Show(".فایل شما با موفقیت بارگذاری شد");
         }
-
-        private void CancelButton_Click(object sender, EventArgs e)
+    }
+    private void CVButton_Click(object sender, EventArgs e)
+    {
+        LoadFile(out cvFileData);
+        if (cvFileData != null)
         {
-            this.Close();
+            CVStatusLabel.Text = "\u2714 بارگذاری شد";
+            MessageBox.Show(".فایل شما با موفقیت بارگذاری شد");
         }
+    }
 
+    private void EducationButton_Click(object sender, EventArgs e)
+    {
+        LoadFile(out educationFileData);
+        if (educationFileData != null)
+        {
+            EducationStatusLabel.Text = "\u2714 بارگذاری شد";
+            MessageBox.Show(".فایل شما با موفقیت بارگذاری شد");
+        }
+    }
+    private void JobExperiencButton_Click(object sender, EventArgs e)
+    {
+        LoadFile(out jobExperienceFileData);
+        if (jobExperienceFileData != null)
+        {
+            JobExperiencStatusLabel.Text = "\u2714 بارگذاری شد";
+            MessageBox.Show(".فایل شما با موفقیت بارگذاری شد");
+        }
+    }
+    private void EmploymentReferenceButton_Click(object sender, EventArgs e)
+    {
+        LoadFile(out employmentReferenceFileData);
+        if (employmentReferenceFileData != null)
+        {
+            EmploymentReferenceLabel.Text = "\u2714 بارگذاری شد";
+            MessageBox.Show(".فایل شما با موفقیت بارگذاری شد");
+        }
+    }
+
+    private void CancelButton_Click(object sender, EventArgs e)
+    {
+        this.Close();
+    }
+    private void DeleteFileButton_Click(object sender, EventArgs e)
+    {
+        if (SelectedFileId == 0)
+        {
+            MessageBox.Show("!لطفا در ابتدا فایل مورد نظر را انتخاب کنید");
+            return;
+        }
+        uploadDocService.Delete(SelectedFileId);
+        LoadListView();
+
+        MessageBox.Show(".حذف فایل با موفقیت انجام شد");
+    }
+
+    private void UploadDocListView_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        if (UploadDocListView.SelectedItems.Count > 0)
+        {
+            SelectedFileId = int.Parse(UploadDocListView.SelectedItems[0].Text);
+        }
+    }
+    public void ResetLabel()
+    {
+        CVStatusLabel.Text = "بارگذاری نشده";
+        MotivationStatusLabel.Text = "بارگذاری نشده";
+        EmploymentReferenceLabel.Text = "بارگذاری نشده";
+        EducationStatusLabel.Text = "بارگذاری نشده";
+        JobExperiencStatusLabel.Text = "بارگذاری نشده";
         
     }
 }

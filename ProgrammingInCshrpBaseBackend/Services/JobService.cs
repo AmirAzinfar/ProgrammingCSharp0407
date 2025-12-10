@@ -9,9 +9,9 @@ public class JobService : IBaseService<Job>
     public void Add(Job job)
     {
         
-        const string ConectionString = "Server=.;Database=ProgrammingCSharp0407Db;Integrated Security=True;TrustServerCertificate=True;";
+        const string ConnectionString = "Server=.;Database=ProgrammingCSharp0407Db;Integrated Security=True;TrustServerCertificate=True;";
 
-        using(SqlConnection Connection = new SqlConnection(ConectionString))              
+        using(SqlConnection Connection = new SqlConnection(ConnectionString))              
         {
             
             Connection.Open ();

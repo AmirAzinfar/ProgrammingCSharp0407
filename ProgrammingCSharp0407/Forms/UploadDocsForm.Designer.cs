@@ -34,20 +34,30 @@
             label3 = new Label();
             label4 = new Label();
             CVButton = new Button();
-            WorkExperiencButton = new Button();
+            JobExperiencButton = new Button();
             EducationButton = new Button();
             label5 = new Label();
             label6 = new Label();
             label7 = new Label();
             MotivationStatusLabel = new Label();
             CVStatusLabel = new Label();
-            WorkExperiencStatusLabel = new Label();
+            JobExperiencStatusLabel = new Label();
             EducationStatusLabel = new Label();
-            WorkCerteficateLabel = new Label();
-            WorkCertificateButton = new Button();
+            EmploymentReferenceLabel = new Label();
+            EmploymentReferenceButton = new Button();
             label9 = new Label();
             ConfirmButton = new Button();
             CancelButton = new Button();
+            DeleteFileButton = new Button();
+            button2 = new Button();
+            UploadDocListView = new ListView();
+            Id = new ColumnHeader();
+            Motivation = new ColumnHeader();
+            Education = new ColumnHeader();
+            JobExperience = new ColumnHeader();
+            CV = new ColumnHeader();
+            EmploymentReference = new ColumnHeader();
+            CreatedAt = new ColumnHeader();
             SuspendLayout();
             // 
             // label1
@@ -75,7 +85,7 @@
             MotivationButton.Location = new Point(227, 120);
             MotivationButton.Name = "MotivationButton";
             MotivationButton.Size = new Size(180, 46);
-            MotivationButton.TabIndex = 2;
+            MotivationButton.TabIndex = 1;
             MotivationButton.Text = "اینجا آپلود کنید";
             MotivationButton.UseVisualStyleBackColor = false;
             MotivationButton.Click += MotivationButton_Click;
@@ -123,28 +133,28 @@
             CVButton.Location = new Point(227, 177);
             CVButton.Name = "CVButton";
             CVButton.Size = new Size(180, 46);
-            CVButton.TabIndex = 8;
+            CVButton.TabIndex = 2;
             CVButton.Text = "اینجا آپلود کنید";
             CVButton.UseVisualStyleBackColor = false;
             CVButton.Click += CVButton_Click;
             // 
-            // WorkExperiencButton
+            // JobExperiencButton
             // 
-            WorkExperiencButton.BackColor = Color.Transparent;
-            WorkExperiencButton.Cursor = Cursors.Hand;
-            WorkExperiencButton.FlatAppearance.BorderColor = Color.White;
-            WorkExperiencButton.FlatAppearance.BorderSize = 2;
-            WorkExperiencButton.FlatAppearance.MouseDownBackColor = Color.Silver;
-            WorkExperiencButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
-            WorkExperiencButton.FlatStyle = FlatStyle.Flat;
-            WorkExperiencButton.ForeColor = Color.Cyan;
-            WorkExperiencButton.Location = new Point(227, 293);
-            WorkExperiencButton.Name = "WorkExperiencButton";
-            WorkExperiencButton.Size = new Size(180, 46);
-            WorkExperiencButton.TabIndex = 10;
-            WorkExperiencButton.Text = "اینجا آپلود کنید";
-            WorkExperiencButton.UseVisualStyleBackColor = false;
-            WorkExperiencButton.Click += WorkExperiencButton_Click;
+            JobExperiencButton.BackColor = Color.Transparent;
+            JobExperiencButton.Cursor = Cursors.Hand;
+            JobExperiencButton.FlatAppearance.BorderColor = Color.White;
+            JobExperiencButton.FlatAppearance.BorderSize = 2;
+            JobExperiencButton.FlatAppearance.MouseDownBackColor = Color.Silver;
+            JobExperiencButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
+            JobExperiencButton.FlatStyle = FlatStyle.Flat;
+            JobExperiencButton.ForeColor = Color.Cyan;
+            JobExperiencButton.Location = new Point(227, 293);
+            JobExperiencButton.Name = "JobExperiencButton";
+            JobExperiencButton.Size = new Size(180, 46);
+            JobExperiencButton.TabIndex = 4;
+            JobExperiencButton.Text = "اینجا آپلود کنید";
+            JobExperiencButton.UseVisualStyleBackColor = false;
+            JobExperiencButton.Click += JobExperiencButton_Click;
             // 
             // EducationButton
             // 
@@ -159,7 +169,7 @@
             EducationButton.Location = new Point(227, 235);
             EducationButton.Name = "EducationButton";
             EducationButton.Size = new Size(180, 46);
-            EducationButton.TabIndex = 9;
+            EducationButton.TabIndex = 3;
             EducationButton.Text = "اینجا آپلود کنید";
             EducationButton.UseVisualStyleBackColor = false;
             EducationButton.Click += EducationButton_Click;
@@ -194,9 +204,9 @@
             label7.ForeColor = Color.White;
             label7.Location = new Point(53, 67);
             label7.Name = "label7";
-            label7.Size = new Size(844, 32);
+            label7.Size = new Size(824, 32);
             label7.TabIndex = 13;
-            label7.Text = "-----------------------------------------------------------------------------------";
+            label7.Text = "---------------------------------------------------------------------------------";
             // 
             // MotivationStatusLabel
             // 
@@ -222,17 +232,17 @@
             CVStatusLabel.TabIndex = 15;
             CVStatusLabel.Text = "بارگذاری نشده";
             // 
-            // WorkExperiencStatusLabel
+            // JobExperiencStatusLabel
             // 
-            WorkExperiencStatusLabel.AutoSize = true;
-            WorkExperiencStatusLabel.BackColor = Color.Transparent;
-            WorkExperiencStatusLabel.FlatStyle = FlatStyle.Popup;
-            WorkExperiencStatusLabel.ForeColor = Color.White;
-            WorkExperiencStatusLabel.Location = new Point(46, 302);
-            WorkExperiencStatusLabel.Name = "WorkExperiencStatusLabel";
-            WorkExperiencStatusLabel.Size = new Size(151, 32);
-            WorkExperiencStatusLabel.TabIndex = 17;
-            WorkExperiencStatusLabel.Text = "بارگذاری نشده";
+            JobExperiencStatusLabel.AutoSize = true;
+            JobExperiencStatusLabel.BackColor = Color.Transparent;
+            JobExperiencStatusLabel.FlatStyle = FlatStyle.Popup;
+            JobExperiencStatusLabel.ForeColor = Color.White;
+            JobExperiencStatusLabel.Location = new Point(46, 302);
+            JobExperiencStatusLabel.Name = "JobExperiencStatusLabel";
+            JobExperiencStatusLabel.Size = new Size(151, 32);
+            JobExperiencStatusLabel.TabIndex = 17;
+            JobExperiencStatusLabel.Text = "بارگذاری نشده";
             // 
             // EducationStatusLabel
             // 
@@ -246,35 +256,35 @@
             EducationStatusLabel.TabIndex = 16;
             EducationStatusLabel.Text = "بارگذاری نشده";
             // 
-            // WorkCerteficateLabel
+            // EmploymentReferenceLabel
             // 
-            WorkCerteficateLabel.AutoSize = true;
-            WorkCerteficateLabel.BackColor = Color.Transparent;
-            WorkCerteficateLabel.FlatStyle = FlatStyle.Popup;
-            WorkCerteficateLabel.ForeColor = Color.White;
-            WorkCerteficateLabel.Location = new Point(42, 361);
-            WorkCerteficateLabel.Name = "WorkCerteficateLabel";
-            WorkCerteficateLabel.Size = new Size(151, 32);
-            WorkCerteficateLabel.TabIndex = 20;
-            WorkCerteficateLabel.Text = "بارگذاری نشده";
+            EmploymentReferenceLabel.AutoSize = true;
+            EmploymentReferenceLabel.BackColor = Color.Transparent;
+            EmploymentReferenceLabel.FlatStyle = FlatStyle.Popup;
+            EmploymentReferenceLabel.ForeColor = Color.White;
+            EmploymentReferenceLabel.Location = new Point(42, 361);
+            EmploymentReferenceLabel.Name = "EmploymentReferenceLabel";
+            EmploymentReferenceLabel.Size = new Size(151, 32);
+            EmploymentReferenceLabel.TabIndex = 20;
+            EmploymentReferenceLabel.Text = "بارگذاری نشده";
             // 
-            // WorkCertificateButton
+            // EmploymentReferenceButton
             // 
-            WorkCertificateButton.BackColor = Color.Transparent;
-            WorkCertificateButton.Cursor = Cursors.Hand;
-            WorkCertificateButton.FlatAppearance.BorderColor = Color.White;
-            WorkCertificateButton.FlatAppearance.BorderSize = 2;
-            WorkCertificateButton.FlatAppearance.MouseDownBackColor = Color.Silver;
-            WorkCertificateButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
-            WorkCertificateButton.FlatStyle = FlatStyle.Flat;
-            WorkCertificateButton.ForeColor = Color.Cyan;
-            WorkCertificateButton.Location = new Point(227, 352);
-            WorkCertificateButton.Name = "WorkCertificateButton";
-            WorkCertificateButton.Size = new Size(180, 46);
-            WorkCertificateButton.TabIndex = 19;
-            WorkCertificateButton.Text = "اینجا آپلود کنید";
-            WorkCertificateButton.UseVisualStyleBackColor = false;
-            WorkCertificateButton.Click += WorkCertificateButton_Click;
+            EmploymentReferenceButton.BackColor = Color.Transparent;
+            EmploymentReferenceButton.Cursor = Cursors.Hand;
+            EmploymentReferenceButton.FlatAppearance.BorderColor = Color.White;
+            EmploymentReferenceButton.FlatAppearance.BorderSize = 2;
+            EmploymentReferenceButton.FlatAppearance.MouseDownBackColor = Color.Silver;
+            EmploymentReferenceButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
+            EmploymentReferenceButton.FlatStyle = FlatStyle.Flat;
+            EmploymentReferenceButton.ForeColor = Color.Cyan;
+            EmploymentReferenceButton.Location = new Point(227, 352);
+            EmploymentReferenceButton.Name = "EmploymentReferenceButton";
+            EmploymentReferenceButton.Size = new Size(180, 46);
+            EmploymentReferenceButton.TabIndex = 5;
+            EmploymentReferenceButton.Text = "اینجا آپلود کنید";
+            EmploymentReferenceButton.UseVisualStyleBackColor = false;
+            EmploymentReferenceButton.Click += EmploymentReferenceButton_Click;
             // 
             // label9
             // 
@@ -297,12 +307,13 @@
             ConfirmButton.FlatStyle = FlatStyle.Flat;
             ConfirmButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             ConfirmButton.ForeColor = Color.Black;
-            ConfirmButton.Location = new Point(467, 455);
+            ConfirmButton.Location = new Point(663, 452);
             ConfirmButton.Name = "ConfirmButton";
             ConfirmButton.Size = new Size(197, 79);
-            ConfirmButton.TabIndex = 21;
-            ConfirmButton.Text = "تایید";
+            ConfirmButton.TabIndex = 6;
+            ConfirmButton.Text = "ثبت مدارک";
             ConfirmButton.UseVisualStyleBackColor = false;
+            ConfirmButton.Click += ConfirmButton_Click;
             // 
             // CancelButton
             // 
@@ -315,33 +326,129 @@
             CancelButton.FlatStyle = FlatStyle.Flat;
             CancelButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             CancelButton.ForeColor = Color.Black;
-            CancelButton.Location = new Point(682, 455);
+            CancelButton.Location = new Point(42, 452);
             CancelButton.Name = "CancelButton";
             CancelButton.Size = new Size(197, 79);
-            CancelButton.TabIndex = 22;
+            CancelButton.TabIndex = 9;
             CancelButton.Text = "بستن صفحه ";
             CancelButton.UseVisualStyleBackColor = false;
             CancelButton.Click += CancelButton_Click;
+            // 
+            // DeleteFileButton
+            // 
+            DeleteFileButton.BackColor = Color.FromArgb(224, 224, 224);
+            DeleteFileButton.Cursor = Cursors.Hand;
+            DeleteFileButton.FlatAppearance.BorderColor = Color.White;
+            DeleteFileButton.FlatAppearance.BorderSize = 2;
+            DeleteFileButton.FlatAppearance.MouseDownBackColor = Color.Silver;
+            DeleteFileButton.FlatAppearance.MouseOverBackColor = Color.Aqua;
+            DeleteFileButton.FlatStyle = FlatStyle.Flat;
+            DeleteFileButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            DeleteFileButton.ForeColor = Color.Black;
+            DeleteFileButton.Location = new Point(456, 452);
+            DeleteFileButton.Name = "DeleteFileButton";
+            DeleteFileButton.Size = new Size(197, 79);
+            DeleteFileButton.TabIndex = 7;
+            DeleteFileButton.Text = "حذف فایل";
+            DeleteFileButton.UseVisualStyleBackColor = false;
+            DeleteFileButton.Click += DeleteFileButton_Click;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.FromArgb(224, 224, 224);
+            button2.Cursor = Cursors.Hand;
+            button2.FlatAppearance.BorderColor = Color.White;
+            button2.FlatAppearance.BorderSize = 2;
+            button2.FlatAppearance.MouseDownBackColor = Color.Silver;
+            button2.FlatAppearance.MouseOverBackColor = Color.Aqua;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.ForeColor = Color.Black;
+            button2.Location = new Point(249, 452);
+            button2.Name = "button2";
+            button2.Size = new Size(197, 79);
+            button2.TabIndex = 8;
+            button2.Text = "به روز رسانی";
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // UploadDocListView
+            // 
+            UploadDocListView.BackColor = Color.DarkSeaGreen;
+            UploadDocListView.Columns.AddRange(new ColumnHeader[] { Id, Motivation, Education, JobExperience, CV, EmploymentReference, CreatedAt });
+            UploadDocListView.ForeColor = Color.FromArgb(64, 64, 64);
+            UploadDocListView.FullRowSelect = true;
+            UploadDocListView.GridLines = true;
+            UploadDocListView.HeaderStyle = ColumnHeaderStyle.Nonclickable;
+            UploadDocListView.Location = new Point(42, 560);
+            UploadDocListView.Name = "UploadDocListView";
+            UploadDocListView.Size = new Size(818, 440);
+            UploadDocListView.TabIndex = 10;
+            UploadDocListView.UseCompatibleStateImageBehavior = false;
+            UploadDocListView.View = View.Details;
+            UploadDocListView.SelectedIndexChanged += UploadDocListView_SelectedIndexChanged;
+            // 
+            // Id
+            // 
+            Id.Text = "Id";
+            Id.Width = 50;
+            // 
+            // Motivation
+            // 
+            Motivation.Text = "Motivation";
+            Motivation.TextAlign = HorizontalAlignment.Center;
+            Motivation.Width = 150;
+            // 
+            // Education
+            // 
+            Education.Text = "Education";
+            Education.TextAlign = HorizontalAlignment.Center;
+            Education.Width = 150;
+            // 
+            // JobExperience
+            // 
+            JobExperience.Text = "JobExperience";
+            JobExperience.TextAlign = HorizontalAlignment.Center;
+            JobExperience.Width = 200;
+            // 
+            // CV
+            // 
+            CV.Text = "CV";
+            CV.TextAlign = HorizontalAlignment.Center;
+            // 
+            // EmploymentReference
+            // 
+            EmploymentReference.Text = "EmploymentReference";
+            EmploymentReference.TextAlign = HorizontalAlignment.Center;
+            EmploymentReference.Width = 230;
+            // 
+            // CreatedAt
+            // 
+            CreatedAt.Text = "CreatedAt";
+            CreatedAt.TextAlign = HorizontalAlignment.Center;
+            CreatedAt.Width = 150;
             // 
             // UploadDocsForm
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DimGray;
-            ClientSize = new Size(917, 576);
+            ClientSize = new Size(902, 1012);
+            Controls.Add(UploadDocListView);
+            Controls.Add(DeleteFileButton);
+            Controls.Add(button2);
             Controls.Add(CancelButton);
             Controls.Add(ConfirmButton);
             Controls.Add(label6);
             Controls.Add(label5);
-            Controls.Add(WorkCerteficateLabel);
-            Controls.Add(WorkCertificateButton);
+            Controls.Add(EmploymentReferenceLabel);
+            Controls.Add(EmploymentReferenceButton);
             Controls.Add(label9);
-            Controls.Add(WorkExperiencStatusLabel);
+            Controls.Add(JobExperiencStatusLabel);
             Controls.Add(EducationStatusLabel);
             Controls.Add(CVStatusLabel);
             Controls.Add(MotivationStatusLabel);
             Controls.Add(label7);
-            Controls.Add(WorkExperiencButton);
+            Controls.Add(JobExperiencButton);
             Controls.Add(EducationButton);
             Controls.Add(CVButton);
             Controls.Add(label4);
@@ -350,7 +457,9 @@
             Controls.Add(MotivationButton);
             Controls.Add(label1);
             Name = "UploadDocsForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "صفحه بارگذاری مدارک";
+            TopMost = true;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -362,19 +471,29 @@
         private Label label3;
         private Label label4;
         private Button CVButton;
-        private Button WorkExperiencButton;
+        private Button JobExperiencButton;
         private Button EducationButton;
         private Label label5;
         private Label label6;
         private Label label7;
         private Label MotivationStatusLabel;
         private Label CVStatusLabel;
-        private Label WorkExperiencStatusLabel;
+        private Label JobExperiencStatusLabel;
         private Label EducationStatusLabel;
-        private Label WorkCerteficateLabel;
-        private Button WorkCertificateButton;
+        private Label EmploymentReferenceLabel;
+        private Button EmploymentReferenceButton;
         private Label label9;
         private Button ConfirmButton;
         private Button CancelButton;
+        private Button DeleteFileButton;
+        private Button button2;
+        private ListView UploadDocListView;
+        private ColumnHeader Id;
+        private ColumnHeader Motivation;
+        private ColumnHeader Education;
+        private ColumnHeader JobExperience;
+        private ColumnHeader CV;
+        private ColumnHeader EmploymentReference;
+        private ColumnHeader CreatedAt;
     }
 }

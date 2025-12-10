@@ -337,7 +337,9 @@
             Controls.Add(label1);
             Controls.Add(pictureBox1);
             Name = "UserManagmentForm";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "ثبت نام کاربر";
+            TopMost = true;
             ((System.ComponentModel.ISupportInitialize)UserManageDataGridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

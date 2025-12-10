@@ -3,7 +3,6 @@ using ProgrammingInCshrpBaseBackend.Services;
 
 
 namespace ProgrammingCSharp0407.Forms;
-
 public partial class UploadDocsForm : Form
 {
     int SelectedFileId = 0;
@@ -165,6 +164,5 @@ public partial class UploadDocsForm : Form
         EmploymentReferenceLabel.Text = "بارگذاری نشده";
         EducationStatusLabel.Text = "بارگذاری نشده";
         JobExperiencStatusLabel.Text = "بارگذاری نشده";
-        
     }
 }

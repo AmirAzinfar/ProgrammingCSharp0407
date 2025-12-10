@@ -83,7 +83,7 @@ public partial class JobManagmentForm : Form
                 CityComboBox.Items.AddRange(new string[] {"مشهد"});
                 break;
 
-            case "تهران ":
+            case "تهران":
                 CityComboBox.Items.Clear();
                 CityComboBox.Items.AddRange(new string[] {"تهران", "قم"});
                 break;
@@ -93,7 +93,7 @@ public partial class JobManagmentForm : Form
                 CityComboBox.Items.AddRange(new string[] {"نجف آباد", "اصفهان"});
                 break;
 
-            case "فارس ":
+            case "فارس":
                 CityComboBox.Items.Clear();
                 CityComboBox.Items.AddRange(new string[] {"شیراز", "فسا"});
                 break;

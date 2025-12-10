@@ -47,6 +47,7 @@
             // button1
             // 
             button1.BackColor = Color.Transparent;
+            button1.Cursor = Cursors.Hand;
             button1.Dock = DockStyle.Bottom;
             button1.FlatAppearance.MouseOverBackColor = Color.Cyan;
             button1.FlatStyle = FlatStyle.Flat;

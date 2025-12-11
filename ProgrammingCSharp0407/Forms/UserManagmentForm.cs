@@ -7,6 +7,7 @@ namespace ProgrammingCSharp0407.Forms;
 
 public partial class UserManagmentForm : Form
 {
+   
     int SelectedUserId = 0;
     UserService userService;
     //List<User> users;
@@ -18,6 +19,7 @@ public partial class UserManagmentForm : Form
         UserManageDataGridView.DataSource = userService.GetAll();
         UserManageDataGridView.Refresh();
     }
+    
     private void RegisterUserbutton_Click(object sender, EventArgs e)
     {
         // Data collect from user
@@ -87,14 +89,13 @@ public partial class UserManagmentForm : Form
 
     private void SearchButton_Click(object sender, EventArgs e)
     {
-        string TextSearch = SearchTextBox.Text.Trim();
-        if (string.IsNullOrEmpty(TextSearch))
+        string text = SearchTextBox.Text.Trim();
+
+        if (string.IsNullOrEmpty(text))
         {
             MessageBox.Show("!کلمه مورد نظر جهت جستجو را در کادر جستجو وارد کنید");
             return;
         }
-
-        //to continue, I nees foreach and Information abaut DataGridViewCell
     }
 
     private void CloseButton_Click(object sender, EventArgs e)
@@ -128,7 +129,7 @@ public partial class UserManagmentForm : Form
     {
         // I need id
         // Service call
-        if (SelectedUserId==0)
+        if (SelectedUserId == 0)
         {
             MessageBox.Show("!لطفا در ابتدا کاربر مورد نظر را انتخاب کنید");
             return;
@@ -151,6 +152,11 @@ public partial class UserManagmentForm : Form
         DateTime birthday = BirthdayDateTimePicker.Value;
         DateTime createdAt = DateTime.Now;
 
+        if (SelectedUserId == 0)
+        {
+            MessageBox.Show("!لطفا در ابتدا کاربر مورد نظر را انتخاب کنید");
+            return;
+        }
 
         if (string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName))
         {
@@ -187,6 +193,11 @@ public partial class UserManagmentForm : Form
         UserManageDataGridView.Refresh();
 
         MessageBox.Show(".به روز رسانی با موفقیت انجام شد");
+
+    }
+
+    private void UserManagmentForm_Load(object sender, EventArgs e)
+    {
 
     }
 }

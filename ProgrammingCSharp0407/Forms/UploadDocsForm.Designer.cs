@@ -49,7 +49,7 @@
             ConfirmButton = new Button();
             CancelButton = new Button();
             DeleteFileButton = new Button();
-            button2 = new Button();
+            UpdateUploadButton = new Button();
             UploadDocListView = new ListView();
             Id = new ColumnHeader();
             Motivation = new ColumnHeader();
@@ -353,23 +353,24 @@
             DeleteFileButton.UseVisualStyleBackColor = false;
             DeleteFileButton.Click += DeleteFileButton_Click;
             // 
-            // button2
+            // UpdateUploadButton
             // 
-            button2.BackColor = Color.FromArgb(224, 224, 224);
-            button2.Cursor = Cursors.Hand;
-            button2.FlatAppearance.BorderColor = Color.White;
-            button2.FlatAppearance.BorderSize = 2;
-            button2.FlatAppearance.MouseDownBackColor = Color.Silver;
-            button2.FlatAppearance.MouseOverBackColor = Color.Aqua;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.Black;
-            button2.Location = new Point(249, 452);
-            button2.Name = "button2";
-            button2.Size = new Size(197, 79);
-            button2.TabIndex = 8;
-            button2.Text = "به روز رسانی";
-            button2.UseVisualStyleBackColor = false;
+            UpdateUploadButton.BackColor = Color.FromArgb(224, 224, 224);
+            UpdateUploadButton.Cursor = Cursors.Hand;
+            UpdateUploadButton.FlatAppearance.BorderColor = Color.White;
+            UpdateUploadButton.FlatAppearance.BorderSize = 2;
+            UpdateUploadButton.FlatAppearance.MouseDownBackColor = Color.Silver;
+            UpdateUploadButton.FlatAppearance.MouseOverBackColor = Color.Aqua;
+            UpdateUploadButton.FlatStyle = FlatStyle.Flat;
+            UpdateUploadButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            UpdateUploadButton.ForeColor = Color.Black;
+            UpdateUploadButton.Location = new Point(249, 452);
+            UpdateUploadButton.Name = "UpdateUploadButton";
+            UpdateUploadButton.Size = new Size(197, 79);
+            UpdateUploadButton.TabIndex = 8;
+            UpdateUploadButton.Text = "به روز رسانی";
+            UpdateUploadButton.UseVisualStyleBackColor = false;
+            UpdateUploadButton.Click += UpdateUploadButton_Click;
             // 
             // UploadDocListView
             // 
@@ -435,7 +436,7 @@
             ClientSize = new Size(902, 1012);
             Controls.Add(UploadDocListView);
             Controls.Add(DeleteFileButton);
-            Controls.Add(button2);
+            Controls.Add(UpdateUploadButton);
             Controls.Add(CancelButton);
             Controls.Add(ConfirmButton);
             Controls.Add(label6);
@@ -486,7 +487,7 @@
         private Button ConfirmButton;
         private Button CancelButton;
         private Button DeleteFileButton;
-        private Button button2;
+        private Button UpdateUploadButton;
         private ListView UploadDocListView;
         private ColumnHeader Id;
         private ColumnHeader Motivation;

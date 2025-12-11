@@ -28,7 +28,11 @@ public partial class ContactWithUsForm : Form
         textContact + Environment.NewLine +
         "------------------------" + Environment.NewLine;
 
-
+        if (firstnameContact =="" && lastNameContact =="" && subjectContact == "" && textContact == "")
+        {
+            MessageBox.Show("!لطفا بخش های ستاره دار را کامل کنید");
+            return;
+        }
         string filepath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "DOCs", "AddTextToFile.txt");
 
         if (File.Exists(filepath))

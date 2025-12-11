@@ -3,6 +3,7 @@ using ProgrammingInCshrpBaseBackend.Services;
 
 
 namespace ProgrammingCSharp0407.Forms;
+
 public partial class UploadDocsForm : Form
 {
     int SelectedFileId = 0;
@@ -67,7 +68,7 @@ public partial class UploadDocsForm : Form
         ResetLabel();
         motivationFileData = null;
         educationFileData = null;
-        jobExperienceFileData =null;
+        jobExperienceFileData = null;
         cvFileData = null;
         employmentReferenceFileData = null;
 
@@ -164,5 +165,45 @@ public partial class UploadDocsForm : Form
         EmploymentReferenceLabel.Text = "بارگذاری نشده";
         EducationStatusLabel.Text = "بارگذاری نشده";
         JobExperiencStatusLabel.Text = "بارگذاری نشده";
+    }
+
+    private void UpdateUploadButton_Click(object sender, EventArgs e)
+    {
+        if (SelectedFileId == 0)
+        {
+            MessageBox.Show("!لطفاً ابتدا یک فایل را انتخاب کنید");
+            return;
+        }
+        if (motivationFileData == null &&
+            educationFileData == null &&
+            jobExperienceFileData == null &&
+            cvFileData == null &&
+            employmentReferenceFileData == null)
+        {
+            MessageBox.Show("!لطفاً حداقل یک فایل را بارگذاری کنید");
+            return;
+        }
+        UploadDoc doc = new UploadDoc
+        {
+            Id = SelectedFileId,
+            Motivation = motivationFileData,
+            Education = educationFileData,
+            JobExperience = jobExperienceFileData,
+            CV = cvFileData,
+            EmploymentReference = employmentReferenceFileData,
+            CreatedAt = DateTime.Now
+        };
+
+        uploadDocService.Update(doc);
+        UploadDocListView.Items.Clear();
+        LoadListView();
+        UploadDocListView.Refresh();
+
+        ResetLabel();
+        motivationFileData = null;
+        educationFileData = null;
+        jobExperienceFileData = null;
+        cvFileData = null;
+        employmentReferenceFileData = null;
     }
 }

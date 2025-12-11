@@ -340,6 +340,7 @@
             StartPosition = FormStartPosition.CenterParent;
             Text = "ثبت نام کاربر";
             TopMost = true;
+            Load += UserManagmentForm_Load;
             ((System.ComponentModel.ISupportInitialize)UserManageDataGridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
@@ -358,7 +359,6 @@
         private TextBox PhoneNumberTextBox;
         private Button RegisterUserbutton;
         private Button ResetRegisterbutton;
-        private DataGridView UserManageDataGridView;
         private Button SearchButton;
         private Label label5;
         private PictureBox pictureBox1;
@@ -371,5 +371,6 @@
         private Button CloseButton;
         private Button AdressUserButton;
         private Label label8;
+        public DataGridView UserManageDataGridView;
     }
 }

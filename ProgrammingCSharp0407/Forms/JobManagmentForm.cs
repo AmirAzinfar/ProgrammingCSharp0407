@@ -268,6 +268,12 @@ public partial class JobManagmentForm : Form
         DateTime dateOfStart;
         string choiceStart;
 
+        if (SelectedJobId == 0)
+        {
+            MessageBox.Show("!لطفاً ابتدا بخش مورد نظر را انتخاب کنید");
+            return;
+        }
+
 
         Job job = new Job
         {
@@ -327,7 +333,7 @@ public partial class JobManagmentForm : Form
 
         JobAppliedDataGridView.DataSource = null;
         JobAppliedDataGridView.DataSource = jobService.GetAll();
-    JobAppliedDataGridView: Refresh();
+        JobAppliedDataGridView: Refresh();
 
         MessageBox.Show(".به روز رسانی با موفقیت انجام شد");
     }    

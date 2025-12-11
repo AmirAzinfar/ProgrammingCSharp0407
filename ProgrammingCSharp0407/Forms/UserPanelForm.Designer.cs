@@ -36,5 +36,6 @@
         private ToolStripMenuItem AdminChangeToolStripMenuItem;
         private ToolStripMenuItem ExitToolStripMenuItem;
         private PictureBox pictureBox1;
+        private ToolStripMenuItem InviteToolStripMenuItem;
     }
 }

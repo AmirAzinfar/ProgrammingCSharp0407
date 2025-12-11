@@ -40,6 +40,10 @@
             LastNameContactTextBox = new TextBox();
             SubjectContactTextBox = new TextBox();
             label5 = new Label();
+            label6 = new Label();
+            label7 = new Label();
+            label8 = new Label();
+            label9 = new Label();
             SuspendLayout();
             // 
             // label1
@@ -139,47 +143,92 @@
             // 
             // FirstNameContactTextBox
             // 
-            FirstNameContactTextBox.BackColor = Color.White;
+            FirstNameContactTextBox.BackColor = Color.WhiteSmoke;
             FirstNameContactTextBox.ForeColor = Color.Black;
             FirstNameContactTextBox.Location = new Point(50, 116);
             FirstNameContactTextBox.Name = "FirstNameContactTextBox";
             FirstNameContactTextBox.Size = new Size(365, 39);
-            FirstNameContactTextBox.TabIndex = 8;
+            FirstNameContactTextBox.TabIndex = 1;
             // 
             // LastNameContactTextBox
             // 
-            LastNameContactTextBox.BackColor = Color.White;
+            LastNameContactTextBox.BackColor = Color.WhiteSmoke;
             LastNameContactTextBox.ForeColor = Color.Black;
             LastNameContactTextBox.Location = new Point(50, 180);
             LastNameContactTextBox.Name = "LastNameContactTextBox";
             LastNameContactTextBox.Size = new Size(365, 39);
-            LastNameContactTextBox.TabIndex = 9;
+            LastNameContactTextBox.TabIndex = 2;
             // 
             // SubjectContactTextBox
             // 
-            SubjectContactTextBox.BackColor = Color.White;
+            SubjectContactTextBox.BackColor = Color.WhiteSmoke;
             SubjectContactTextBox.ForeColor = Color.Black;
             SubjectContactTextBox.Location = new Point(50, 244);
             SubjectContactTextBox.Name = "SubjectContactTextBox";
             SubjectContactTextBox.Size = new Size(365, 39);
-            SubjectContactTextBox.TabIndex = 10;
+            SubjectContactTextBox.TabIndex = 3;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.Blue;
             label5.Location = new Point(440, 29);
             label5.Name = "label5";
             label5.Size = new Size(132, 45);
             label5.TabIndex = 11;
             label5.Text = "پیام شما";
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.BackColor = Color.Transparent;
+            label6.Location = new Point(564, 116);
+            label6.Name = "label6";
+            label6.Size = new Size(24, 32);
+            label6.TabIndex = 12;
+            label6.Text = "*";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.BackColor = Color.Transparent;
+            label7.Location = new Point(564, 180);
+            label7.Name = "label7";
+            label7.Size = new Size(24, 32);
+            label7.TabIndex = 13;
+            label7.Text = "*";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.BackColor = Color.Transparent;
+            label8.Location = new Point(564, 247);
+            label8.Name = "label8";
+            label8.Size = new Size(24, 32);
+            label8.TabIndex = 14;
+            label8.Text = "*";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.BackColor = Color.Transparent;
+            label9.Location = new Point(564, 311);
+            label9.Name = "label9";
+            label9.Size = new Size(24, 32);
+            label9.TabIndex = 15;
+            label9.Text = "*";
+            // 
             // ContactWithUsForm
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.MediumAquamarine;
-            ClientSize = new Size(633, 815);
+            ClientSize = new Size(633, 821);
+            Controls.Add(label9);
+            Controls.Add(label8);
+            Controls.Add(label7);
+            Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(SubjectContactTextBox);
             Controls.Add(LastNameContactTextBox);
@@ -195,6 +244,7 @@
             Name = "ContactWithUsForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "تماس با ما";
+            TopMost = true;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -213,5 +263,9 @@
         private TextBox LastNameContactTextBox;
         private TextBox SubjectContactTextBox;
         private Label label5;
+        private Label label6;
+        private Label label7;
+        private Label label8;
+        private Label label9;
     }
 }

@@ -170,7 +170,7 @@ public partial class JobManagmentForm : Form
         job.ChoiceStart = string.Join(",", Choices);
 
         jobService.Add(job);
-        RefreshJobManagmentForm();
+        ReloadJobManagmentEvent.Invoke();
         MessageBox.Show(".درخواست شغلی شما با موفقیت ثبت شد");
     }
 
@@ -249,7 +249,7 @@ public partial class JobManagmentForm : Form
             return;
         }
         jobService.Delete(SelectedJobId);
-        RefreshJobManagmentForm();
+        ReloadJobManagmentEvent.Invoke();
         MessageBox.Show(".لغو درخواست با موفقیت انجام شد");
     }
 
@@ -323,7 +323,7 @@ public partial class JobManagmentForm : Form
         job.ChoiceStart = string.Join(",", Choices);
 
         jobService.Update(job);
-        RefreshJobManagmentForm();
+        ReloadJobManagmentEvent.Invoke();
         MessageBox.Show(".به روز رسانی با موفقیت انجام شد");
     }    
     public void RefreshJobManagmentForm()

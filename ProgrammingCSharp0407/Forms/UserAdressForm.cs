@@ -44,7 +44,7 @@ public partial class UserAdressForm : Form
 
         Adress adress = new Adress(street: Street, houseNumber: HouseNumber, postalCode: PostalCode);
         adressService.Add(adress);
-        RefreshUserAdressForm();
+        ReloadAdressEvent.Invoke();
         MessageBox.Show(".آدرس کاربر با موفقیت ثبت شد");
 
     }
@@ -112,8 +112,7 @@ public partial class UserAdressForm : Form
             PostalCode = PostalCode,
         };
         adressService.Update(adress);
-
-        RefreshUserAdressForm();
+        ReloadAdressEvent.Invoke();
         MessageBox.Show(".به روز رسانی با موفقیت انجام شد");
     }
 
@@ -127,7 +126,7 @@ public partial class UserAdressForm : Form
             return;
         }
         adressService.Delete(SelectedAdressId);
-        RefreshUserAdressForm();
+        ReloadAdressEvent.Invoke();
         MessageBox.Show(".حذف اطلاعات کاربر با موفقیت انجام شد");
     }
     public void RefreshUserAdressForm()

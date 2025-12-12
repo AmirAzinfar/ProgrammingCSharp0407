@@ -71,9 +71,7 @@ public partial class UserManagmentForm : Form
         User user = new User(firstName: firstName, lastName: lastName, birthDay: birthday, nationalCode: nationalCode, phoneNumber: phonNumber);
         //users.Add(user);
         userService.Add(user);
-
-        RefreshUserManagmentForm();
-
+        ReloadDataEvent.Invoke();
         MessageBox.Show(".ثبت نام شما با موفقیت انجام شد");
 
     }
@@ -139,9 +137,7 @@ public partial class UserManagmentForm : Form
             return;
         }
         userService.Delete(SelectedUserId);
-
-        RefreshUserManagmentForm();
-
+        ReloadDataEvent.Invoke();
         MessageBox.Show(".حذف اطلاعات کاربر با موفقیت انجام شد");
 
     }
@@ -191,9 +187,7 @@ public partial class UserManagmentForm : Form
         };
         //users.Add(user);
         userService.Update(user);
-
-        RefreshUserManagmentForm();
-
+        ReloadDataEvent.Invoke();
         MessageBox.Show(".به روز رسانی با موفقیت انجام شد");
     }
     public void RefreshUserManagmentForm()

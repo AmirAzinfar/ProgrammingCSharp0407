@@ -195,6 +195,7 @@ public partial class UploadDocsForm : Form
         };
 
         uploadDocService.Update(doc);
+
         UploadDocListView.Items.Clear();
         LoadListView();
         UploadDocListView.Refresh();

@@ -6,14 +6,17 @@ namespace ProgrammingCSharp0407.Forms;
 public partial class UserAdressForm : Form
 {
     int SelectedAdressId = 0;
-
     AdressService adressService;
+
+    public delegate void ReloadAdress();
+    public event ReloadAdress ReloadAdressEvent;
     public UserAdressForm()
     {
         InitializeComponent();
         adressService = new AdressService();
-        AdressDataGridView.DataSource = adressService.GetAll();
-        AdressDataGridView.Refresh();
+
+        ReloadAdressEvent += RefreshUserAdressForm;
+        ReloadAdressEvent.Invoke();
     }
 
     private void RegistAdressButton_Click(object sender, EventArgs e)
@@ -41,10 +44,7 @@ public partial class UserAdressForm : Form
 
         Adress adress = new Adress(street: Street, houseNumber: HouseNumber, postalCode: PostalCode);
         adressService.Add(adress);
-        AdressDataGridView.DataSource = null;
-        AdressDataGridView.DataSource = adressService.GetAll();
-        AdressDataGridView.Refresh();
-
+        RefreshUserAdressForm();
         MessageBox.Show(".آدرس کاربر با موفقیت ثبت شد");
 
     }
@@ -112,10 +112,8 @@ public partial class UserAdressForm : Form
             PostalCode = PostalCode,
         };
         adressService.Update(adress);
-        AdressDataGridView.DataSource = null;
-        AdressDataGridView.DataSource = adressService.GetAll();
-        AdressDataGridView.Refresh();
 
+        RefreshUserAdressForm();
         MessageBox.Show(".به روز رسانی با موفقیت انجام شد");
     }
 
@@ -129,9 +127,13 @@ public partial class UserAdressForm : Form
             return;
         }
         adressService.Delete(SelectedAdressId);
+        RefreshUserAdressForm();
+        MessageBox.Show(".حذف اطلاعات کاربر با موفقیت انجام شد");
+    }
+    public void RefreshUserAdressForm()
+    {
+        AdressDataGridView.DataSource = null;
         AdressDataGridView.DataSource = adressService.GetAll();
         AdressDataGridView.Refresh();
-
-        MessageBox.Show(".حذف اطلاعات کاربر با موفقیت انجام شد");
     }
 }

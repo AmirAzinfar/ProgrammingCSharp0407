@@ -340,7 +340,6 @@
             StartPosition = FormStartPosition.CenterParent;
             Text = "ثبت نام کاربر";
             TopMost = true;
-            Load += UserManagmentForm_Load;
             ((System.ComponentModel.ISupportInitialize)UserManageDataGridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

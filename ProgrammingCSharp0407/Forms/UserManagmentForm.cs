@@ -7,17 +7,23 @@ namespace ProgrammingCSharp0407.Forms;
 
 public partial class UserManagmentForm : Form
 {
-   
     int SelectedUserId = 0;
     UserService userService;
     //List<User> users;
+
+    //Declare The Delegate
+    public delegate void ReloadData();
+    //Declare Event
+    public event ReloadData ReloadDataEvent; 
     public UserManagmentForm()
     {
         InitializeComponent();
         //users= new List<User>();
         userService = new UserService();
-        UserManageDataGridView.DataSource = userService.GetAll();
-        UserManageDataGridView.Refresh();
+
+        ReloadDataEvent += RefreshUserManagmentForm; //connecting our Methode to our Event (ReloadDataEvent)
+        ReloadDataEvent.Invoke(); //The event is triggered (did) immediately, and all registered methods are called.
+        //RefreshUserManagmentForm();
     }
     
     private void RegisterUserbutton_Click(object sender, EventArgs e)
@@ -65,10 +71,8 @@ public partial class UserManagmentForm : Form
         User user = new User(firstName: firstName, lastName: lastName, birthDay: birthday, nationalCode: nationalCode, phoneNumber: phonNumber);
         //users.Add(user);
         userService.Add(user);
-        UserManageDataGridView.DataSource = null;
-        //UserManageDataGridView.DataSource= users;
-        UserManageDataGridView.DataSource = userService.GetAll();
-        UserManageDataGridView.Refresh();
+
+        RefreshUserManagmentForm();
 
         MessageBox.Show(".ثبت نام شما با موفقیت انجام شد");
 
@@ -135,8 +139,8 @@ public partial class UserManagmentForm : Form
             return;
         }
         userService.Delete(SelectedUserId);
-        UserManageDataGridView.DataSource = userService.GetAll();
-        UserManageDataGridView.Refresh();
+
+        RefreshUserManagmentForm();
 
         MessageBox.Show(".حذف اطلاعات کاربر با موفقیت انجام شد");
 
@@ -187,18 +191,17 @@ public partial class UserManagmentForm : Form
         };
         //users.Add(user);
         userService.Update(user);
+
+        RefreshUserManagmentForm();
+
+        MessageBox.Show(".به روز رسانی با موفقیت انجام شد");
+    }
+    public void RefreshUserManagmentForm()
+    {
         UserManageDataGridView.DataSource = null;
         //UserManageDataGridView.DataSource= users;
         UserManageDataGridView.DataSource = userService.GetAll();
         UserManageDataGridView.Refresh();
-
-        MessageBox.Show(".به روز رسانی با موفقیت انجام شد");
-
-    }
-
-    private void UserManagmentForm_Load(object sender, EventArgs e)
-    {
-
     }
 }
 

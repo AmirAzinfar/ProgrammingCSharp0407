@@ -7,13 +7,17 @@ public partial class JobManagmentForm : Form
 {
     int SelectedJobId = 0;
     JobService jobService;
+
+    public delegate void ReloadJobManagmentForm();
+    public event ReloadJobManagmentForm ReloadJobManagmentEvent;
     public JobManagmentForm()
     {
         InitializeComponent();
 
         jobService = new JobService();
-        JobAppliedDataGridView.DataSource = jobService.GetAll();
-        JobAppliedDataGridView: Refresh();
+        ReloadJobManagmentEvent += RefreshJobManagmentForm;
+        ReloadJobManagmentEvent.Invoke();
+
         FullTimeRadioButton.Checked = true;
 
         jobService = new JobService();
@@ -165,15 +169,9 @@ public partial class JobManagmentForm : Form
 
         job.ChoiceStart = string.Join(",", Choices);
 
-
         jobService.Add(job);
-
-        JobAppliedDataGridView.DataSource = null;
-        JobAppliedDataGridView.DataSource = jobService.GetAll();
-        JobAppliedDataGridView: Refresh();
-
+        RefreshJobManagmentForm();
         MessageBox.Show(".درخواست شغلی شما با موفقیت ثبت شد");
-
     }
 
     private void CancelApplaybutton_Click(object sender, EventArgs e)
@@ -251,9 +249,7 @@ public partial class JobManagmentForm : Form
             return;
         }
         jobService.Delete(SelectedJobId);
-        JobAppliedDataGridView.DataSource = jobService.GetAll();
-        JobAppliedDataGridView.Refresh();
-
+        RefreshJobManagmentForm();
         MessageBox.Show(".لغو درخواست با موفقیت انجام شد");
     }
 
@@ -274,7 +270,6 @@ public partial class JobManagmentForm : Form
             return;
         }
 
-
         Job job = new Job
         {
             Id = SelectedJobId,
@@ -284,7 +279,6 @@ public partial class JobManagmentForm : Form
             ProvinceWorkplace = provinceWorkplace,
             CityWorkplace = cityWorkplace,
         };
-
 
         // definition TimeWorkingHours
         if (FullTimeRadioButton.Checked)
@@ -328,13 +322,14 @@ public partial class JobManagmentForm : Form
 
         job.ChoiceStart = string.Join(",", Choices);
 
-
         jobService.Update(job);
-
+        RefreshJobManagmentForm();
+        MessageBox.Show(".به روز رسانی با موفقیت انجام شد");
+    }    
+    public void RefreshJobManagmentForm()
+    {
         JobAppliedDataGridView.DataSource = null;
         JobAppliedDataGridView.DataSource = jobService.GetAll();
         JobAppliedDataGridView: Refresh();
-
-        MessageBox.Show(".به روز رسانی با موفقیت انجام شد");
-    }    
+    }
 }

@@ -6,14 +6,11 @@ namespace ProgrammingInCshrpBaseBackend.Services;
 
 public class JobService : IBaseService<Job>
 {
+    private const string ConnectionString = "Server=.;Database=ProgrammingCSharp0407Db;Integrated Security=True;TrustServerCertificate=True;";
     public void Add(Job job)
     {
-        
-        const string ConnectionString = "Server=.;Database=ProgrammingCSharp0407Db;Integrated Security=True;TrustServerCertificate=True;";
-
         using(SqlConnection Connection = new SqlConnection(ConnectionString))              
         {
-            
             Connection.Open ();
             string Query = $"INSERT INTO[dbo].[Table_Job] " +
             "VALUES(@FieldOfJob,@TitelOfJob,@Salary,@TimeWorkingHours," + 
@@ -38,9 +35,7 @@ public class JobService : IBaseService<Job>
      public List<Job> GetAll()
      {
         List<Job> jobs = new List<Job>();
-        const string Connectionstring = "Server=.;Database=ProgrammingCSharp0407Db;Integrated Security=True;TrustServerCertificate=True;";
-
-        using (SqlConnection connection = new SqlConnection(Connectionstring))
+        using (SqlConnection connection = new SqlConnection(ConnectionString))
         {
             connection.Open();
             
@@ -72,8 +67,7 @@ public class JobService : IBaseService<Job>
     }
     public void Delete(int id)
     {
-        const string Connectionstring = "Server=.;Database=ProgrammingCSharp0407Db;Integrated Security=True;TrustServerCertificate=True;";
-        using (SqlConnection connection = new SqlConnection(Connectionstring))
+        using (SqlConnection connection = new SqlConnection(ConnectionString))
         {
             connection.Open();
             
@@ -88,8 +82,7 @@ public class JobService : IBaseService<Job>
     }
     public void Update(Job item)
     {
-        const string Connectionstring = "Server=.;Database=ProgrammingCSharp0407Db;Integrated Security=True;TrustServerCertificate=True;";
-        using (SqlConnection connection = new SqlConnection(Connectionstring))
+        using (SqlConnection connection = new SqlConnection(ConnectionString))
         {
             connection.Open();
             

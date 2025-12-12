@@ -7,13 +7,13 @@ namespace ProgrammingInCshrpBaseBackend.Services;
 
     public class UserService : IBaseService<User>
     {
-        public void Add(User user)
+        private const string Connectionstring = "Server=.;Database=ProgrammingCSharp0407Db;Integrated Security=True;TrustServerCertificate=True;";
+    public void Add(User user)
         {
         //users.Add(user); 
 
         // 1:connect to Database (Db)
 
-            const string Connectionstring = "Server=.;Database=ProgrammingCSharp0407Db;Integrated Security=True;TrustServerCertificate=True;";
             using (SqlConnection connection = new SqlConnection(Connectionstring))
              { 
                 connection.Open();
@@ -51,7 +51,7 @@ namespace ProgrammingInCshrpBaseBackend.Services;
             // How we get Data from Tables of Database:
 
             // 1:connect to Database (Db)
-            const string Connectionstring = "Server=.;Database=ProgrammingCSharp0407Db;Integrated Security=True;TrustServerCertificate=True;";
+            //const string Connectionstring = "Server=.;Database=ProgrammingCSharp0407Db;Integrated Security=True;TrustServerCertificate=True;";
 
             // 2: SqlServer command or Query --> select Table (User) from Db
             // here,I need SqlClient Pacage to Install, therefor I search "Microsoft.Data.SqlClient"
@@ -90,7 +90,7 @@ namespace ProgrammingInCshrpBaseBackend.Services;
 
         public void Delete(int id)
         {
-            const string Connectionstring = "Server=.;Database=ProgrammingCSharp0407Db;Integrated Security=True;TrustServerCertificate=True;";
+            //const string Connectionstring = "Server=.;Database=ProgrammingCSharp0407Db;Integrated Security=True;TrustServerCertificate=True;";
             using (SqlConnection connection = new SqlConnection(Connectionstring))
             {
                 connection.Open();
@@ -112,7 +112,7 @@ namespace ProgrammingInCshrpBaseBackend.Services;
 
         public void Update(User item)
          {
-            const string Connectionstring = "Server=.;Database=ProgrammingCSharp0407Db;Integrated Security=True;TrustServerCertificate=True;";
+           // const string Connectionstring = "Server=.;Database=ProgrammingCSharp0407Db;Integrated Security=True;TrustServerCertificate=True;";
             using (SqlConnection connection = new SqlConnection(Connectionstring))
             {
                 connection.Open();

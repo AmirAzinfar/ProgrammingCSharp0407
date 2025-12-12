@@ -7,9 +7,9 @@ namespace ProgrammingInCshrpBaseBackend.Services;
 
 public class UploadDocService : IBaseService<UploadDoc>
 {
+    private const string ConnectionString = "Server=.;Database=ProgrammingCSharp0407Db;Integrated Security=True;TrustServerCertificate=True;";
     public void Add(UploadDoc doc)
     {
-        const string ConnectionString = "Server=.;Database=ProgrammingCSharp0407Db;Integrated Security=True;TrustServerCertificate=True;";
         using (SqlConnection connection = new SqlConnection(ConnectionString))
         {
             connection.Open();
@@ -32,8 +32,7 @@ public class UploadDocService : IBaseService<UploadDoc>
     }
     public void Delete(int id)
     {
-        const string Connectionstring = "Server=.;Database=ProgrammingCSharp0407Db;Integrated Security=True;TrustServerCertificate=True;";
-        using (SqlConnection connection = new SqlConnection(Connectionstring))
+        using (SqlConnection connection = new SqlConnection(ConnectionString))
         {
             connection.Open();
             string Query = $"DELETE FROM [dbo].[Table_UploadDoc] WHERE Id = @Id;";
@@ -46,8 +45,6 @@ public class UploadDocService : IBaseService<UploadDoc>
     public List<UploadDoc> GetAll()
     {
         List<UploadDoc> uploadDocs = new List<UploadDoc>();
-        const string ConnectionString = "Server=.;Database=ProgrammingCSharp0407Db;Integrated Security=True;TrustServerCertificate=True;";
-
         using (SqlConnection connection = new SqlConnection(ConnectionString))
         {
             connection.Open();
@@ -78,7 +75,6 @@ public class UploadDocService : IBaseService<UploadDoc>
 
     public void Update(UploadDoc doc)
     {
-        const string ConnectionString = "Server=.;Database=ProgrammingCSharp0407Db;Integrated Security=True;TrustServerCertificate=True;";
         using (SqlConnection connection = new SqlConnection(ConnectionString))
         {
             connection.Open();

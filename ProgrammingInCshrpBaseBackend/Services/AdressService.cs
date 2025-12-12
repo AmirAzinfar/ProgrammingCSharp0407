@@ -7,10 +7,9 @@ namespace ProgrammingInCshrpBaseBackend.Services;
 
 public class AdressService : IBaseService<Adress>
 {
+    private const string ConnectionString = "Server=.;Database=ProgrammingCSharp0407Db;Integrated Security=True;TrustServerCertificate=True;";
     public void Add(Adress adress)
     {
-        const string ConnectionString = "Server=.;Database=ProgrammingCSharp0407Db;Integrated Security=True;TrustServerCertificate=True;";
-
         using (SqlConnection connection = new SqlConnection(ConnectionString))
         {
             connection.Open();
@@ -24,12 +23,9 @@ public class AdressService : IBaseService<Adress>
             int rowsAffected = command.ExecuteNonQuery();
         }
     }
-
     public List<Adress> GetAll()
     {
         List<Adress> adresses = new List<Adress>();
-        const string ConnectionString = "Server=.;Database=ProgrammingCSharp0407Db;Integrated Security=True;TrustServerCertificate=True;";
-
         using(SqlConnection connection = new SqlConnection(ConnectionString))
         {
             connection.Open();
@@ -55,8 +51,7 @@ public class AdressService : IBaseService<Adress>
 
     public void Delete(int id)
     {
-        const string Connectionstring = "Server=.;Database=ProgrammingCSharp0407Db;Integrated Security=True;TrustServerCertificate=True;";
-        using (SqlConnection connection = new SqlConnection(Connectionstring))
+        using (SqlConnection connection = new SqlConnection(ConnectionString))
         {
             connection.Open();
             // now, I write a Query with command DELETE (same "DELETE" as Query in Database)
@@ -76,8 +71,7 @@ public class AdressService : IBaseService<Adress>
     }
     public void Update(Adress item)
     {
-        const string Connectionstring = "Server=.;Database=ProgrammingCSharp0407Db;Integrated Security=True;TrustServerCertificate=True;";
-        using (SqlConnection connection = new SqlConnection(Connectionstring))
+        using (SqlConnection connection = new SqlConnection(ConnectionString))
         {
             connection.Open();
             // now, I write a Query with command UPDATE (same "UPDATE" as Query in Database)

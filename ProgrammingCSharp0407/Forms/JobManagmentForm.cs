@@ -2,7 +2,6 @@
 using ProgrammingInCshrpBaseBackend.Services;
 
 namespace ProgrammingCSharp0407.Forms;
-
 public partial class JobManagmentForm : Form
 {
     int SelectedJobId = 0;

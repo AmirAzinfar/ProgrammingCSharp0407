@@ -1,11 +1,11 @@
 ﻿namespace ProgrammingInCshrpBaseBackend.Interfaces;
 
-//Generic --> Type --> <T> :undependet to Type of Data, therfore, we need "interface"
+//Generic --> Type --> <T> :independet to Type of Data, therefor, we need "interface"
 public interface IBaseService<T>
 {
-    void Update(T item);
+    //all this Methods are "public", otherwise it doesn't make sense
+    void Update(T item); 
     void Delete(int  id);
     void Add(T item);
     List<T> GetAll();
-    
 }

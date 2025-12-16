@@ -8,11 +8,11 @@ namespace ProgrammingInCshrpBaseBackend.Services;
     public class UserService : IBaseService<User>
     {
         private const string Connectionstring = "Server=.;Database=ProgrammingCSharp0407Db;Integrated Security=True;TrustServerCertificate=True;";
-    public void Add(User user)
+        public void Add(User user)
         {
-        //users.Add(user); 
+            //users.Add(user); 
 
-        // 1:connect to Database (Db)
+            // 1:connect to Database (Db)
 
             using (SqlConnection connection = new SqlConnection(Connectionstring))
              { 
@@ -111,7 +111,7 @@ namespace ProgrammingInCshrpBaseBackend.Services;
         }
 
         public void Update(User item)
-         {
+        {
            // const string Connectionstring = "Server=.;Database=ProgrammingCSharp0407Db;Integrated Security=True;TrustServerCertificate=True;";
             using (SqlConnection connection = new SqlConnection(Connectionstring))
             {
